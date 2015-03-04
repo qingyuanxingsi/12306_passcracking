@@ -1,6 +1,6 @@
 ##12306 Paper
 ###Preliminary Results:
-1. Structure of the passowrds:
+#### 1. Structure of the passowrds:
 The following table shows the most frequent 20 password structures, in which "D" represents digits, "L" represents letters, and "S" represent special characters. The number following the letters indicate the length of the segment. For example, password132 -> L7D3
 
 |Structure | frequency| percentage|
@@ -26,8 +26,12 @@ The following table shows the most frequent 20 password structures, in which "D"
 |D7L1|1973|1.498%|
 |L3D4|1879|1.427%|
 
-2. Most frequently used passwords
+The result is a little different from previous workds due to:
+* No complicated password constraint is set.
+* The nature of this website is different from others.
 
+
+####2. Most frequently used passwords
 
 NOTE:this is very different from previous research. The congregation is regarded much higher than this in Chinese Password set.
 
@@ -54,4 +58,60 @@ NOTE:this is very different from previous research. The congregation is regarded
 |100200|0.039%|
 |woaini|0.038%|
 
-3. Longest Common Sequence
+####3. Longest Common Sequence
+Here we compute the coverage of longest common sequence, which is computed as $len(LCS) \over len(password)$
+
+The results are shown below:
+
+|Info | longest common sequence|longest common consecutive sequence|
+|-------:|:-------:|:--------|
+|Birthday |0.33 | 0.23|
+|Name|0.17| 0.13|
+|Email|0.32| 0.21|
+|Tel|0.31| 0.16|
+|Account|0.32| 0.24|
+|ID Number|0.44| 0.27|
+Considered that the average length of the password is 7. The rate does not seem much. However, the structure of passwords are usually combined with letters, symbols, and digits. The rate is underested.
+
+Let's see the same rate for D7, D8, and D6, which are most commonly used structures (account for over 20% of all passwords)
+
+for __D7__
+
+|Info | longest common sequence|longest common consecutive sequence|
+|-------:|:-------:|:--------|
+| Birthday |0.376|0.226|
+|Name|0.0|0.0|
+|Email|0.326|0.207|
+|Tel|0.425|0.215|
+|Account|0.294|0.250|
+|ID Number|0.572|0.277|
+
+for __D8__
+
+|Info | longest common sequence|longest common consecutive sequence|
+|-------:|:-------:|:--------|
+| Birthday |0.543|0.430|
+|Name|0.0|0.0|
+|Email|0.312|0.205|
+|Tel|0.432|0.195|
+|Account|0.238|0.194|
+|ID Number|0.669|0.461|
+
+for __D6__
+
+|Info | longest common sequence|longest common consecutive sequence|
+|-------:|:-------:|:--------|
+| Birthday |0.532|0.390|
+|Name|0.0|0.0|
+|Email|0.319|0.220|
+|Tel|0.462|0.236|
+|Account|0.245|0.210|
+|ID Number|0.695|0.445|
+
+Now let's set a threshold of coverage to be 0.7 (most of the digits in password are covered) and compare the password to birthday.
+
+|Dataset| longest common sequence|longest common consecutive sequence|
+|-------:|:-------:|:--------|
+| D7 |0.076|0.048|
+| D8 |0.214|0.192|
+| D6 |0.303|0.289|
