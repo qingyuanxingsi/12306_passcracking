@@ -171,6 +171,7 @@ We use a greedy algorithm to match the password with personal information. It in
 2. Sort the substrings by its length in descending order
 3. From the longest length, try to match the personal information to the substrings. 
 4. If a match is found, recursively found the segments left. 
+5. Only segment with length >= 2 will be matched.
 
 For example, a string Chris19880808abc will be matched in the following order:
 
@@ -184,6 +185,30 @@ For example, a string Chris19880808abc will be matched in the following order:
 
 ####7. Matching rules 
 By matching we mean the password substring is very related to a kind of personal information. Different kind of personal information is handled differently. 
+
+* Birthday
+Birthday is most likely to be digits only. We use multiple permutations of year, month, and day to represent birthday. If any permutation is exactly the same as the input string, a match is found. Note that we apply restrictions on the length of the substring to be matched because we want to avoid coincidence to make the result more accurate. 
+These permutations are:
+YYYY+MM+DD, YYYY+M+DD, YYYY+M+D, YY+MM+DD, YY+M+DD, YY+M+D, YYYY+MM, YYYY+DD, YYYY, YY, MM+DD, M+DD, M+D
+
+* Name
+The name in our database is in Chinese, we convert it into Pinyin. A name is matched if the Pinyin or the Pinyin initials is exactly the same as the input string. For example, liyue or ly will be matched to [NAME].
+
+* Email
+Email is usually of the form A@B.C. If the input string is a substring of A, B or C, then a email match is found. Note that A will be personal information, B and C are more related to the service name. 
+
+* Cellphome
+If the input string is at least of length 4, and is a substring of the cellphone. A cellphone match is found.
+
+* Account
+If the input string is at least of length 4, and is a substring of the account name. An account match is found.
+
+* ID:
+If the input string is at least of length 4, and is a substring of the ID. An ID match is found.
+
+
+####8. Matching Result
+The following table is the matching result from the whole database. 
 
 
 |FORM|FREQUENCY|percentage|
@@ -208,6 +233,99 @@ By matching we mean the password substring is very related to a kind of personal
 |D7L1|1440|1.09%|
 |L3D6|1356|1.03%|
 |L1D6|1342|1.02%|
+
+We may have the following observations:
+1. There is a significant number of password which is associated with personal information. 
+2. The most popular information is the [ACCT], [BD], and [NAME]
+3. A number of passwords can be fully recovered from personal information while some other passwords have segments not associated to personal information, which needs some guesssing. 
+
+#### Password usage in different groups of users
+We try to study the difference between males and females. And people from different age group 
+
+* Male and Female:
+Our database is biased in gender. We have 9,856 females and 121,533 males. Although the number is not balanced, we can still get some insight on how male and female choose their passwords. 
+The matching result for male is 
+
+|FORM|FREQUENCY|percentage|
+|------:|:------:|:------|
+|D7|6756|5.55%|
+|[ACCT]|6486|5.33%|
+|[BD]|5694|4.68%|
+|D6|4444|3.65%|
+|[NAME][BD]|4135|3.40%|
+|D8|3946|3.24%|
+|L1D7|3142|2.58%|
+|[EMAIL]|2876|2.36%|
+|[NAME]D7|2165|1.78%|
+|[NAME]|1797|1.47%|
+|L2D7|1793|1.47%|
+|D9|1747|1.43%|
+|[NAME]D3|1712|1.40%|
+|[NAME]D6|1635|1.34%|
+
+For female is:
+
+|FORM|FREQUENCY|percentage|
+|------:|:------:|:------|
+|D6|486|4.93%|
+|[ACCT]|429|4.35%|
+|D7|426|4.32%|
+|D8|326|3.30%|
+|[BD]|271|2.74%|
+|[NAME][BD]|208|2.11%|
+|L2D6|204|2.06%|
+|[EMAIL]|194|1.96%|
+|L2D7|173|1.75%|
+|L3D6|171|1.73%|
+|L1D7|168|1.70%|
+|L6D3|165|1.67%|
+|L3D7|141|1.43%|
+|L4D4|139|1.41%|
+
+* Age group
+Currently we have 2 groups of people in different age. The cutting point is 30 years old. We have 32,603 younger people and 98,786 older people. The matching results are as the following:
+
+For younger people 
+
+|FORM|FREQUENCY|percentage|
+|------:|:------:|:------|
+|[ACCT]|5851|5.92%|
+|D7|5516|5.58%|
+|[BD]|4098|4.14%|
+|[NAME][BD]|3358|3.39%|
+|D8|2976|3.01%|
+|D6|2944|2.98%|
+|L1D7|2904|2.93%|
+|[EMAIL]|2524|2.55%|
+|[NAME]D7|1849|1.87%|
+|L2D7|1622|1.64%|
+|D9|1571|1.59%|
+|[NAME]|1484|1.50%|
+|[NAME]D3|1454|1.47%|
+|L1D8|1412|1.42%|
+
+
+For older people:
+
+|FORM|FREQUENCY|percentage|
+|------:|:------:|:------|
+|D7|7182|5.46%|
+|[ACCT]|6915|5.26%|
+|[BD]|5965|4.53%|
+|D6|4930|3.75%|
+|[NAME][BD]|4343|3.30%|
+|D8|4272|3.25%|
+|L1D7|3310|2.51%|
+|[EMAIL]|3070|2.33%|
+|[NAME]D7|2213|1.68%|
+|L2D7|1966|1.49%|
+|[NAME]|1859|1.41%|
+|D9|1841|1.40%|
+|[NAME]D3|1769|1.34%|
+|[NAME]D6|1684|1.28%|
+
+
+
 
 
 
