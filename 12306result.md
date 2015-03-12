@@ -186,24 +186,30 @@ For example, a string Chris19880808abc will be matched in the following order:
 ####7. Matching rules 
 By matching we mean the password substring is very related to a kind of personal information. Different kind of personal information is handled differently. 
 
-* Birthday
+* __Birthday__
+
 Birthday is most likely to be digits only. We use multiple permutations of year, month, and day to represent birthday. If any permutation is exactly the same as the input string, a match is found. Note that we apply restrictions on the length of the substring to be matched because we want to avoid coincidence to make the result more accurate. 
 These permutations are:
 YYYY+MM+DD, YYYY+M+DD, YYYY+M+D, YY+MM+DD, YY+M+DD, YY+M+D, YYYY+MM, YYYY+DD, YYYY, YY, MM+DD, M+DD, M+D
 
-* Name
+* __Name__
+
 The name in our database is in Chinese, we convert it into Pinyin. A name is matched if the Pinyin or the Pinyin initials is exactly the same as the input string. For example, liyue or ly will be matched to [NAME].
 
-* Email
+* __Email__
+
 Email is usually of the form A@B.C. If the input string is a substring of A, B or C, then a email match is found. Note that A will be personal information, B and C are more related to the service name. 
 
-* Cellphome
+* __Cellphome__
+
 If the input string is at least of length 4, and is a substring of the cellphone. A cellphone match is found.
 
-* Account
+* __Account__
+
 If the input string is at least of length 4, and is a substring of the account name. An account match is found.
 
-* ID:
+* __ID__
+
 If the input string is at least of length 4, and is a substring of the ID. An ID match is found.
 
 
@@ -243,8 +249,9 @@ We may have the following observations:
 We try to study the difference between males and females. And people from different age group 
 
 * Male and Female:
+
 Our database is biased in gender. We have 9,856 females and 121,533 males. Although the number is not balanced, we can still get some insight on how male and female choose their passwords. 
-The matching result for male is 
+The matching result for __male__ is 
 
 |FORM|FREQUENCY|percentage|
 |------:|:------:|:------|
@@ -263,7 +270,7 @@ The matching result for male is
 |[NAME]D3|1712|1.40%|
 |[NAME]D6|1635|1.34%|
 
-For female is:
+For __female__ is:
 
 |FORM|FREQUENCY|percentage|
 |------:|:------:|:------|
@@ -283,9 +290,10 @@ For female is:
 |L4D4|139|1.41%|
 
 * Age group
+
 Currently we have 2 groups of people in different age. The cutting point is 30 years old. We have 32,603 younger people and 98,786 older people. The matching results are as the following:
 
-For younger people 
+For __younger__ people 
 
 |FORM|FREQUENCY|percentage|
 |------:|:------:|:------|
@@ -305,7 +313,7 @@ For younger people
 |L1D8|1412|1.42%|
 
 
-For older people:
+For __older__ people:
 
 |FORM|FREQUENCY|percentage|
 |------:|:------:|:------|
