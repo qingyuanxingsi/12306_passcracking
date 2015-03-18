@@ -130,11 +130,11 @@ We then calculate the coverage for different threshold.
 
 |threshold| Coverage|threshold|Coverage|
 |-------:|:--------:|:------:|:-------|
-|0| 0.717 |0.6| 0.556 |
+|0  | 0.717 |0.6| 0.556 |
 |0.1| 0.717 |0.7| 0.475 |
 |0.2| 0.715 |0.8| 0.419 |
 |0.3| 0.708 |0.9| 0.374 |
-|0.4| 0.691 |1| 0.374 |
+|0.4| 0.691 |1  | 0.374 |
 |0.5| 0.662 |
 
 
@@ -144,11 +144,11 @@ Note that ID number contains exactly the birthday in our dataset, and it contain
 
 |threshold| Coverage|threshold|Coverage|
 |-------:|:--------:|:------:|:-------|
-|0| 0.667 |0.6| 0.467 |
+|0  | 0.667 |0.6| 0.467 |
 |0.1| 0.667 |0.7| 0.402 |
 |0.2| 0.665 |0.8| 0.372 |
 |0.3| 0.651 |0.9| 0.350 |
-|0.4| 0.621 |1|0.350|
+|0.4| 0.621 | 1 | 0.350 |
 |0.5| 0.572 |
 
 
@@ -162,7 +162,7 @@ Although coverage may be a good indicator of how passwords are correlated to per
 
 Therefore we create a new representation of password, which is useful in measurement and password cracking. This new representation is evolved from the original PCFG. We call it personal representation. Like original PCFG, personal representation consists of different "TYPES" of segments. An example is $[name_4][bd_8]$ or $[name-initial_2][cellphone_{11}]$
 
-==TODO:Key stroke strings can be added==
+==~~TODO:Key stroke strings can be added~~==
 
 
 ####6. Personal Information Matching
@@ -245,13 +245,15 @@ We may have the following observations:
 2. The most popular information is the [ACCT], [BD], and [NAME]
 3. A number of passwords can be fully recovered from personal information while some other passwords have segments not associated to personal information, which needs some guesssing. 
 
-#### Password usage in different groups of users
+#### 9. Password usage in different groups of users
 We try to study the difference between males and females. And people from different age group 
 
 * Male and Female:
 
 Our database is biased in gender. We have 9,856 females and 121,533 males. Although the number is not balanced, we can still get some insight on how male and female choose their passwords. 
 The matching result for __male__ is 
+
+==~~TODO: Match the number of male and female~~==
 
 |FORM|FREQUENCY|percentage|
 |------:|:------:|:------|
@@ -270,72 +272,117 @@ The matching result for __male__ is
 |[NAME]D3|1712|1.40%|
 |[NAME]D6|1635|1.34%|
 
-For __female__ is:
+We randomly select 9800+ users from male lists and compare with female list. Female is on the __left__ and male is on the __right__:
 
-|FORM|FREQUENCY|percentage|
-|------:|:------:|:------|
-|D6|486|4.93%|
-|[ACCT]|429|4.35%|
-|D7|426|4.32%|
-|D8|326|3.30%|
-|[BD]|271|2.74%|
-|[NAME][BD]|208|2.11%|
-|L2D6|204|2.06%|
-|[EMAIL]|194|1.96%|
-|L2D7|173|1.75%|
-|L3D6|171|1.73%|
-|L1D7|168|1.70%|
-|L6D3|165|1.67%|
-|L3D7|141|1.43%|
-|L4D4|139|1.41%|
+
+|RANK|FORM|FREQUENCY|PERCENTAGE|FORM|FREQUENCY|PERCENTAGE|
+|-----:|:------:|:------:|:------:|:-----:|:-----:|:-------|
+|1|D6|486|4.93%|[ACCT]|510|5.17%|
+|2|[ACCT]|429|4.35%|D7|503|5.10%|
+|3|D7|426|4.32%|[BD]|467|4.73%|
+|4|D8|326|3.30%|D6|364|3.69%|
+|5|[BD]|271|2.74%|D8|319|3.23%|
+|6|[NAME][BD]|208|2.11%|[NAME][BD]|317|3.21%|
+|7|L2D6|204|2.06%|L1D7|288|2.92%|
+|8|[EMAIL]|194|1.96%|[EMAIL]|237|2.40%|
+|9|L2D7|173|1.75%|[NAME]D7|187|1.89%|
+|10|L3D6|171|1.73%|[NAME]|154|1.56%|
+|11|L1D7|168|1.70%|[NAME]D3|153|1.55%|
+|12|L6D3|165|1.67%|L2D7|144|1.46%|
+|13|L3D7|141|1.43%|D9|138|1.40%|
+|14|L4D4|139|1.41%|[NAME]D6|134|1.35%|
+|15|L6D4|124|1.25%|L1D8|117|1.18%|
 
 * Age group
-
-Currently we have 2 groups of people in different age. The cutting point is 30 years old. We have 32,603 younger people and 98,786 older people. The matching results are as the following:
-
-For __younger__ people 
-
-|FORM|FREQUENCY|percentage|
-|------:|:------:|:------|
-|[ACCT]|5851|5.92%|
-|D7|5516|5.58%|
-|[BD]|4098|4.14%|
-|[NAME][BD]|3358|3.39%|
-|D8|2976|3.01%|
-|D6|2944|2.98%|
-|L1D7|2904|2.93%|
-|[EMAIL]|2524|2.55%|
-|[NAME]D7|1849|1.87%|
-|L2D7|1622|1.64%|
-|D9|1571|1.59%|
-|[NAME]|1484|1.50%|
-|[NAME]D3|1454|1.47%|
-|L1D8|1412|1.42%|
+==~~TODO: Try under 18 and over 65, or 10 years gap (NOT THAT FEASIBLE, Over 72% of the users are in 20-30 range, only 208 users are younger than 18 and only 150 users are older than 65. But still we can try <25, 25-30, and >25~~==
 
 
-For __older__ people:
-
-|FORM|FREQUENCY|percentage|
-|------:|:------:|:------|
-|D7|7182|5.46%|
-|[ACCT]|6915|5.26%|
-|[BD]|5965|4.53%|
-|D6|4930|3.75%|
-|[NAME][BD]|4343|3.30%|
-|D8|4272|3.25%|
-|L1D7|3310|2.51%|
-|[EMAIL]|3070|2.33%|
-|[NAME]D7|2213|1.68%|
-|L2D7|1966|1.49%|
-|[NAME]|1859|1.41%|
-|D9|1841|1.40%|
-|[NAME]D3|1769|1.34%|
-|[NAME]D6|1684|1.28%|
+We divide the data into 3 groups -- younger than 25, 25-30, and over 30. The corresponding number of users are 35465, 70002, and 25922. The result is shown in the following table:
 
 
+|RANK|FORM(Y)|PERCENTAGE|FORM(A)|PERCENTAGE|FORM(O)|PERCENTAGE|
+|-----:|:------:|:------:|:------:|:-----:|:-----:|:-------|
+|1|[ACCT]|6.94%|D7|6.05%|D6|6.25%
+|2|D7|4.72%|[BD]|5.24%|[BD]|5.27%
+|3|L1D7|4.10%|[ACCT]|5.16%|D7|4.88%
+|4|[NAME][BD]|3.22%|D6|3.72%|D8|3.90%
+|5|[EMAIL]|2.95%|D8|3.50%|[ACCT]|3.21%
+|6|[BD]|2.60%|[NAME][BD]|3.47%|[NAME][BD]|2.95%
+|7|L2D7|2.28%|[EMAIL]|2.28%|[EMAIL]|1.63%
+|8|D8|2.27%|L1D7|2.17%|L2D6|1.61%
+|9|D6|1.97%|[NAME]D7|1.76%|L3D6|1.46%
+|10|[NAME]D7|1.97%|D9|1.63%|[NAME]D6|1.43%
+|11|L1D8|1.82%|[NAME]|1.61%|L4D4|1.28%
+|12|[NAME]D3|1.73%|[NAME]D3|1.30%|L1D7|1.28%
+|13|L3D7|1.50%|[NAME]D6|1.29%|L8|1.23%
+|14|D9|1.39%|L2D7|1.25%|L6|1.19%
+|15|L6D3|1.38%|L1D8|1.14%|[NAME]D7|1.06%
 
 
+==TOOD: consider service information, like ranking of the pinyin==
+==TODO: Password Protection -- Distortion Function==
 
+#### Pinyin ranking -- Service Information
+We wish to explore whether the Service Information help in cracking the password. 
+Initial study
+1. How many "piao" are in passwords?
+We used a list of keywords related to "piao" to explore how many passwords carry the service information. 
+
+The list is [chepiao,maipiao,goupiao,huoche,train,railway,ticket]
+The keywords appear 0 time in 131389 passwords. 
+
+However, we found that service information is more likely to be in the username. There are 105 out of 131389 username contains at least one word from the keyword list, which is 0.08%.
+
+__Our observation is that Service Information does not happen in Passowrd much, but it does show in account name__
+
+A whole Pinyin table is extracted from [Wikipedia Pinyin Table](http://en.wikipedia.org/wiki/Pinyin_table). We again use the recursive matching algorithm to find most commonly used Pinyin in passwords. They are shown in the below table. We can see that short pharse and last names are overwhelming. 
+
+|PINYIN|OCCURANCE|PERCENTAGE|
+|---:|:---:|:----|
+|a|17155|18.2%
+|o|3943|4.20%
+|e|3720|3.96%
+|wo|2242|2.39%
+|li|1994|2.12%
+|ai|1844|1.96%
+|ni|1543|1.64%
+|wang|1381|1.47%
+|lo|1149|1.22%
+|yu|1127|1.20%
+|wei|1079|1.15%
+|xiao|1061|1.13%
+|ma|1030|1.09%
+|liu|916|0.97%
+|yang|900|0.95%
+|shi|873|0.93%
+|zhang|827|0.88%
+
+Then we wish to get the parts in password which are not recognized as personal information and do similar processing. The most commonly used Pinyin words are:
+
+|PINYIN|OCCURANCE|PERCENTAGE|PINYIN|OCCURANCE|PERCENTAGE|PINYIN|OCCURANCE|PERCENTAGE|
+|---:|:---:|:----:|:---:|:---:|:---:|:---:|:---:|:---|
+|a|6240|10.2%|a|9513|23.2%|a|14270|21.7%
+|q|1409|2.30%|aa|892|2.18%|o|3178|4.85%
+|z|1026|1.67%|e|827|2.02%|e|2991|4.56%
+|w|889|1.45%|o|729|1.78%|wo|2122|3.23%
+|aa|810|1.32%|woaini|551|1.34%|ai|1722|2.62%
+|asd|598|0.97%|li|493|1.20%|ni|1409|2.15%
+|woaini|526|0.85%|loe|481|1.17%|li|1032|1.57%
+|as|487|0.79%|er|404|0.98%|lo|1004|1.53%
+|qq|486|0.79%|wang|324|0.79%|ma|845|1.28%
+|qwe|472|0.77%|liu|304|0.74%|er|821|1.25%
+|s|444|0.72%|zhang|271|0.66%|xiao|729|1.11%
+|li|441|0.72%|aaa|263|0.64%|shi|679|1.03%
+|x|385|0.62%|wa|258|0.63%|yu|601|0.91%
+|abc|357|0.58%|wo|236|0.57%|wang|600|0.91%
+|l|335|0.54%|yu|229|0.56%|le|541|0.82%
+|love|309|0.50%|oo|194|0.47%|wei|504|0.76%
+|wang|292|0.47%|chen|175|0.42%|da|494|0.75%
+|liu|290|0.47%|ma|173|0.42%|liu|477|0.72%
+|c|282|0.46%|ai|162|0.39%|de|442|0.67%
+|qw|252|0.41%|woai|152|0.37%|zhang|420|0.64%
+
+Again this is overwhelmed by woaini or last name.
 
 This may be the outline of the data analysis result
 * Data Overview 
