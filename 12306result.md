@@ -338,6 +338,7 @@ __Our observation is that Service Information does not happen in Passowrd much, 
 A whole Pinyin table is extracted from [Wikipedia Pinyin Table](http://en.wikipedia.org/wiki/Pinyin_table). We again use the recursive matching algorithm to find most commonly used Pinyin in passwords. They are shown in the below table. We can see that short pharse and last names are overwhelming. 
 
 ==TODO: COMPARE WITH OTHER DATASET==
+
 |PINYIN|OCCURANCE|PERCENTAGE|
 |---:|:---:|:----|
 |a|17155|18.2%
