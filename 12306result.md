@@ -118,7 +118,7 @@ Now let's set a threshold of coverage to be 0.7 (most of the digits in password 
 
 
 #### 4.Coverage
-
+==TODO: IMPROVE COVERAGE==
 Coverage will be an important factor for measuring the correlation of the passwords and personal informaiton. Coverage is defined as the ratio of the password that can be recovered from the personal information. In short, $cvg = {len(LCS) \over len(password)}$. Firstly we segmentize the passwords into "Letter", "Digits", and "Special Symbols". Then we try to map "Letter" and "Digits" with personal information (Map Letter with name, email, and account, map digits with birthday, email, cellphone, id number, and account). We map these segments by the following rules:
 1. We find the longest common sequence (LCS) between each segment of password and each type of personal information that is used to mapping.
 2. We select the longest common sequence as the candidate for each segment of password.
@@ -337,6 +337,7 @@ __Our observation is that Service Information does not happen in Passowrd much, 
 
 A whole Pinyin table is extracted from [Wikipedia Pinyin Table](http://en.wikipedia.org/wiki/Pinyin_table). We again use the recursive matching algorithm to find most commonly used Pinyin in passwords. They are shown in the below table. We can see that short pharse and last names are overwhelming. 
 
+==TODO: COMPARE WITH OTHER DATASET==
 |PINYIN|OCCURANCE|PERCENTAGE|
 |---:|:---:|:----|
 |a|17155|18.2%
