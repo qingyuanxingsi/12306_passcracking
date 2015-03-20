@@ -322,7 +322,7 @@ We divide the data into 3 groups -- younger than 25, 25-30, and over 30. The cor
 ==TOOD: consider service information, like ranking of the pinyin==
 ==TODO: Password Protection -- Distortion Function==
 
-#### Pinyin ranking -- Service Information
+#### 10 Pinyin ranking -- Service Information
 We wish to explore whether the Service Information help in cracking the password. 
 Initial study
 1. How many "piao" are in passwords?
@@ -386,17 +386,40 @@ Then we wish to get the parts in password which are not recognized as personal i
 
 Again this is overwhelmed by woaini or last name.
 
-This may be the outline of the data analysis result
-* Data Overview 
-  * Data Structure Overview
-  * Most commly usd passwords
-* Coverage
-* New representation of password ([name][birthday][special symbol])
-* Which is the most relevant personal information, an analysis
-* Gender Diff
-  * Personal info struct
-* Age Diff
-  * Same as Gender diff
+
+
+
+#### 11. Other database -- service information
+__Tianya__
+
+67,312 out of 24,087,768 passwords (0.2%) contains string "tianya". However, 44227 passwords are "111222tianya". There might be noise in the dataset because it does not make sense that so many people choose the same password "111222tianya". if we take these duplications out, it turns out less than 0.1% user uses service information in their passwords
+
+__Rockyou__
+
+8,823 out of 28,688,782 passwords use string "rockyou" in their passwords (0.03%). Again, the percentage is so low that we can safely ignore it. 
+
+#### 12. New coverage:
+The coverage metric is improved. The new method uses a sliding window to compute the correlation between passwords and personal information. It works like the following:
+
+1. Choose a window size (usually 1-4).
+2. Slide the window from the begining of the password to the end.
+3. With in a window, match the string in the window to personal information.
+4. If a match is found, mark all character in the window as "match".
+5. Window moves forward one character after all personal information have been tried for match.
+
+Results:
+
+|WINDOWSIZE|COVERAGE|
+|:----:|:------:|
+|1|0.926
+|2|0.608
+|3|0.389
+|4|0.297
+|5|0.229
+|6|0.206
+|7|0.147
+
+
 
 
 
