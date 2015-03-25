@@ -337,7 +337,7 @@ __Our observation is that Service Information does not happen in Passowrd much, 
 
 A whole Pinyin table is extracted from [Wikipedia Pinyin Table](http://en.wikipedia.org/wiki/Pinyin_table). We again use the recursive matching algorithm to find most commonly used Pinyin in passwords. They are shown in the below table. We can see that short pharse and last names are overwhelming. 
 
-==TODO: COMPARE WITH OTHER DATASET==
+==TODO: COMPARE WITH OTHER DATASET -- As many as we can==
 
 |PINYIN|OCCURANCE|PERCENTAGE|
 |---:|:---:|:----|
@@ -407,6 +407,10 @@ The coverage metric is improved. The new method uses a sliding window to compute
 4. If a match is found, mark all character in the window as "match".
 5. Window moves forward one character after all personal information have been tried for match.
 
+==	TODO: Use PCFG to Crack the dataset	==
+
+==	TODO: PASSWORD PROTECTION -- encrypt serviceinfo + personalinfo with private key(Password manager without password stored in it)  ==
+
 Results:
 
 |WINDOWSIZE|COVERAGE|
@@ -418,8 +422,3 @@ Results:
 |5|0.229
 |6|0.206
 |7|0.147
-
-
-
-
-
