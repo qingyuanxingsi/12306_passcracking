@@ -398,6 +398,15 @@ __Rockyou__
 
 8,823 out of 28,688,782 passwords use string "rockyou" in their passwords (0.03%). Again, the percentage is so low that we can safely ignore it. 
 
+
+__PHPBB__
+
+1411 out of 184389 passwords contain string "phpbb" (0.8%)
+
+__Myspace__
+
+51 out of 37144 contain string "myspace" (0.1%)
+
 #### 12. New coverage:
 The coverage metric is improved. The new method uses a sliding window to compute the correlation between passwords and personal information. It works like the following:
 
@@ -422,3 +431,26 @@ Results:
 |5|0.229
 |6|0.206
 |7|0.147
+
+####13.Most relevant personal information. 
+As we have multiple types of personal information available, we rank them in the following table
+
+|Info Type | Occurance | Rate|
+|:---:|:---:|:----:|
+|[BD]|30874|0.234|
+|[NAME]|21161|0.161|
+|[ACCT]|17069|0.129|
+|[EMAIL]|5359|0.040|
+|[ID]|2947|0.022|
+|[CELL]|572|0.004|
+
+
+#### 14. PCFG Cracking
+__Use original PCFG to crack the passwords with half training and half testing__
+
+Dictionary: __A perfect Dictionary__
+
+![Cracking result](Cracking150M.png "Cracking Result")
+
+
+
