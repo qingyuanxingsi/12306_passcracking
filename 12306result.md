@@ -453,4 +453,10 @@ Dictionary: __A perfect Dictionary__
 ![Cracking result](Cracking150M.png "Cracking Result")
 
 
+#### 15. personalPCFG Cracking
+==note: We need to delete the person entry from the testing set if his password is cracked out==
+Result
+![Cracking result](guessno.png "Cracking Result")
+![Cracking result](compno.png "Cracking Result")
+
 
