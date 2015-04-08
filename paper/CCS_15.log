@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  6 APR 2015 22:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  8 APR 2015 00:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**sig-alternate.tex
-(./sig-alternate.tex
+**CCS_15.tex
+(./CCS_15.tex
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 (./sig-alternate.cls
@@ -292,9 +292,8 @@ LaTeX Font Info:    Try loading font information for U+psy on input line 64.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/upsy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
-))
-(./sig-alternate.aux)
-\openout1 = `sig-alternate.aux'.
+)) (./CCS_15.aux)
+\openout1 = `CCS_15.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
 LaTeX Font Info:    ... okay on input line 55.
@@ -397,135 +396,138 @@ Overfull \hbox (1.50145pt too wide) in paragraph at lines 149--150
 
 
 ]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 214.
+Overfull \hbox (13.72356pt too wide) in paragraph at lines 183--184
+\T1/aer/m/n/9 are triv-ial pass-words (123456 and man-gled 123456 like a123456)
+,
+ []
 
+LaTeX Font Info:    Try loading font information for T1+aett on input line 218.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-Overfull \hbox (19.37599pt too wide) in paragraph at lines 220--220
+Overfull \hbox (19.37599pt too wide) in paragraph at lines 224--224
 []\T1/aett/m/n/9 3. Cellphone number: User's registered cellphone number[] 
  []
 
 
-Overfull \hbox (5.22821pt too wide) in paragraph at lines 220--220
-[]\T1/aett/m/n/9 4. Username: the username used to log on the system.[] 
+Overfull \hbox (19.37599pt too wide) in paragraph at lines 224--224
+[]\T1/aett/m/n/9 4. Account name: the account used to log on the system.[] 
  []
 
 
-Overfull \hbox (2.4817pt too wide) in paragraph at lines 225--226
+Overfull \hbox (2.4817pt too wide) in paragraph at lines 229--230
 \OT1/cmr/m/n/9 [\OML/cmm/m/it/9 Name\OT1/cmr/m/n/9 ][\OML/cmm/m/it/9 Birthday\O
 T1/cmr/m/n/9 ]\OML/cmm/m/it/9 L[]$ \T1/aer/m/n/9 in-stead of $\OML/cmm/m/it/9 L
 []D[]L[]$ \T1/aer/m/n/9 in a tra-di-tional mea-
  []
 
-
-Overfull \hbox (48.92111pt too wide) in paragraph at lines 279--279
+[2] [3]
+Overfull \hbox (48.92111pt too wide) in paragraph at lines 338--338
 []\secfnt PERSONAL-PCFG, AN INDIVIDUAL-ORIENTED
  []
 
-[2] [3]
+[4]
 Package epstopdf Info: Source file: <fly.eps>
-(epstopdf)                    date: 2015-04-05 13:43:56
+(epstopdf)                    date: 2015-04-06 23:37:30
 (epstopdf)                    size: 155104 bytes
 (epstopdf)             Output file: <fly-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-04-05 13:44:21
+(epstopdf)                    date: 2015-04-06 23:37:30
 (epstopdf)                    size: 4243 bytes
 (epstopdf)             Command: <repstopdf --outfile=fly-eps-converted-to.pdf f
 ly.eps>
-(epstopdf)             \includegraphics on input line 416.
+(epstopdf)             \includegraphics on input line 475.
 Package epstopdf Info: Output file is already uptodate.
- <fly-eps-converted-to.pdf, id=31, 34.1275pt x 32.12pt>
+ <fly-eps-converted-to.pdf, id=35, 34.1275pt x 32.12pt>
 File: fly-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fly-eps-converted-to.pdf>
-Package pdftex.def Info: fly-eps-converted-to.pdf used on input line 416.
+Package pdftex.def Info: fly-eps-converted-to.pdf used on input line 475.
 (pdftex.def)             Requested size: 34.1274pt x 32.1199pt.
 Package epstopdf Info: Source file: <fly.eps>
-(epstopdf)                    date: 2015-04-05 13:43:56
+(epstopdf)                    date: 2015-04-06 23:37:30
 (epstopdf)                    size: 155104 bytes
 (epstopdf)             Output file: <fly-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-04-05 13:44:21
+(epstopdf)                    date: 2015-04-06 23:37:30
 (epstopdf)                    size: 4243 bytes
 (epstopdf)             Command: <repstopdf --outfile=fly-eps-converted-to.pdf f
 ly.eps>
-(epstopdf)             \includegraphics on input line 422.
+(epstopdf)             \includegraphics on input line 481.
 Package epstopdf Info: Output file is already uptodate.
 File: fly-eps-converted-to.pdf Graphic file (type pdf)
  <use fly-eps-converted-to.pdf>
-Package pdftex.def Info: fly-eps-converted-to.pdf used on input line 422.
+Package pdftex.def Info: fly-eps-converted-to.pdf used on input line 481.
 (pdftex.def)             Requested size: 72.27492pt x 72.27565pt.
 Package epstopdf Info: Source file: <flies.eps>
-(epstopdf)                    date: 2015-04-05 13:40:16
+(epstopdf)                    date: 2015-04-06 23:37:30
 (epstopdf)                    size: 343737 bytes
 (epstopdf)             Output file: <flies-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-04-05 13:43:32
+(epstopdf)                    date: 2015-04-06 23:37:30
 (epstopdf)                    size: 9687 bytes
 (epstopdf)             Command: <repstopdf --outfile=flies-eps-converted-to.pdf
  flies.eps>
-(epstopdf)             \includegraphics on input line 437.
+(epstopdf)             \includegraphics on input line 496.
 Package epstopdf Info: Output file is already uptodate.
 
-<flies-eps-converted-to.pdf, id=32, 307.1475pt x 114.4275pt>
+<flies-eps-converted-to.pdf, id=36, 307.1475pt x 114.4275pt>
 File: flies-eps-converted-to.pdf Graphic file (type pdf)
 
 <use flies-eps-converted-to.pdf>
-Package pdftex.def Info: flies-eps-converted-to.pdf used on input line 437.
+Package pdftex.def Info: flies-eps-converted-to.pdf used on input line 496.
 (pdftex.def)             Requested size: 307.14674pt x 114.42722pt.
 \c@theorem=\count129
 \c@definition=\count130
 
-Overfull \hbox (15.60826pt too wide) detected at line 498
+Overfull \hbox (15.60826pt too wide) detected at line 557
 \OML/cmm/m/it/9 l \OT1/cmr/m/n/9 = [] \OML/cmm/m/it/9 f\OT1/cmr/m/n/9 (\OML/cmm
 /m/it/9 x\OT1/cmr/m/n/9 ) = [] [] = [] \OML/cmm/m/it/9 g\OT1/cmr/m/n/9 (\OML/cm
 m/m/it/9 x\OT1/cmr/m/n/9 ) \OMS/cmsy/m/n/9 ^^A [] [] \OT1/cmr/m/n/9 = 0 \OMS/cm
 sy/m/n/9 ^^A \OML/cmm/m/it/9 L \OT1/cmr/m/n/9 = 0\OML/cmm/m/it/9 ;
  []
 
-[4 <./fly-eps-converted-to.pdf>] (./sig-alternate.bbl)
-Overfull \hbox (11.79744pt too wide) in paragraph at lines 589--593
+(./CCS_15.bbl [5 <./fly-eps-converted-to.pdf>])
+Overfull \hbox (11.79744pt too wide) in paragraph at lines 648--652
 \T1/aer/m/n/9 just add the names and in-for-ma-tion in the \T1/aett/m/n/9 \addi
 tionalauthors
  []
 
-[5 <./flies-eps-converted-to.pdf>] [6
-
-] (./sig-alternate.aux) )
-(\end occurred when \iftrue on line 440 was incomplete)
-(\end occurred when \iftrue on line 399 was incomplete) 
+[6 <./flies-eps-converted-to.pdf>] (./CCS_15.aux) )
+(\end occurred when \iftrue on line 499 was incomplete)
+(\end occurred when \iftrue on line 458 was incomplete) 
 Here is how much of TeX's memory you used:
- 4704 strings out of 493117
- 67090 string characters out of 6135433
- 143723 words of memory out of 5000000
- 8025 multiletter control sequences out of 15000+600000
- 64552 words of font info for 92 fonts, out of 8000000 for 9000
+ 4716 strings out of 493117
+ 67133 string characters out of 6135433
+ 146739 words of memory out of 5000000
+ 8034 multiletter control sequences out of 15000+600000
+ 65289 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,38p,1009b,386s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,10n,38p,1002b,386s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014
 /texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2014/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2014/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2014/texmf-dist/fonts
 /type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2014/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2014/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2014/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2014/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmti7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmti9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmtt9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/
-uhvb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.
-pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/l
-ocal/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2014/t
-exmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/
-fonts/type1/urw/times/utmri8a.pfb>
-Output written on sig-alternate.pdf (6 pages, 256630 bytes).
+s/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2014/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2014/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmti7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmti9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmtt9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uh
+vb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pf
+b></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/loc
+al/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
+/2014/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2014/tex
+mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fo
+nts/type1/urw/times/utmri8a.pfb>
+Output written on CCS_15.pdf (6 pages, 270307 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
+ 115 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

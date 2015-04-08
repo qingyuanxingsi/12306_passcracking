@@ -1,11 +1,11 @@
 This is BibTeX, Version 0.99d (TeX Live 2014)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: sig-alternate.aux
+The top-level auxiliary file: CCS_15.aux
 The style file: abbrv.bst
 Database file #1: sigproc.bib
 You've used 6 entries,
             2118 wiz_defined-function locations,
-            537 strings with 4460 characters,
+            537 strings with 4446 characters,
 and the built_in function-call counts, 1813 in all, are:
 = -- 176
 > -- 59

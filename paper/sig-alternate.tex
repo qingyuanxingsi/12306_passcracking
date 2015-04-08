@@ -178,9 +178,9 @@ Rank&Password&Percentage\\ \hline
 9 & 1qaz2wsx & 0.070\%\\ \hline
 10 & 1q2w3e4r & 0.063\%\\ 
 \hline\end{tabular}
-
 \label{t1}
 \end{table}
+
 From Table~\ref{t1} we can see that the dominating passwords are trivial passwords (123456 and mangled 123456 like a123456), keyboard passwords (1qaz2wsx and 1q2w3e4r), and "I love you" passwords. Both "5101314" and "woaini1314" means "I love you forever" in Chinese. The most commonly used Chinese passwords are similar to previous studies [fudan]. However, 12306 dataset is much less congregated. The most popular password "123456" accounts less than 0.3\% of all passwords while the number is 2.17\% in [Fudan]. We believe that the sparsity is due to the importance of the website so that users are less prone to use trivial passwords like "123456", etc. 
 
 Then, we show the basic structure of passwords. The most popular password structures are shown in Table~\ref{t2}. Our result again shows that Chinese users prefer to use digits in their passwords instead of letters as in English-speaking users. The 5 top structures all have significant portion of digits, in which at most 2 or 3 letters are appended in front.
@@ -215,26 +215,29 @@ As we have mentioned, 12306 dataset not only contains user passwords, it also ca
 1. Name: User's Chinese name
 2. Email address: User's registered email address
 3. Cellphone number: User's registered cellphone number
-4. Username: the username used to log on the system.
+4. Account name: the account used to log on the system.
 5. ID number: Government issued ID number.
 \end{verbatim}
 
-Note that the government issued ID number is an 18-digit powerful number. These digits actually show personal information as well. Digit 1-6 represents the birth place of the owner, Digit 7-14 represents the birthday of the owner, and digit 17 represents the gender of the owner -- odd number means male and even number means female. We take out the 8-digit birthday information and treat it separately because birthday information is very important in a password. Therefore, we finally have 6 types personal information - 1)Name, 2)Birthday, 3)Email, 4)Cellphone 5)Username, and 6) ID number (birthday not included). 
+Note that the government issued ID number is an 18-digit powerful number. These digits actually show personal information as well. Digit 1-6 represents the birth place of the owner, Digit 7-14 represents the birthday of the owner, and digit 17 represents the gender of the owner -- odd number means male and even number means female. We take out the 8-digit birthday information and treat it separately because birthday information is very important in a password. Therefore, we finally have 6 types personal information - 1)Name, 2)Birthday, 3)Email, 4)Cellphone 5)Account name, and 6) ID number (birthday not included). 
 
 \subsubsection{New Password Representation}
 To better illustrate how personal information correlates to user passwords, we develop a new representation of password which add more semantic symbols beside the conventional "D", "L" and "S" symbols, which means digit, letter, and special symbol accordingly. We try to match password to the 6 types of user personal information, and express the passwords with these personal information. For example, a password "alice1987abc" may be represented as $[Name][Birthday]L_3$ instead of $L_3D_4L_3$ in a traditional measurement. We substitute personal information with corresponding tag ([Name] and [Birthday] in this case). For the segments that are not matched, we still use "D","L", and "S" to describe the types of characters.
 
 We believe representation like $[Name][Birthday]L_3$ is better than $L_5D_4L_3$ since it more accurately describe the composition of user passwords. We apply the matching to the whole 12306 dataset to see how these personal information tag appear in such password representations.
 
-\subsubsection{Matching method}
-In order to make personal information password representations, an essential question will be: How do we match the personal information to user passwords? To answer this question, we show the algorithm we used in Algorithm~\ref{alg1}
+\subsubsection{Matching Method}
+In order to make personal information password representations, an essential question will be: How do we match the personal information to user passwords? To answer this question, we show the algorithm we used in Algorithm~\ref{alg1}. The high level idea is that we find all substrings of the password and sort them in descending length order. Then we try to match the substrings from longest to shortest to all types of personal information. If one match is found, the leftover password segments are recursively applied the match function until no further match is found. Segments that are not matched to personal information will be processed use the traditional "LDS" method.
 
 \begin{algorithm}
 \caption{Match personal information with password}
 \label{CHalgorithm}
 \begin{algorithmic}[1]
 \Procedure{Match}{$pwd$,$infolist$}
-\State $newform$ = ""
+\State $newform$ = empty\_string
+\If len($pwd$) == 0
+\State return empty\_string
+\EndIf
 \State $substring$ = get\_all\_substring($pwd$)
 \State reverse\_length\_sort($substring$)
 \For {$eachstring$ \Pisymbol{psy}{206} $substring$}
@@ -269,6 +272,44 @@ In order to make personal information password representations, an essential que
 \end{algorithmic}
 \label{alg1}
 \end{algorithm}
+
+Note that we did not show specific matching algorithm to each type of the personal information (line 10 and line 16). To keep Algorithm~\ref{alg1} clean and simple, we describe the matching methods as follows.
+
+First we make sure the password segments are at least length of 2. For segment of length 1, we directly map it to digit, letter, or special character. 
+
+For name information, we first convert Chinese names into Pinyin form, which is alphabetic representation of Chinese. Then we compare password segments to 10 possible permutations of the names, which include $lastname + firstname$, $lastinitial+firstname$, etc. If the segment is exactly same as any of the permutations, we consider a match is found. We list all the 10 permutations in the Appendices.
+
+For birthday information, we list 17 possible permutations and compare password segments to each of the permutation, if the segment is same as any permutations, we consider a match is found. We list all the birthday permutations in the Appendices.
+
+For account name, cellphone number, and ID number, we further restrain the length of segment to be at least 4 to avoid coincidence. We believe a match of length 4 is very likely to be an actual match. If the segment is a substring of any of the 3 personal information, we regard it a match to the corresponding personal information. 
+
+
+\subsubsection{Matching Result}
+After applying Algorithm~\ref{alg1} to 12306 dataset, we present the top 10 password representations in Table~\ref{t3}.
+
+\begin{table}
+\centering
+\caption{Most Frequent Passwords}
+\begin{tabular}{|c|c|c|} \hline
+Rank&Password&Percentage\\ \hline
+1&[ACCT]&4.64\%\\ \hline
+2&[NAME][BD]&4.12\%\\ \hline
+3&D7&3.92\%\\ \hline
+4&[BD]&3.40\%\\ \hline
+5&D6&2.87\%\\ \hline
+6&D8&2.32\%\\ \hline
+7&L1D7&1.72\%\\ \hline
+8&[NAME]D7&1.52\%\\ \hline
+9&[NAME]D3&1.49\%\\ \hline
+10&[EMAIL]&1.47\%\\
+\hline\end{tabular}
+\label{t3}
+\end{table}
+
+We can see from the table that personal information is an essential part of user passwords. The top 2 structures are perfectly matched to personal information, and 6 out of the top 10 structures have personal information.
+
+The dominating structures $D_7$, $D_6$, and $D_8$ in Table~\ref{t2} still rank fairly high. 
+
 
 \subsection{Service Information}
 \subsection{Ethical Consideration}

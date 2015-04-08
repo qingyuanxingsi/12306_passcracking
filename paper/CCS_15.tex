@@ -160,23 +160,22 @@ At the end of year 2014, a Chinese dataset is exposed to the public by anonymous
 12306 dataset contains over 130,000 Chinese passwords. Having witnessed so many large datasets been leaked out, the size of 12306 dataset is just medium. What makes it special is that together with plain text passwords, the dataset also carries several types of user personal information. For example, user's name, ID number, etc. As the website needs real ID number to register and people need to provide real information to book a ticket, information in the dataset is considered reliable.
 
 \subsubsection{Basic Measurement}
-We do fundamental measurement to reveal some characteristics of 12306 dataset. Just like previous works, we first show the most common passwords in 12306 dataset. They are listed in Table~\ref{t1}
+We do fundamental measurement to reveal some characteristics of 12306 dataset. After appropriate cleansing, we remove a minor part of passwords (0.2\%), with 131,389 good passowrds left for analysis. Just like previous works, we first show the most common passwords in 12306 dataset. They are listed in Table~\ref{t1}
 \begin{table}
 \centering
 \caption{Most Frequent Passwords}
-\begin{tabular}{|c|c|c|} \hline
-Rank&Password&Percentage\\ \hline
-1 & 123456 & 0.296\%\\ \hline
-2 & a123456 & 0.213\%\\ \hline
-3 & 123456a & 0.126\%\\ \hline
-4 & 5101314 & 0.122\%\\ \hline
-5 & 111111 & 0.119\%\\ \hline
-6 & woaini1314 & 0.102\%\\ \hline
-7 & qq123456 & 0.075\%\\ \hline
-7 & 123123 & 0.074\%\\ \hline
-8 & 000000 & 0.073\%\\ \hline
-9 & 1qaz2wsx & 0.070\%\\ \hline
-10 & 1q2w3e4r & 0.063\%\\ 
+\begin{tabular}{|c|c|c|c|} \hline
+Rank&Password&Amount&Percentage\\ \hline
+1&123456&389&0.296\%\\ 
+2&a123456&280&0.213\%\\ 
+3&123456a&165&0.125\%\\ 
+4&5201314&160&0.121\%\\ 
+5&111111&156&0.118\%\\ 
+6&woaini1314&134&0.101\%\\ 
+7&qq123456&98&0.074\%\\ 
+8&123123&97&0.073\%\\ 
+9&000000&96&0.073\%\\ 
+10&1qaz2wsx&92&0.070\%\\ 
 \hline\end{tabular}
 \label{t1}
 \end{table}
@@ -190,18 +189,23 @@ We reckon that the reason behind may be Chinese users lack vocabulary because Ch
 \begin{table}
 \centering
 \caption{Most Frequent Passwords}
-\begin{tabular}{|c|c|c|} \hline
-Rank&Password&Percentage\\ \hline
-1&DDDDDDD&8.29\%\\ \hline
-2&DDDDDDDD&7.19\%\\ \hline
-3&DDDDDD&6.91\%\\ \hline
-4&LLDDDDDDD&3.85\%\\ \hline
-5&LLLDDDDDD&3.67\%\\
+\begin{tabular}{|c|c|c|c|} \hline
+Rank&Structure&Amount&Percentage\\ \hline
+1&$D_7$&10893&8.290\%\\ 
+2&$D_8$&9442&7.186\%\\ 
+3&$D_6$&9084&6.913\%\\ 
+4&$L_2D_7$&5065&3.854\%\\ 
+5&$L_3D_6$&4820&3.668\%\\ 
+6&$L_1D_7$&4770&3.630\%\\ 
+7&$L_2D_6$&4261&3.243\%\\ 
+8&$L_3D_7$&3883&2.955\%\\ 
+9&$D_9$&3590&2.732\%\\ 
+10&$L_2D_8$&3362&2.558\%\\ 
 \hline\end{tabular}
 
 \begin{tablenotes}
       \small
-      \item One "D" represents one digit and one "L" represents one English letter. For example, "DDDDDDD" means the password contains 7 digits in a row.
+      \item "D" represents digits and "L" represents English letters. The number indicates the segment length. For example, $D_7$ means the password contains 7 digits in a row.
     \end{tablenotes}
 \label{t2}
 \end{table}
@@ -236,21 +240,21 @@ In order to make personal information password representations, an essential que
 \Procedure{Match}{$pwd$,$infolist$}
 \State $newform$ = empty\_string
 \If len($pwd$) == 0
-\State return empty\_string
+\State \Return empty\_string
 \EndIf
-\State $substring$ = get\_all\_substring($pwd$)
+\State $substring \gets$ get\_all\_substring($pwd$)
 \State reverse\_length\_sort($substring$)
 \For {$eachstring$ \Pisymbol{psy}{206} $substring$}
 \If {len($eachstring$) $\ge$ 2}
 \If{matchbd($eachstring$,$infolist$)}
-\State $tag$ = "[BD]"
-\State $leftover$ = $pwd$.split($eachstring$)
+\State $tag \gets $ "[BD]"
+\State $leftover \gets pwd$.split($eachstring$)
 \State break
 \EndIf
 \State $\ldots$
 \If{matchID($eachstring$,$infolist$)}
-\State $tag$ = "[ID]"
-\State $leftover$ = $pwd$.split($eachstring$)
+\State $tag \gets$ "[ID]"
+\State $leftover \gets pwd$.split($eachstring$)
 \State break
 \EndIf
 \Else
@@ -258,16 +262,14 @@ In order to make personal information password representations, an essential que
 \EndIf
 \EndFor
 \If{$leftover$.size() $\ge$ 2}
-\For{i = 0 to $leftover$.size()-2}
-\State $newform$ = 
-\State MATCH($leftover[i]$,$infolist$) + $tag$
+\For{i $\gets$ 0 to $leftover$.size()-2}
+\State $newform \gets$ MATCH($leftover[i]$,$infolist$) + $tag$
 \EndFor
-\State $newform$ += 
-\State MATCH($leftover[leftover.size()-1]$)
+\State $newform \gets$  MATCH($leftover[leftover.size()-1]$)+$newform$
 \Else
-\State $newform$ = seg($pwd$)
+\State $newform \gets$ seg($pwd$)
 \EndIf
-\State return $newform$
+\State \Return $newform$
 \EndProcedure
 \end{algorithmic}
 \label{alg1}
@@ -285,29 +287,47 @@ For account name, cellphone number, and ID number, we further restrain the lengt
 
 
 \subsubsection{Matching Result}
-After applying Algorithm~\ref{alg1} to 12306 dataset, we present the top 10 password representations in Table~\ref{t3}.
+After applying Algorithm~\ref{alg1} to 12306 dataset. We found that 71,037 out of 131,389 (54.1\%) of the passwords contain at least one of the 6 types of personal information. Apparently, personal information is an essential part of user passwords and most users put certain personal information in their passwords. We believe the rate could be higher if we have more personal information at hand. However, this percentage has served its purpose properly. Then We present the top 10 password structures in Table~\ref{t3} and most commonly used personal information in Table~\ref{t4}. Based on Table~\ref{t3} and Table~\ref{t4}, we have the following observations
 
 \begin{table}
 \centering
 \caption{Most Frequent Passwords}
-\begin{tabular}{|c|c|c|} \hline
-Rank&Password&Percentage\\ \hline
-1&[ACCT]&4.64\%\\ \hline
-2&[NAME][BD]&4.12\%\\ \hline
-3&D7&3.92\%\\ \hline
-4&[BD]&3.40\%\\ \hline
-5&D6&2.87\%\\ \hline
-6&D8&2.32\%\\ \hline
-7&L1D7&1.72\%\\ \hline
-8&[NAME]D7&1.52\%\\ \hline
-9&[NAME]D3&1.49\%\\ \hline
-10&[EMAIL]&1.47\%\\
+\begin{tabular}{|c|c|c|c|} \hline
+Rank&Structure&Amount&Percentage\\ \hline
+1&D7&7105&5.407\%\\ 
+2&[ACCT]&6103&4.644\%\\ 
+3&[NAME][BD]&5410&4.117\%\\ 
+4&D6&4873&3.708\%\\ 
+5&[BD]&4470&3.402\%\\ 
+6&D8&4233&3.221\%\\ 
+7&L1D7&3286&2.500\%\\ 
+8&[NAME]D7&2941&2.238\%\\ 
+9&[NAME]D3&2363&1.798\%\\ 
+10&[NAME]D6&2241&1.705\%\\ 
 \hline\end{tabular}
 \label{t3}
 \end{table}
 
-We can see from the table that personal information is an essential part of user passwords. The top 2 structures are perfectly matched to personal information. The dominating structures $D_7$
+\begin{table}
+\centering
+\caption{Most Frequent Passwords}
+\begin{tabular}{|c|c|c|c|} \hline
+Rank&Information Type&Amount&Percentage\\ \hline
+1&[BD]&30674&23.34\%\\ 
+2&[NAME]&29653&22.56\%\\ 
+3&[ACCT]&17065&12.98\%\\ 
+4&[EMAIL]&4229&3.218\%\\ 
+5&[ID]&2918&2.220\%\\ 
+6&[CELL]&529&0.402\%\\ 
+\hline\end{tabular}
+\label{t4}
+\end{table}
 
+\begin{enumerate}
+\item The second and third structures are perfectly matched to personal information. 3 out of the top 10 structures are composed by pure personal information and 6 out of the top 10 structures have personal information segment. The dominating structures $D_7$, $D_6$, and $D_8$ in Table~\ref{t2} still rank fairly high.
+\item Birthday, name, and account name are most popular personal information in user passwords.
+\item Set aside personal information, digits are still dominating user passwords. The result confirms again that Chinese users prefer to use digits in their passwords.
+\end{enumerate}
 
 \subsection{Service Information}
 \subsection{Ethical Consideration}
