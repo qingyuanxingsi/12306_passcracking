@@ -458,5 +458,6 @@ Dictionary: __A perfect Dictionary__
 Result
 ![Cracking result](guessno.png "Cracking Result")
 ![Cracking result](compno.png "Cracking Result")
+![Cracking result](compguess.png "Cracking Result")
 
 
