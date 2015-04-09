@@ -331,8 +331,9 @@ Rank&Information Type&Amount&Percentage\\ \hline
 \end{enumerate}
 
 \subsubsection{Gender difference}
-We are also interested in the difference of password composition between males and females. Note that although the dataset does not have a gender column, user ID number actually has gender information (The second last digit in ID number represents gender). We found that the dataset is biased in gender, with 9,856 females and 121,533 males in it. To balance the number, we randomly select 9,856 males from the male pool and compare them with females. The average length of passwords for males and females are 8.41 and 8.51, which are quite similar. It shows that males and females do not differ much in the length of their passwords. We then apply the matching method to each of the genders. We found that 55\% of male passwords contain personal information while 45\% of female passwords contain personal information. Therefore we conclude that generally males put more personal information than females in their passwords. It indicates females have wider ideas when it comes to password. It also implies that females have more complex passwords, and therefore maybe more secure. We list the top 10 structures for each gender in Table~\ref{t5} and personal information usage in Table~\ref{t6}. From the tables we have the following observations:
+We are also interested in the difference of password composition between males and females. Note that although the dataset does not have a gender column, user ID number actually has gender information (The second last digit in ID number represents gender). We found that the dataset is biased in gender, with 9,856 females and 121,533 males in it. To balance the number, we randomly select 9,856 males from the male pool and compare them with females. The average length of passwords for males and females are 8.41 and 8.51, which are quite similar. It shows that males and females do not differ much in the length of their passwords. We then apply the matching method to each of the genders. We found that 55\% of male passwords contain personal information while 45\% of female passwords contain personal information. Besides, the number of structures for females is 1137, which is 8.6\% more than the number for males. Therefore we conclude that generally males put more personal information than females in their passwords. It indicates females have wider ideas when it comes to password. It also implies that females have more complex passwords, and therefore maybe more secure. We list the top 10 structures for each gender in Table~\ref{t5} and personal information usage in Table~\ref{t6}. From the tables we have the following observations:
 \begin{enumerate}
+\item The top 10 structures count 33.62\% of males passwords and 28.31\% of female passwords. Besides, the total number of password structures of males is also smaller. We can see passwords of males are more congregated, and therefore more predictable. 
 \item For males, 6 out of the top 10 structures contain personal information. Yet for females, only 3 out of top 10 structures contain personal information. It further implies that males are more likely to consider personal information when creating passwords.
 \item For both males and females, [ACCT], [NAME][BD], and [BD] are three most frequent structures with personal information. However, The percentage of males are much higher than that of females. Averagely 47.3\% more males are constructing their passwords following the 3 patterns than females.
 \item From Table~\ref{t6} we can see the percentage of each type of personal information in the passwords. Interestingly males and females are very different in the usage of name information. Males use their names as frequent as their birthday (23.43\% passwords of males contain their names) while only 13.03\% passwords of females contain names. We also notice that the name usage mostly contribute the 10\% difference in personal information usage between males and females. 
@@ -379,26 +380,21 @@ We are also interested in the difference of password composition between males a
 \label{t6}
 \end{table}
 
+In conclusion, passwords of males are generally composed of more personal information, especially names of the users. The sparsity of passwords of males is lower. We believe insightful analysis on the difference between male and female passwords is interesting since it provides insight for password cracking and protection. 
 
-\subsection{Service Information} 
+
+\subsection{Service Information - half page} 
 \subsection{Ethical Consideration}
 We do realize that studying leaked datasets involves much ethical concern. Like many other works, we only use this dataset for researching purpose. We will not expose any user personal information of in this dataset.
-\section{Correlation Quantification}
+\section{Correlation Quantification - 1 and half pages}
 \subsection{Coverage}
 
-\section{Personal-PCFG, an individual-oriented password cracker}
+\section{Personal-PCFG, an individual-oriented password cracker - 1 and half pages}
 \subsection{Attack Scenarios}
-\section{Password Protection}
+\section{Password Protection - half page}
 
 \section{Related Workd}
 Left blank
-\section{REF}
-
-
-
-
-
-
 \section{Acknowledgments}
 
 % The following two commands are all you need in the

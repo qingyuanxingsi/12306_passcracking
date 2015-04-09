@@ -1,4 +1,4 @@
-##12306 Paper
+====##12306 Paper
 ###Preliminary Results:
 #### 1. Structure of the passowrds:
 The following table shows the most frequent 20 password structures, in which "D" represents digits, "L" represents letters, and "S" represent special characters. The number following the letters indicate the length of the segment. For example, password132 -> L7D3
