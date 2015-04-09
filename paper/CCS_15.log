@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  8 APR 2015 00:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  9 APR 2015 00:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -292,35 +292,90 @@ LaTeX Font Info:    Try loading font information for U+psy on input line 64.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/upsy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
-)) (./CCS_15.aux)
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2012/05/21 v1.0 Adjusting TeX boxes (trim, clip, ...)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/05/09 v2.6d package option processing (HA)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+\XKV@toks=\toks39
+\XKV@tempa@toks=\toks40
+\XKV@depth=\count123
+File: xkeyval.tex 2014/05/09 v2.6d key=value parser (HA)
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2012/05/16 v1.0 Trim and clip general TeX material
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box33
+)
+\tc@llx=\dimen143
+\tc@lly=\dimen144
+\tc@urx=\dimen145
+\tc@ury=\dimen146
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen147
+\adjbox@Height=\dimen148
+\adjbox@Depth=\dimen149
+\adjbox@Totalheight=\dimen150
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2011/09/13 v1.0 Conditionals for odd/even page detection
+\c@checkoddpage=\count124
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box34
+\sift@deathcycles=\count125
+\@vwid@loff=\dimen151
+\@vwid@roff=\dimen152
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen153
+)
+(./CCS_15.aux)
 \openout1 = `CCS_15.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count123
-\scratchdimen=\dimen143
-\scratchbox=\box33
-\nofMPsegments=\count124
-\nofMParguments=\count125
-\everyMPshowfont=\toks39
-\MPscratchCnt=\count126
-\MPscratchDim=\dimen144
-\MPnumerator=\count127
-\makeMPintoPDFobject=\count128
-\everyMPtoPDFconversion=\toks40
+\scratchcounter=\count126
+\scratchdimen=\dimen154
+\scratchbox=\box35
+\nofMPsegments=\count127
+\nofMParguments=\count128
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count129
+\MPscratchDim=\dimen155
+\MPnumerator=\count130
+\makeMPintoPDFobject=\count131
+\everyMPtoPDFconversion=\toks42
 ) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -373,22 +428,22 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: threeparttable package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 131.
+LaTeX Font Info:    Try loading font information for U+msa on input line 135.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 131.
+LaTeX Font Info:    Try loading font information for U+msb on input line 135.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 131.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 135.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-Overfull \hbox (1.50145pt too wide) in paragraph at lines 149--150
+Overfull \hbox (1.50145pt too wide) in paragraph at lines 153--154
 []\T1/aer/m/n/9 Human-generated pass-words are long crit-i-cized to be weak.
  []
 
@@ -396,138 +451,88 @@ Overfull \hbox (1.50145pt too wide) in paragraph at lines 149--150
 
 
 ]
-Overfull \hbox (13.72356pt too wide) in paragraph at lines 183--184
-\T1/aer/m/n/9 are triv-ial pass-words (123456 and man-gled 123456 like a123456)
-,
+Underfull \hbox (badness 10000) in paragraph at lines 198--212
+[][]
  []
 
-LaTeX Font Info:    Try loading font information for T1+aett on input line 218.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 223.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-Overfull \hbox (19.37599pt too wide) in paragraph at lines 224--224
+Overfull \hbox (19.37599pt too wide) in paragraph at lines 230--230
 []\T1/aett/m/n/9 3. Cellphone number: User's registered cellphone number[] 
  []
 
 
-Overfull \hbox (19.37599pt too wide) in paragraph at lines 224--224
-[]\T1/aett/m/n/9 4. Account name: the account used to log on the system.[] 
+Overfull \hbox (19.37599pt too wide) in paragraph at lines 230--230
+[]\T1/aett/m/n/9 4. Account name: the account used to log on the system,[] 
  []
 
 
-Overfull \hbox (2.4817pt too wide) in paragraph at lines 229--230
+Overfull \hbox (28.80785pt too wide) in paragraph at lines 230--230
+[]\T1/aett/m/n/9 may contain digits and letters. For example, "myacct123".[] 
+ []
+
+
+Overfull \hbox (2.4817pt too wide) in paragraph at lines 235--236
 \OT1/cmr/m/n/9 [\OML/cmm/m/it/9 Name\OT1/cmr/m/n/9 ][\OML/cmm/m/it/9 Birthday\O
 T1/cmr/m/n/9 ]\OML/cmm/m/it/9 L[]$ \T1/aer/m/n/9 in-stead of $\OML/cmm/m/it/9 L
 []D[]L[]$ \T1/aer/m/n/9 in a tra-di-tional mea-
  []
 
 [2] [3]
-Overfull \hbox (48.92111pt too wide) in paragraph at lines 338--338
+Overfull \hbox (3.13716pt too wide) in paragraph at lines 330--331
+\T1/aer/m/n/9 in-for-ma-tion, the struc-ture [ACCT] ranks high-est among
+ []
+
+
+Overfull \hbox (1.92082pt too wide) in paragraph at lines 361--363
+ [] 
+ []
+
+
+Overfull \hbox (1.92194pt too wide) in paragraph at lines 379--381
+ [] 
+ []
+
+
+Overfull \hbox (48.92111pt too wide) in paragraph at lines 390--390
 []\secfnt PERSONAL-PCFG, AN INDIVIDUAL-ORIENTED
  []
 
-[4]
-Package epstopdf Info: Source file: <fly.eps>
-(epstopdf)                    date: 2015-04-06 23:37:30
-(epstopdf)                    size: 155104 bytes
-(epstopdf)             Output file: <fly-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-04-06 23:37:30
-(epstopdf)                    size: 4243 bytes
-(epstopdf)             Command: <repstopdf --outfile=fly-eps-converted-to.pdf f
-ly.eps>
-(epstopdf)             \includegraphics on input line 475.
-Package epstopdf Info: Output file is already uptodate.
- <fly-eps-converted-to.pdf, id=35, 34.1275pt x 32.12pt>
-File: fly-eps-converted-to.pdf Graphic file (type pdf)
+(./CCS_15.bbl) [4] [5
 
-<use fly-eps-converted-to.pdf>
-Package pdftex.def Info: fly-eps-converted-to.pdf used on input line 475.
-(pdftex.def)             Requested size: 34.1274pt x 32.1199pt.
-Package epstopdf Info: Source file: <fly.eps>
-(epstopdf)                    date: 2015-04-06 23:37:30
-(epstopdf)                    size: 155104 bytes
-(epstopdf)             Output file: <fly-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-04-06 23:37:30
-(epstopdf)                    size: 4243 bytes
-(epstopdf)             Command: <repstopdf --outfile=fly-eps-converted-to.pdf f
-ly.eps>
-(epstopdf)             \includegraphics on input line 481.
-Package epstopdf Info: Output file is already uptodate.
-File: fly-eps-converted-to.pdf Graphic file (type pdf)
- <use fly-eps-converted-to.pdf>
-Package pdftex.def Info: fly-eps-converted-to.pdf used on input line 481.
-(pdftex.def)             Requested size: 72.27492pt x 72.27565pt.
-Package epstopdf Info: Source file: <flies.eps>
-(epstopdf)                    date: 2015-04-06 23:37:30
-(epstopdf)                    size: 343737 bytes
-(epstopdf)             Output file: <flies-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-04-06 23:37:30
-(epstopdf)                    size: 9687 bytes
-(epstopdf)             Command: <repstopdf --outfile=flies-eps-converted-to.pdf
- flies.eps>
-(epstopdf)             \includegraphics on input line 496.
-Package epstopdf Info: Output file is already uptodate.
-
-<flies-eps-converted-to.pdf, id=36, 307.1475pt x 114.4275pt>
-File: flies-eps-converted-to.pdf Graphic file (type pdf)
-
-<use flies-eps-converted-to.pdf>
-Package pdftex.def Info: flies-eps-converted-to.pdf used on input line 496.
-(pdftex.def)             Requested size: 307.14674pt x 114.42722pt.
-\c@theorem=\count129
-\c@definition=\count130
-
-Overfull \hbox (15.60826pt too wide) detected at line 557
-\OML/cmm/m/it/9 l \OT1/cmr/m/n/9 = [] \OML/cmm/m/it/9 f\OT1/cmr/m/n/9 (\OML/cmm
-/m/it/9 x\OT1/cmr/m/n/9 ) = [] [] = [] \OML/cmm/m/it/9 g\OT1/cmr/m/n/9 (\OML/cm
-m/m/it/9 x\OT1/cmr/m/n/9 ) \OMS/cmsy/m/n/9 ^^A [] [] \OT1/cmr/m/n/9 = 0 \OMS/cm
-sy/m/n/9 ^^A \OML/cmm/m/it/9 L \OT1/cmr/m/n/9 = 0\OML/cmm/m/it/9 ;
- []
-
-(./CCS_15.bbl [5 <./fly-eps-converted-to.pdf>])
-Overfull \hbox (11.79744pt too wide) in paragraph at lines 648--652
-\T1/aer/m/n/9 just add the names and in-for-ma-tion in the \T1/aett/m/n/9 \addi
-tionalauthors
- []
-
-[6 <./flies-eps-converted-to.pdf>] (./CCS_15.aux) )
-(\end occurred when \iftrue on line 499 was incomplete)
-(\end occurred when \iftrue on line 458 was incomplete) 
+] (./CCS_15.aux) ) 
 Here is how much of TeX's memory you used:
- 4716 strings out of 493117
- 67133 string characters out of 6135433
- 146739 words of memory out of 5000000
- 8034 multiletter control sequences out of 15000+600000
- 65289 words of font info for 96 fonts, out of 8000000 for 9000
+ 5449 strings out of 493117
+ 79271 string characters out of 6135433
+ 159271 words of memory out of 5000000
+ 8738 multiletter control sequences out of 15000+600000
+ 61572 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,38p,1002b,386s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014
-/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2014/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2014/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2014/texmf-dist/fonts
-/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2014/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2014/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2014/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2014/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmti7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmti9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmtt9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uh
-vb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pf
-b></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/loc
-al/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
-/2014/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2014/tex
-mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fo
-nts/type1/urw/times/utmri8a.pfb>
-Output written on CCS_15.pdf (6 pages, 270307 bytes).
+ 41i,10n,75p,1270b,440s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.e
+nc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></u
+sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/
+local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
+al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texliv
+e/2014/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2014/
+texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-d
+ist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
+ype1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/t
+imes/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri
+8a.pfb>
+Output written on CCS_15.pdf (5 pages, 200332 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 82 compressed objects within 1 object stream
+ 85 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
