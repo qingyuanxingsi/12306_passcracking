@@ -460,4 +460,7 @@ Result
 ![Cracking result](compno.png "Cracking Result")
 ![Cracking result](compguess.png "Cracking Result")
 
-
+#### 16. DynamicCoverage
+for a password like [3,3,3,4,4,4,4,2,2]
+cvg = (3^2 + 4^2 + 2^2)/9^2 = 0.36
+Avg coverage over the whole dataset is 0.31
