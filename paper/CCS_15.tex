@@ -570,7 +570,28 @@ The result is shown in Figure~\ref{f3}, in which we compute the probability of a
 
 
 \section{Password Protection}
-After showing that user passwords are highly guessable, we wonder how could users protect their passwords. It is long said that there is trade-off between password memorability and password security. A secure password 
+After showing that user passwords are even more guessable with their personal information available, we wonder how could users protect their passwords. It is commonly believed that there is trade-off between password usability and password security. A secure password would usually be less memorable because it is expected to be long and random. However, people are bothered to remember secure passwords so the usability of secure passwords is low. In this work we do not propose authentication method to break the conventional password authentication frame. In stead we seek an easy way to make passwords more secure while maintain acceptable memorability.
+
+\subsection{Distortion Function}
+We realize that make users to remember passwords that are totally irrelevant to users is infeasible because users have the right to choose their passwords. Although most users concern their password security, many of them would not sacrifice password usability for security. Therefore we introduce distortion function, which adds a function on user own-chosen passwords. This distortion function can be chosen by users. It could be linear or non-linear. After applying the distortion function, user passwords are mapped to another string. 
+
+We conducted a proof-of-concept study to show the effectiveness of distortion function on password security. In our study, every password symbols is replaced by the incremented symbol. The distortion function is simply $S = S + 1$. For example, "a" will be replaced by "b", "b" will be replaced by "c", and "z" will be replaced by "a", etc. Digits work similarly -- "1" is replaced by "2" and "9" is replaced by "0". However, as there is no explicit order for special characters, we keep them unchanged. Note that users could choose their own distortion function, the distortion function we used is one of the simplest.
+
+After applying the distortion function on each of the password in 12306 dataset. We again calculate the Coverage. This time the average Coverage for the dataset is only 0.075. And the cumulative probability distribution is shown in Figure~\ref{f4}. If we apply the distortion function multiple times, which is equivalent to increment the symbols by more places, the Coverage is 0.069 for 2 times, 0.067 for 3 times, and 0.063 for 4 times.
+
+\begin{figure}[h!]
+\centering
+  \caption{Coverage distribution}{}
+  \label{f4}
+  \centering
+    \includegraphics[width=0.5\textwidth]{fig/dist1}
+\end{figure}
+
+We can see that a simple distortion function would greatly reduce the correlation between user passwords and personal information. It mitigates the problem of vast usage of personal information in user passwords. 
+
+\subsection{Other Possible Methods}
+
+
 
 \section{Related Workd}
 Left blank
