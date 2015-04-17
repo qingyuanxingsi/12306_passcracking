@@ -587,7 +587,7 @@ After applying the distortion function on each of the password in 12306 dataset.
     \includegraphics[width=0.5\textwidth]{fig/dist1}
 \end{figure}
 
-We can see that a simple distortion function would greatly reduce the correlation between user passwords and personal information. It can mitigate the problem of vast usage of personal information in user passwords. T
+We can see that a simple distortion function would greatly reduce the correlation between user passwords and personal information. It mitigates the problem of vast usage of personal information in user passwords. 
 
 \subsection{Other Possible Methods}
 
