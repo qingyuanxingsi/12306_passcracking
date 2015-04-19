@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  17 APR 2015 14:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  18 APR 2015 23:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -614,7 +614,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: fig/cvgfig.png Graphic file (type png)
  <use fig/cvgfig.png>
 Package pdftex.def Info: fig/cvgfig.png used on input line 490.
-(pdftex.def)             Requested size: 201.59692pt x 251.50826pt.
+(pdftex.def)             Requested size: 151.20154pt x 188.63718pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -658,11 +658,11 @@ Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 542.
 
-<fig/cmp.png, id=48, 383.4325pt x 272.01625pt>
+<fig/cmp.png, id=48, 391.4625pt x 272.01625pt>
 File: fig/cmp.png Graphic file (type png)
  <use fig/cmp.png>
 Package pdftex.def Info: fig/cmp.png used on input line 559.
-(pdftex.def)             Requested size: 252.0pt x 178.77586pt.
+(pdftex.def)             Requested size: 252.0pt x 175.11086pt.
 
 Overfull \hbox (12.0pt too wide) in paragraph at lines 559--560
  [][] 
@@ -671,7 +671,7 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 559--560
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[8]
+
 Overfull \hbox (1.32893pt too wide) in paragraph at lines 565--566
 []\T1/aer/m/n/9 Personal-PCFG works much bet-ter than PCFG when only
  []
@@ -681,7 +681,7 @@ Overfull \hbox (2.041pt too wide) in paragraph at lines 565--566
 \T1/aer/m/n/9 one per-son is the tar-get. With 10 mil-lion guesses Personal-
  []
 
-
+[8]
 Overfull \hbox (9.97774pt too wide) in paragraph at lines 567--568
 []\T1/aer/m/n/9 Personal-PCFG cov-ers more pass-words than PCFG method.
  []
@@ -689,14 +689,16 @@ Overfull \hbox (9.97774pt too wide) in paragraph at lines 567--568
 <fig/dist1.png, id=52, 391.4625pt x 272.01625pt>
 File: fig/dist1.png Graphic file (type png)
  <use fig/dist1.png>
-Package pdftex.def Info: fig/dist1.png used on input line 587.
+Package pdftex.def Info: fig/dist1.png used on input line 590.
 (pdftex.def)             Requested size: 252.0pt x 175.11086pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 587--588
+Overfull \hbox (12.0pt too wide) in paragraph at lines 590--591
  [][] 
  []
 
-(./CCS_15.bbl) [9 <./fig/cmp.png> <./fig/dist1.png>] (./CCS_15.aux)
+(./CCS_15.bbl) [9 <./fig/cmp.png> <./fig/dist1.png>] [10
+
+] (./CCS_15.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -727,10 +729,10 @@ s/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
 /urw/symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/
 utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on CCS_15.pdf (9 pages, 319304 bytes).
+Output written on CCS_15.pdf (10 pages, 325994 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
+ 119 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -487,7 +487,7 @@ CVG & = \sum_{i=1}^2 (\frac{l_n^2}{L^2}) \\
   \caption{Coverage - An Example}{}
   \label{f1}
   \centering
-    \includegraphics[width=0.4\textwidth]{fig/cvgfig}
+    \includegraphics[width=0.3\textwidth]{fig/cvgfig}
 \caption*{Grey boxes hold unvisited password symbols. green and red boxes denote that the symbols inside are covered by the sliding window. Blue boxes denote the symbols inside have been settled (window stops extending). }
 
 \end{figure}
@@ -575,10 +575,13 @@ After showing that user passwords are even more guessable with their personal in
 \subsection{Distortion Function}
 We realize that make users to remember passwords that are totally irrelevant to users is infeasible because users have the right to choose their passwords. Although most users concern their password security, many of them would not sacrifice password usability for security. Therefore we introduce distortion function, which adds a function on user own-chosen passwords. This distortion function can be chosen by users. It could be linear or non-linear. After applying the distortion function, user passwords are mapped to another string. 
 
-We conducted a proof-of-concept study to show the effectiveness of distortion function on password security. In our study, every password symbols is replaced by the incremented symbol. The distortion function is simply $S = S + 1$. For example, "a" will be replaced by "b", "b" will be replaced by "c", and "z" will be replaced by "a", etc. Digits work similarly -- "1" is replaced by "2" and "9" is replaced by "0". However, as there is no explicit order for special characters, we keep them unchanged. Note that users could choose their own distortion function, the distortion function we used is one of the simplest.
+We conducted a proof-of-concept study to show the effectiveness of distortion function on password security. In our study, we use 2 simple functions. 
 
-After applying the distortion function on each of the password in 12306 dataset. We again calculate the Coverage. This time the average Coverage for the dataset is only 0.075. And the cumulative probability distribution is shown in Figure~\ref{f4}. If we apply the distortion function multiple times, which is equivalent to increment the symbols by more places, the Coverage is 0.069 for 2 times, 0.067 for 3 times, and 0.063 for 4 times.
+For the first distortion function, every password symbols is replaced by the incremented symbol. It is simply $S = S + 1$. For example, "a" will be replaced by "b", "b" will be replaced by "c", and "z" will be replaced by "a", etc. Digits work similarly -- "1" is replaced by "2" and "9" is replaced by "0". However, as there is no explicit order for special characters, we keep them unchanged. We call this distortion function D1.
 
+The second distortion function adds an "a" between any pair of symbols. The length of passwords become twice of the original password minus 1. For example, Alice's password "alice816" will be "aalaiacaea8a1a6" after the distortion function. We call this distortion function D2.
+
+Note that users could choose their own distortion function, the distortion function we used is one of the simplest. After applying the distortion functions on each of the password in 12306 dataset. We again calculate the Coverage. This time the average Coverage for the dataset is 0.075 for D1 and only 0.009 for D2. The cumulative probability distributions for both D1 and D2 are shown in Figure~\ref{f4}. 
 \begin{figure}[h!]
 \centering
   \caption{Coverage distribution}{}
@@ -593,9 +596,19 @@ We can see that a simple distortion function would greatly reduce the correlatio
 
 
 
-\section{Related Workd}
+\section{Related Work}
 Left blank
 \section{Acknowledgments}
+\section{TODO}
+\begin{enumerate}
+\item figure 1, adjust color, shrink size
+\item figures add specific points
+\item non-distortion function -- Pi and add gap 0
+\item Add contingent match and fragmented match concepts
+\item Figure3 adjust x axes
+\item Start related work
+\item run attacking result on distorted passwords
+\end{enumerate}
 
 % The following two commands are all you need in the
 % initial runs of your .tex file to
