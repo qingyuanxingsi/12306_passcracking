@@ -488,7 +488,7 @@ CVG & = \sum_{i=1}^2 (\frac{l_n^2}{L^2}) \\
   \label{f1}
   \centering
     \includegraphics[width=0.3\textwidth]{fig/cvgfig}
-\caption*{Grey boxes hold unvisited password symbols. green and red boxes denote that the symbols inside are covered by the sliding window. Blue boxes denote the symbols inside have been settled (window stops extending). }
+\caption*{Grey boxes hold unvisited password symbols. green and red boxes denote that the symbols inside are covered by the sliding window. White boxes denote the symbols inside have been settled (window stops extending). }
 
 \end{figure}
 
@@ -498,13 +498,13 @@ In order to show that Coverage is a useful and reasonable metric, we present 4 f
 \begin{enumerate}[leftmargin=*]
 \item By the nature of Equation~\ref{eq1}, Coverage ranges from 0 to 1, in which 0 means no personal information is matched to any password segment and 1 means the entire password is matched to only one type of personal information. 
 \item Coverage can be universally applicable for its simplicity. Any kind of personal information can be formatted as a string, check whether or not a password segment is a substring of the string is straightforward. Besides, a few variations of personal information strings may be applied to enhance the completeness and accuracy (like names in our application). Therefore, even certain types of personal information are missing or extra types of personal information are available, Coverage can consistently serve its purpose.
-\item Coverage can reflect the length of personal information over the length of password. We need this feature because longer matched password segment naturally indicates stronger correlation. From Equation~\ref{1}, for a matched password segment, the longer the segment is, the larger the numerator will be. It is obvious Coverage measures the correlation strength. \item For personal information segments of same length, Coverage distinguish the composition of the segments. The more complex the composition is, the lower the metric will be. We argue that the correlation between password and personal information is not growing linearly. That is to say, for a given password of length $L$, a matched segment of length $l$ has stronger password than 2 matched segments of length $l_1$ and $l_2$ with $l = l_1 + l_2$. For example, a matched segment of length 6 is expected to have stronger correlation than 2 matched segments of length 2 and 4. We desire this feature because shorter segments usually involve wrong match (coincidence). Since it is very hard to differentiate a real match and a coincidence match, we would like to minimize the effect of wrong matches by taking squares of the matched segments to compute the Coverage.
+\item Coverage can reflect the length of personal information over the length of password. We need this feature because longer matched password segment naturally indicates stronger correlation. From Equation~\ref{1}, for a matched password segment, the longer the segment is, the larger the numerator will be. It is obvious Coverage measures the correlation strength. \item For personal information segments of same length, Coverage stresses the Continuation of matching. We argue that continuous match is stronger than fragmented match. That is to say, for a given password of length $l$, a matched segment of length $l$ has stronger password than 2 matched segments of length $l_1$ and $l_2$ with $l = l_1 + l_2$. For example, a matched segment of length 6 is expected to have stronger correlation than 2 matched segments of length 2 and 4. We desire this feature because shorter segments usually involve wrong match (coincidence). Since it is very hard to differentiate a real match and a coincidence match, we would like to minimize the effect of wrong matches by taking squares of the matched segments to compute the Coverage.
 \end{enumerate}
 
 \subsection{Result}
 We apply Algorithm~\ref{alg2} on every user of 12306 dataset. The result is shown as a cumulative distribution graph in Figure~\ref{f2}. From the figure we have the following observation
 \begin{enumerate}[leftmargin=*]
-\item Around half of the users have Coverage higher than 0.2, implying that  a significant portion of user passwords have relatively high correlation to their personal information.
+\item Half of the users have Coverage higher than 0.186, implying that  a significant portion of user passwords have relatively high correlation to their personal information.
 \item 9.9\% users have 0 Coverage. 0 Coverage indicates there is no possible correlation between the users' passwords and their personal information.
 \item 10.5\% users have Coverage of 1, which means that 11.9\% passwords are perfectly matched to exactly one type of personal information. However, Only 13.4\% users have Coverage higher than 0.5 and lower than 1.0. 
 \end{enumerate}
@@ -575,13 +575,13 @@ After showing that user passwords are even more guessable with their personal in
 \subsection{Distortion Function}
 We realize that make users to remember passwords that are totally irrelevant to users is infeasible because users have the right to choose their passwords. Although most users concern their password security, many of them would not sacrifice password usability for security. Therefore we introduce distortion function, which adds a function on user own-chosen passwords. This distortion function can be chosen by users. It could be linear or non-linear. After applying the distortion function, user passwords are mapped to another string. 
 
-We conducted a proof-of-concept study to show the effectiveness of distortion function on password security. In our study, we use 2 simple functions. 
+We conducted a proof-of-concept study to show the effectiveness of distortion function on password security. In our study, we use 2 simple linear functions. 
 
 For the first distortion function, every password symbols is replaced by the incremented symbol. It is simply $S = S + 1$. For example, "a" will be replaced by "b", "b" will be replaced by "c", and "z" will be replaced by "a", etc. Digits work similarly -- "1" is replaced by "2" and "9" is replaced by "0". However, as there is no explicit order for special characters, we keep them unchanged. We call this distortion function D1.
 
 The second distortion function adds an "a" between any pair of symbols. The length of passwords become twice of the original password minus 1. For example, Alice's password "alice816" will be "aalaiacaea8a1a6" after the distortion function. We call this distortion function D2.
 
-Note that users could choose their own distortion function, the distortion function we used is one of the simplest. After applying the distortion functions on each of the password in 12306 dataset. We again calculate the Coverage. This time the average Coverage for the dataset is 0.075 for D1 and only 0.009 for D2. The cumulative probability distributions for both D1 and D2 are shown in Figure~\ref{f4}. 
+Note that users could choose their own distortion function, the distortion function we used is some of the simplest. After applying the distortion functions on each of the password in 12306 dataset. We again calculate the Coverage. This time the average Coverage for the dataset is 0.075 for D1 and only 0.009 for D2. The cumulative probability distributions for both D1 and D2 are shown in Figure~\ref{f4}. 
 \begin{figure}[h!]
 \centering
   \caption{Coverage distribution}{}
@@ -590,25 +590,115 @@ Note that users could choose their own distortion function, the distortion funct
     \includegraphics[width=0.5\textwidth]{fig/dist1}
 \end{figure}
 
-We can see that a simple distortion function would greatly reduce the correlation between user passwords and personal information. It mitigates the problem of vast usage of personal information in user passwords. 
+We can see that a simple distortion function would greatly reduce the correlation between user passwords and personal information. Therefore distortion function mitigates the problem of vast usage of personal information in user passwords. What is more, distortion function is also cure for semantics and syntax aware password cracking methods, for example, [NDSS14] proposed in 2014, which leverages semantic patterns in passwords to crack other passwords. After applying a distortion function, the semantic pattern would no longer be available, thus make the passwords secure against such attacks. Even for context-free password cracker like PCFG method, distortion function is effective because distortion function makes dictionary words unrecognizable strings, which are not covered in commonly-used password dictionaries. 
+
+From our 2 example distortion functions, we also found that the selection of distortion function makes big difference. D1 and D2 have their own advantages and disadvantages. D2 works better in reducing correlation between passwords and personal information because the average coverage of D2 is merely 12\% of D1. However, D2 is a more obvious method which can be detected easily by an attacker. To sum up, users can choose their distortion function based on their needs. 
+
+The main weakness of distortion function is that it has to be kept secret. If an attacker knows the distortion function of a user, cracking the user's password is as easy as cracking a plain password. However, as users choose their own distortion functions, it is hard for attackers to know which one is used. Beside attacking a specific target, attacking a large dataset also becomes harder because various distortion functions exist, making the passwords in the dataset sparser and more unpredictable, which are not good news for attackers.
+ 
+ \begin{figure}[h!]
+\centering
+  \caption{Coverage distribution}{}
+  \label{f4}
+  \centering
+    \includegraphics[width=0.5\textwidth]{fig/dist2}
+\end{figure}
 
 \subsection{Other Possible Methods}
 
 
 
 \section{Related Work}
-Left blank
+subsection{password intro}
+J. BONNEAU 12SP -- The Quest to Replace Passwords: A Framework for Comparative Evaluation of Web Authentication Schemes (Not only does no known scheme come close to providing all desired benefits: none even retains the full set of benefits that legacy passwords already provide.)
+
+
+
+\subsection{Password analysis}
+Jeff Yan, 2004 -- Password Memorability and Security: Empirical Results. 
+They suggest to use mnemonic based passwords (mbki20yon! for my brother kevin is 20 years old now!) because their study shows such passwords are as secure as random passwords and as memorable as naively selected passwords
+
+
+J. BONNEAU, 12SP -- The science of guessing: Analyzing an anonymized corpus of 70 million passwords. (studied password strength based on languages by performing an empirical study on Yahoo! users and concluded that Chinese passwords are among the hardest ones to guess.)
+
+J. BONNEAU, FC' 12 -- A birthday present every eleven wallets? the security of customer-chosen banking pins.
+
+A. Das NDSS 14 -- The tangled web of password reuse
+
+DELLAMICO, INFOCOMM 2010 -- Password strength: An empirical analysis
+
+C. KUO 06SP -- Human selection of mnemonic phrase-based passwords.
+
+D. MALONE WWW2012 -- Investigating the distribution of password choices.
+
+D. FLORENCIO, 2007 WWW -- A large-scale study of web password habits. (used a browser extension to observe thousands of users’ password habits, finding on average 25 accounts and 6 unique passwords per user.)
+
+HOWE, A , 2012 SP -- The psychology of security for the home computer user
+
+MAZUREK, ACM Conference on Computer and Communications Security (2013) -- Measuring password guessability for an entire university.
+
+\subsection{password metrics}
+
+(CCS 2010) -- Testing metrics for password creation policies by attacking large sets of revealed passwords
+
+C. Casterlluccia (NDSS 2012) -- Adaptive Password-Strength Meters from Markov Models 
+
+DE CARN DE CARNAVALET, X NDSS2014 -- From very weak to very strong: Analyzing password-strength meters
+
+PLIAM, J. O. INDOCRYPT (2000) -- On the incomparability of entropy and marginal guesswork in brute-force attacks.  ($\alpha-work-factors$)
+
+BOZTAS, S. Entropies, 1999 -- guessing, and cryptography. Tech. rep., ($\beta-success-rate$ )
+
+
+\subsection{Password cracking}
+M. Hellman (Information Theory, IEEE 1980) -- A Cryptanalytic time-memory trade-off 
+
+P. Oechslin (CRYPTO 2003) -- Making a faster cryptanalytic time-memory trade-off 
+
+NARAYANAN, A, CCS 05 -- Fast dictionary attacks on passwords using time-space tradeoff
+
+R. VERAS, NDSS 2014 -- On the semantic patterns of passwords and their security impact
+
+M.Weir 09SP -- Password cracking using probabilistic context-free grammars (PCFG)
+
+R. Morris and K. Thompson, Commun. ACM, vol. 22, no. 11, pp. 594–597, , 1979 -- Password security: a case history (early work talking about cracking passwords using dictionary attacks and early light on how to protect passwords including choosing slower hash, less guessable passwords, adding salt, etc)
+
+D. Balzarotti, SP 08 --“ClearShot: Eavesdropping on Keyboard Input from Video (passwords can be automatically recovered from high-quality video of the keyboard)
+
+M. Durmuth (2013) -- When Privacy meets Security: Leveraging Personal Information for Password Cracking 
+
+ICIC2013 -- Password Cracking Based on Learned Patterns from Disclosed Passwords 
+
+\subsection{password protection}
+
+C. Herley USENIX Security 2014 --Telepathwords:Preventing Weak Passwords by Reading Users’ Minds
+
+PINKAS, B, CCS02 --Securing passwords against dictionary attacks.
+ 
+U manber 1994 -- A Simple Scheme to Make Passwords Based on One-Way Functions Much Harder to Crack (Besides public salt, which is used to make attacking the whole dataset harder, they use a secret salt which has only 100-1000 possible values. Secret salt is disgarded, every password will be tried 0 to 100-1000 times to validate it. Legitimate try is OK because the it is just a little slower. But attackers will suffer 100-1000 times slow.)
+
+KELLEY, P , 12SP -- Guess again (and again and again): Measuring password strength by simulating password-cracking algorithms
+
+S. Gaw and E. W. Felten,in ACM SOUPS 2006 -- Password Management Strategies for Online Accounts.
+\subsection{new authentication scheme}
+H. Wimberly SP 11 -- Using Fingerprint Authentication to Reduce System Security: An Empirical Study (at least under controlled conditions users can be expected to behave less securely when interacting with systems that seem to them to be better secured.)
+
+R. Dhamija USENIX Security 2000 --A user study using images for authentication
+D. Davis, USENIX Security 04 --  On user choice in graphical password schemes
+J. Thorpe USENIX Security 04 --Graphical dictionaries and the memorable space of graphical passwords.
+
+SCHWEITZER, D., VizSec 2009 -- Visualizing keyboard pattern passwords.
+
+A. K. Jain, TIFS 2007 -- “Biometrics: a tool for information security,” IEEE Transactions on Information Forensics and Security (1) examining applications where biometrics can solve issues pertaining to information security; 2) enumerating the fundamental challenges encountered by biometric systems in real-world applications; and 3) discussing solutions to address the problems of scalability and security in large-scale authentication systems.))
+
+A. Ross, IEEE Trans. Pattern Anal. Mach. Intell 2007 -- From Template to Image: Reconstructing Fingerprints from Minutiae Points.
+
+J. Daugman, IEEE Trans.Circuits Syst. Video Techn, 2006 -- How iris recognition works.
+
+S. Schechter, SP09 -- It’s no secret Measuring the security and reliability of authentication via ‘secret’ questions (The secret questions employed by the top four webmail services are not sufficiently reliable authenticators.)
+
+] J. Brainard, CCS 06 --Fourth-factor authentication: somebody you know,” in ACM (Somebody you know, explore the social network of the user)
 \section{Acknowledgments}
-\section{TODO}
-\begin{enumerate}
-\item figure 1, adjust color, shrink size
-\item figures add specific points
-\item non-distortion function -- Pi and add gap 0
-\item Add contingent match and fragmented match concepts
-\item Figure3 adjust x axes
-\item Start related work
-\item run attacking result on distorted passwords
-\end{enumerate}
 
 % The following two commands are all you need in the
 % initial runs of your .tex file to

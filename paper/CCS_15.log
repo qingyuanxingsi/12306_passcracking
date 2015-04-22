@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  18 APR 2015 23:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  22 APR 2015 09:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -414,7 +414,11 @@ Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 \fn@notes=\box36
 \fn@width=\dimen156
 )
-(./CCS_15.aux)
+(./CCS_15.aux
+
+LaTeX Warning: Label `f4' multiply defined.
+
+)
 \openout1 = `CCS_15.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
@@ -429,8 +433,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
 LaTeX Font Info:    ... okay on input line 68.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
 LaTeX Font Info:    ... okay on input line 68.
-
-(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count135
 \scratchdimen=\dimen157
@@ -696,18 +699,66 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 590--591
  [][] 
  []
 
-(./CCS_15.bbl) [9 <./fig/cmp.png> <./fig/dist1.png>] [10
+[9 <./fig/cmp.png> <./fig/dist1.png>]
+<fig/dist2.png, id=58, 391.4625pt x 272.01625pt>
+File: fig/dist2.png Graphic file (type png)
+ <use fig/dist2.png>
+Package pdftex.def Info: fig/dist2.png used on input line 604.
+(pdftex.def)             Requested size: 252.0pt x 175.11086pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 604--605
+ [][] 
+ []
+
+
+Overfull \hbox (9.42055pt too wide) in paragraph at lines 644--645
+[]\T1/aer/m/n/9 C. Cast-er-l-luc-cia (NDSS 2012) -- Adap-tive Password-Strength
+
+ []
+
+
+Overfull \hbox (13.59631pt too wide) in paragraph at lines 662--663
+[]\T1/aer/m/n/9 M.Weir 09SP -- Pass-word crack-ing us-ing prob-a-bilis-tic cont
+ext-
+ []
+
+
+Overfull \hbox (3.61684pt too wide) in paragraph at lines 668--669
+[]\T1/aer/m/n/9 M. Dur-muth (2013) -- When Pri-vacy meets Se-cu-rity: Lever-
+ []
+
+
+Overfull \hbox (10.68088pt too wide) in paragraph at lines 674--675
+[]\T1/aer/m/n/9 C. Her-ley USENIX Se-cu-rity 2014 --Telepathwords:Preventing
+ []
+
+
+Overfull \hbox (7.34225pt too wide) in paragraph at lines 680--681
+\T1/aer/m/n/9 Mea-sur-ing pass-word strength by sim-u-lat-ing password-cracking
+
+ []
+
+[10 <./fig/dist2.png>]
+Overfull \hbox (3.48758pt too wide) in paragraph at lines 700--701
+[]\T1/aer/m/n/9 ] J. Brainard, CCS 06 --Fourth-factor au-then-ti-ca-tion: some-
+
+ []
+
+(./CCS_15.bbl) [11
 
 ] (./CCS_15.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 6560 strings out of 493117
- 95420 string characters out of 6135433
- 184714 words of memory out of 5000000
- 9812 multiletter control sequences out of 15000+600000
+ 6565 strings out of 493117
+ 95500 string characters out of 6135433
+ 184753 words of memory out of 5000000
+ 9816 multiletter control sequences out of 15000+600000
  62222 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,15n,75p,1663b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -729,10 +780,10 @@ s/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
 /urw/symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/
 utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on CCS_15.pdf (10 pages, 325994 bytes).
+Output written on CCS_15.pdf (11 pages, 349497 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 124 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
