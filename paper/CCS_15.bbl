@@ -1,3 +1,226 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{balzarotti2008clearshot}
+D.~Balzarotti, M.~Cova, and G.~Vigna.
+\newblock Clearshot: Eavesdropping on keyboard input from video.
+\newblock In {\em Security and Privacy, 2008. SP 2008. IEEE Symposium on},
+  pages 170--183. IEEE, 2008.
+
+\bibitem{bonneau2012science}
+J.~Bonneau.
+\newblock The science of guessing: analyzing an anonymized corpus of 70 million
+  passwords.
+\newblock In {\em Security and Privacy (SP), 2012 IEEE Symposium on}, pages
+  538--552. IEEE, 2012.
+
+\bibitem{bonneau2012quest}
+J.~Bonneau, C.~Herley, P.~C. Van~Oorschot, and F.~Stajano.
+\newblock The quest to replace passwords: A framework for comparative
+  evaluation of web authentication schemes.
+\newblock In {\em Security and Privacy (SP), 2012 IEEE Symposium on}, pages
+  553--567. IEEE, 2012.
+
+\bibitem{bonneau2012birthday}
+J.~Bonneau, S.~Preibusch, and R.~Anderson.
+\newblock A birthday present every eleven wallets? the security of
+  customer-chosen banking pins.
+\newblock In {\em Financial Cryptography and Data Security}, pages 25--40.
+  Springer, 2012.
+
+\bibitem{boztas1999entropies}
+S.~Boztas.
+\newblock Entropies, guessing, and cryptography.
+\newblock {\em Department of Mathematics, Royal Melbourne Institute of
+  Technology, Tech. Rep}, 6:2--3, 1999.
+
+\bibitem{brainard2006fourth}
+J.~Brainard, A.~Juels, R.~L. Rivest, M.~Szydlo, and M.~Yung.
+\newblock Fourth-factor authentication: somebody you know.
+\newblock In {\em Proceedings of the 13th ACM conference on Computer and
+  communications security}, pages 168--178. ACM, 2006.
+
+\bibitem{cachin1997entropy}
+C.~Cachin.
+\newblock {\em Entropy measures and unconditional security in cryptography}.
+\newblock PhD thesis, Swiss Federal Institute of Technology Zurich, 1997.
+
+\bibitem{castelluccia2013privacy}
+C.~Castelluccia, A.~Chaabane, M.~D{\"u}rmuth, and D.~Perito.
+\newblock When privacy meets security: Leveraging personal information for
+  password cracking.
+\newblock {\em arXiv preprint arXiv:1304.6584}, 2013.
+
+\bibitem{castelluccia2012adaptive}
+C.~Castelluccia, M.~D{\"u}rmuth, and D.~Perito.
+\newblock Adaptive password-strength meters from markov models.
+\newblock In {\em NDSS}, 2012.
+
+\bibitem{das2014tangled}
+A.~Das, J.~Bonneau, M.~Caesar, N.~Borisov, and X.~Wang.
+\newblock The tangled web of password reuse.
+\newblock In {\em Symposium on Network and Distributed System Security (NDSS)},
+  2014.
+
+\bibitem{davis2004user}
+D.~Davis, F.~Monrose, and M.~K. Reiter.
+\newblock On user choice in graphical password schemes.
+\newblock In {\em USENIX Security Symposium}, volume~13, pages 11--11, 2004.
+
+\bibitem{de2014very}
+X.~d.~C. de~Carnavalet and M.~Mannan.
+\newblock From very weak to very strong: Analyzing password-strength meters.
+\newblock In {\em Proceedings of the Network and Distributed System Security
+  Symposium}, 2014.
+
+\bibitem{florencio2007large}
+D.~Florencio and C.~Herley.
+\newblock A large-scale study of web password habits.
+\newblock In {\em Proceedings of the 16th international conference on World
+  Wide Web}, pages 657--666. ACM, 2007.
+
+\bibitem{gaw2006password}
+S.~Gaw and E.~W. Felten.
+\newblock Password management strategies for online accounts.
+\newblock In {\em Proceedings of the second symposium on Usable privacy and
+  security}, pages 44--55. ACM, 2006.
+
+\bibitem{hellman1980cryptanalytic}
+M.~E. Hellman.
+\newblock A cryptanalytic time-memory trade-off.
+\newblock {\em Information Theory, IEEE Transactions on}, 26(4):401--406, 1980.
+
+\bibitem{howe2012psychology}
+A.~E. Howe, I.~Ray, M.~Roberts, M.~Urbanska, and Z.~Byrne.
+\newblock The psychology of security for the home computer user.
+\newblock In {\em Security and Privacy (SP), 2012 IEEE Symposium on}, pages
+  209--223. IEEE, 2012.
+
+\bibitem{jain2006biometrics}
+A.~K. Jain, A.~Ross, and S.~Pankanti.
+\newblock Biometrics: a tool for information security.
+\newblock {\em Information Forensics and Security, IEEE Transactions on},
+  1(2):125--143, 2006.
+
+\bibitem{jermyn1999design}
+I.~Jermyn, A.~J. Mayer, F.~Monrose, M.~K. Reiter, A.~D. Rubin, et~al.
+\newblock The design and analysis of graphical passwords.
+\newblock In {\em Usenix Security}, 1999.
+
+\bibitem{kelley2012guess}
+P.~G. Kelley, S.~Komanduri, M.~L. Mazurek, R.~Shay, T.~Vidas, L.~Bauer,
+  N.~Christin, L.~F. Cranor, and J.~Lopez.
+\newblock Guess again (and again and again): Measuring password strength by
+  simulating password-cracking algorithms.
+\newblock In {\em Security and Privacy (SP), 2012 IEEE Symposium on}, pages
+  523--537. IEEE, 2012.
+
+\bibitem{komanduri2014telepathwords}
+S.~Komanduri, R.~Shay, L.~F. Cranor, C.~Herley, and S.~Schechter.
+\newblock Telepathwords: Preventing weak passwords by reading users’ minds.
+\newblock In {\em 23rd USENIX Security Symposium (USENIX Security 14). San
+  Diego, CA: USENIX Association}, pages 591--606, 2014.
+
+\bibitem{kuo2006human}
+C.~Kuo, S.~Romanosky, and L.~F. Cranor.
+\newblock Human selection of mnemonic phrase-based passwords.
+\newblock In {\em Proceedings of the second symposium on Usable privacy and
+  security}, pages 67--78. ACM, 2006.
+
+\bibitem{li2014large}
+Z.~Li, W.~Han, and W.~Xu.
+\newblock A large-scale empirical analysis of chinese web passwords.
+\newblock In {\em Proc. USENIX Security}, pages 1--16, 2014.
+
+\bibitem{malone2012investigating}
+D.~Malone and K.~Maher.
+\newblock Investigating the distribution of password choices.
+\newblock In {\em Proceedings of the 21st international conference on World
+  Wide Web}, pages 301--310. ACM, 2012.
+
+\bibitem{massey1994guessing}
+J.~L. Massey.
+\newblock Guessing and entropy.
+\newblock In {\em Information Theory, 1994. Proceedings., 1994 IEEE
+  International Symposium on}, page 204. IEEE, 1994.
+
+\bibitem{mazurek2013measuring}
+M.~L. Mazurek, S.~Komanduri, T.~Vidas, L.~Bauer, N.~Christin, L.~F. Cranor,
+  P.~G. Kelley, R.~Shay, and B.~Ur.
+\newblock Measuring password guessability for an entire university.
+\newblock In {\em Proceedings of the 2013 ACM SIGSAC conference on Computer \&
+  communications security}, pages 173--186. ACM, 2013.
+
+\bibitem{morris1979password}
+R.~Morris and K.~Thompson.
+\newblock Password security: A case history.
+\newblock {\em Communications of the ACM}, 22(11):594--597, 1979.
+
+\bibitem{narayanan2005fast}
+A.~Narayanan and V.~Shmatikov.
+\newblock Fast dictionary attacks on passwords using time-space tradeoff.
+\newblock In {\em Proceedings of the 12th ACM conference on Computer and
+  communications security}, pages 364--372. ACM, 2005.
+
+\bibitem{oechslin2003making}
+P.~Oechslin.
+\newblock Making a faster cryptanalytic time-memory trade-off.
+\newblock In {\em Advances in Cryptology-CRYPTO 2003}, pages 617--630.
+  Springer, 2003.
+
+\bibitem{pinkas2002securing}
+B.~Pinkas and T.~Sander.
+\newblock Securing passwords against dictionary attacks.
+\newblock In {\em Proceedings of the 9th ACM conference on Computer and
+  communications security}, pages 161--170. ACM, 2002.
+
+\bibitem{pliam2000incomparability}
+J.~O. Pliam.
+\newblock On the incomparability of entropy and marginal guesswork in
+  brute-force attacks.
+\newblock In {\em Progress in Cryptology—INDOCRYPT 2000}, pages 67--79.
+  Springer, 2000.
+
+\bibitem{schechter2009s}
+S.~Schechter, A.~B. Brush, and S.~Egelman.
+\newblock It's no secret. measuring the security and reliability of
+  authentication via “secret” questions.
+\newblock In {\em Security and Privacy, 2009 30th IEEE Symposium on}, pages
+  375--390. IEEE, 2009.
+
+\bibitem{schweitzer2009visualizing}
+D.~Schweitzer, J.~Boleng, C.~Hughes, and L.~Murphy.
+\newblock Visualizing keyboard pattern passwords.
+\newblock In {\em Visualization for Cyber Security, 2009. VizSec 2009. 6th
+  International Workshop on}, pages 69--73. IEEE, 2009.
+
+\bibitem{veras2014semantic}
+R.~Veras, C.~Collins, and J.~Thorpe.
+\newblock On the semantic patterns of passwords and their security impact.
+\newblock In {\em Network and Distributed System Security Symposium
+  (NDSS’14)}, 2014.
+
+\bibitem{veras2012visualizing}
+R.~Veras, J.~Thorpe, and C.~Collins.
+\newblock Visualizing semantics in passwords: The role of dates.
+\newblock In {\em Proceedings of the Ninth International Symposium on
+  Visualization for Cyber Security}, pages 88--95. ACM, 2012.
+
+\bibitem{weir2010testing}
+M.~Weir, S.~Aggarwal, M.~Collins, and H.~Stern.
+\newblock Testing metrics for password creation policies by attacking large
+  sets of revealed passwords.
+\newblock In {\em Proceedings of the 17th ACM conference on Computer and
+  communications security}, pages 162--175. ACM, 2010.
+
+\bibitem{weir2009password}
+M.~Weir, S.~Aggarwal, B.~De~Medeiros, and B.~Glodek.
+\newblock Password cracking using probabilistic context-free grammars.
+\newblock In {\em Security and Privacy, 2009 30th IEEE Symposium on}, pages
+  391--405. IEEE, 2009.
+
+\bibitem{yan2004password}
+J.~Yan et~al.
+\newblock Password memorability and security: Empirical results.
+\newblock {\em IEEE Security \& privacy}, (5):25--31, 2004.
 
 \end{thebibliography}

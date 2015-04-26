@@ -143,7 +143,8 @@ email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
 
 \maketitle
 \begin{abstract}
-Left blank.
+Personal information in passwords was understudied due to various reasons. To fill this gap, in this paper we dissect user passwords from a leaked dataset to study how and to what extent do user personal information resides in their passwords. We present most popular password structures as expressed by personal information and show high correlation between passwords and personal information. We also found that male and female behave differently regarding to generating passwords with personal information. Then a quantification metric--Coverage--that describes the correlation between passwords and personal information is carried out in this work. After seeing the potential of cracking passwords on top of our analysis, We succeeded developing a semantics-richer Probabilistic Context-Free Grammars method called Personal-PCFG. Personal-PCFG cracks passwords much faster than the state-of-art technique and makes online attacks much easier and more feasible. To defend such semantic-aware attacks, we propose to use distortion functions that are chosen by users to mitigate unwanted correlation between personal information and passwords.
+
 \end{abstract}
 
 % A category with the (minimum) three required fields
@@ -156,14 +157,19 @@ Left blank.
 \keywords{passwords, password cracking, data processing, password protection}
 
 \section{Introduction}
-Left blank
+Text-based passwords still remain a dominating and irreplaceable authentication method in foreseeable future. Although people have proposed alternative authentication mechanisms, no such mechanism can bring all benefits of passwords while introducing no extra trouble to users\cite{bonneau2012quest}. However, passwords are also long criticized to be one of the weakest link in authentication system. Numerous works have shown that due to memorability requirement, users are more likely to use meaningful strings as their passwords. Therefore, passwords are usually very different from real random strings. For example, "password" is more likely a password than "ziorqpe". As a result, most passwords are within only a small portion of the large password space, making password guessing a lot easier. 
+
+To help both users and system administrators better enhance passwords strength. A very common way is to restrict password creation policies by requiring non-alphabets in passwords. The bad news is that users tend to simply mangle their passwords to fulfill the restriction[]. Nowadays most websites also have password strength meters enabled to provide direct feedbacks to users. However, these meters are proved to be ad-hoc and inconsistent \cite{de2014very}. To better assess the strength of passwords, we need to understand how users construct their passwords. If an attacker knows exactly how users construct their passwords, guessing their passwords will become much easier. On the other hand, if a user knows how other users construct their passwords, the user can easily improve his/her password strength by avoid using these password construction methods. 
+
+Toward this end, researchers have done much to unveil the structures of passwords. Traditional dictionary attacks on passwords have shown that users tend to use dictionary words to construct their passwords. [][] claims that the distribution of characters in passwords is very similar to that in their native languages and people are prone to use words in their own languages. [] Shows password words distribution is not the same as word distribution in the language. [Markov] shows that passwords are phonetically memorable. [PCFG] shows that using dictionary words to guess passwords is effective. [][][] indicate that users use keyboard strings such as "qwerty" and "qweasdzxc", trivial strings such as "password", "123456", and date strings such as "19951225" in their passwords. However, most studies are showing superficial password patterns. The actual composition of passwords are still mysterious to people. Fortunately, an enlightening work studied how users generate their passwords by learning the semantic patterns in passwords \cite{veras2014semantic}. We would like to take another perspective to study password semantics. 
+
+Our contribution is 4-fold. First, we measure the importance of personal information in passwords and present interesting quantified results. We show most popular password structures with personal information notion embedded. We also found that male and female behave differently when putting personal information in their passwords. Second, we quantify the correlation between user password and personal information by developing a metric -- Coverage. Coverage is useful in measuring password strength, which can potentially be used in password meters. Third, we introduce Personal-PCFG, an evolution of PCFG method by M. Weir[PCFG] by adding personal information symbols in password structures. Personal-PCFG is able to crack password much faster than PCFG. It also makes online attack more feasible by drastically increasing guessing successful rate with a small amount of guesses. Forth, we discuss how to defend such semantics-aware attacks like Personal-PCFG or \cite{veras2014semantic} by applying a simple distortion function on passwords. 
+
+This paper is organized as follows. Section~\ref{personalinfo} studies how personal information resides in user passwords and shows the gender difference in passwords. Section~\ref{correlationquantification} introduces the Correlation descriptive metric -- Coverage. In Section~\ref{personalpcfg} we present Personal-PCFG and show cracking results compared to original PCFG method. In Section~\ref{passwordprotection} we discussed defense of our attacks by applying distortion functions in passwords.
 
 \section{Personal Info in Passwords}
-Human-generated passwords are long criticized to be weak. Numerous works have shown that due to memorability requirement, users are more likely to use meaningful strings as their passwords. Therefore, passwords are usually very different from real random strings. For example, "password" is more likely a password than "ziorqpe". As a result, most passwords are within only a small portion of the large password space, making password guessing a lot easier. A natural question is: how do users choose their passwords so that they are different from random strings? The answer to the question has great significance for it has strong security implication to both users as well as systems. If an attacker knows exactly how users construct their passwords, cracking their passwords will become an easy task. On the other hand, if a user knows how other users construct their passwords, the user can easily improve his/her password strength by avoid using these password construction methods. 
-
-To this end, researchers have done much to unveil the composition of passwords. Traditional dictionary attacks on passwords have shown that users tend to use dictionary words to construct their passwords. [][] claims that the distribution of characters in passwords is very similar to that in their native languages and people are prone to use words in their languages. [] Shows password words distribution is not the same as word distribution in the language. [Markov] shows that passwords are phonetically memorable. [PCFG] shows that using dictionary words to guess passwords is effective. [][][] indicate that users use keyboard strings such as "qwerty" and "qweasdzxc", trivial strings such as "password", "123456", and date strings such as "19951225" in their passwords.
-
-As far as we see, most studies are done at a macro level. We now study user passwords in an individual base. We would like to show that user personal experience plays an important role when users create their passwords. Intuitively, people tend to choose their passwords based on their personal information because human beings are limited by their memory -- totally unrelated passwords are much less memorable.
+\label{personalinfo}
+Intuitively, people tend to choose their passwords based on their personal information because human beings are limited by their memory -- totally unrelated passwords are much less memorable. We would like to show that user personal experience plays an important role when generating passwords by dissecting passwords in a mid-sized dataset. We try to match personal information to user passwords and present quantified results.
  
 \subsection{12306 Dataset}
 In recent years, many password datasets are exposed to the public. Recent works on password measurement or password cracking are usually based on these datasets. Some of these datasets, such as Rockyou, are very large such that they even constitute millions of passwords. Now we are going to use a dataset which we call 12306 dataset to illustrate how personal information is used in user passwords.
@@ -250,7 +256,7 @@ We believe representation like $[Name][Birthday]L_3$ is better than $L_5D_4L_3$ 
 In order to make personal information password representations, an essential question will be: How do we match the personal information to user passwords? To answer this question, we show the algorithm we used in Algorithm~\ref{alg1}. The high level idea is that we find all substrings of the password and sort them in descending length order. Then we try to match the substrings from longest to shortest to all types of personal information. If one match is found, the leftover password segments are recursively applied the match function until no further match is found. Segments that are not matched to personal information will be processed using the traditional "LDS" method.
 
 
-\begin{algorithm}[!]
+\begin{algorithm}[h!]
 \caption{Match personal information with password}
 \label{alg1}
 \begin{algorithmic}[1]
@@ -420,6 +426,7 @@ As shown in Table~\ref{t7}, we can see indeed some users are using service infor
 \subsection{Ethical Consideration}
 We do realize that studying leaked datasets involves much ethical concern. Like many other works, we only use this dataset for researching purpose. We will not expose any user personal information in analyzed datasets.
 \section{Correlation Quantification}
+\label{correlationquantification}
 In Section~\ref{matchingresult} we have shown the personal-information-involved password structure distributions and how much does each type of the personal information count in all passwords. These results helped us to draw interesting 1)qualitative conclusions such as users like to use their personal information in their passwords and 2)quantitative conclusions such as birthday appears in 24.63\% passwords, which is the highest percentage among the 5 types of personal information.
 However, until this point we do not have a clear idea about how much does personal information correlate to passwords in a quantitative way. Although we have shown useful numbers between each type of personal information and passwords (such as birthday appears in 24.63\% passwords), these numbers are not proper to describe the passwords. 
 Yet we seek a more comprehensive method to quantify the correlation between passwords and personal information. Thereby we create Coverage to quantify the correlation. 
@@ -547,13 +554,13 @@ The result of last step can be applied to any target user. However, this will no
 \subsection{Cracking Result}
 We use 12306 dataset in both Personal-PCFG and original PCFG method. 12306 dataset has 131,389 users. We use half of them as training set, and the other half as testing set. Besides, both of the methods involve selection of dictionaries for the "L" segments. Dictionaries are a vital part for password cracking. [] proved that vocabulary in password datasets are more closed to each other than to an ordinary dictionary therefore using dictionaries collected from other dataset is more efficient. To eliminate the effect of unfair dictionary selection, we use "perfect" dictionaries in both of the methods. "Perfect" dictionaries are dictionaries we collected directly from the testing set, in which any string is useful and no string is uncovered. Therefore a perfect dictionary is guaranteed to find correct alpha strings efficiently.
 
-We realized that most previous works on password cracking use guessing number to compare different methods. However, we use hashing number to evaluate Personal-PCFG. We argue that as hashing is the bottleneck of such attacks, it is more reasonable to compare hashing number instead of guessing number. It is acceptable to use guessing number in past works because guessing number has linear relation to hashing number. For each password, 
+We realized that most previous works on password cracking use guessing number to compare different methods. However, we use hashing number to evaluate Personal-PCFG. We argue that as hashing is the bottleneck of such attacks, it is more reasonable to compare hashing number instead of guessing number. It is acceptable to use guessing number in past works because guessing number has linear relation to hashing number. For each guess, it needs to be padded by the salt before hashing. Therefore, a database of $N$ passwords requires $N$ hashes to verify each guess. However, in Personal-PCFG, one guess is usually personalized to test on only one password so it requires only $1$ hash to verify a guess. Therefore insist on using guessing number to compare 2 methods is inappropriate.
 
 The result is shown in Figure~\ref{f3}, in which we compute the probability of a password that can be cracked given the guessing number. We found that Personal-PCFG works substantially better than original PCFG method. Some interesting observations are listed in following.
 
 \begin{figure}[h!]
 \centering
-  \caption{Coverage distribution}{}
+  \caption{Compare PCFG and Personal-PCFG}{}
   \label{f3}
   \centering
     \includegraphics[width=0.5\textwidth]{fig/cmp}
@@ -606,98 +613,28 @@ The main weakness of distortion function is that it has to be kept secret. If an
 
 \subsection{Other Possible Methods}
 
+\section{Conclusion}
+In this work, we conduct a comprehensive quantitative study on how user personal information resides in human-chosen passwords. To the best of our knowledge, we are the first to systematically analyze personal information in passwords. We present interesting and quantitative observations such as 3.42\% of the users in 12306 dataset use their birthday as passwords, and male users are much more likely to include their name in passwords than female users. We then develop a novel metric -- Coverage -- that describes the correlation between a set of personal information and passwords. Coverage carries preeminent features, making it widely applicable. Besides the natural belief that longer personal information should yield higher Coverage, Coverage also stresses that a continued personal information match is much stronger than fragmented matches. We make our findings meaningful by creating Personal-PCFG, which leverages the basic idea of PCFG but adds more semantic symbols to crack passwords in 12307 dataset. Unlike most of previous password cracking methods, Personal-PCFG generates personalized password guesses by putting user personal information in the guesses. Personal-PCFG is significantly faster than PCFG. It meanwhile makes online attacks feasible. Finally, we discussed how to guard passwords against these attacks. We present a simple but effective approach that using distortion function to distort passwords. We conducted proof-of-concept studies by applying several simple distortion functions on user passwords and measure the Coverage again. With a steep drop in Coverage, we found distortion functions are very effective to defend personal information related and semantic-aware attacks.
 
+\section{TODO}
+finish related work, intro, and abstract
+
+an experiment to show online attacks
+
+a more comprehensive graph to show different distortion function
+
+explicit explain our advantage over PCFG
 
 \section{Related Work}
-subsection{password intro}
-J. BONNEAU 12SP -- The Quest to Replace Passwords: A Framework for Comparative Evaluation of Web Authentication Schemes (Not only does no known scheme come close to providing all desired benefits: none even retains the full set of benefits that legacy passwords already provide.)
 
+Researchers have done brilliant works on measuring real life passwords. One of the earliest work is done by R. Morris and K. Thompson \cite{morris1979password}. They found that passwords are quite simple and thus are vulnerable to dictionary attacks. Similar measurement works are usually done on school system passwords or publicly available leaked passwords. Malone et al \cite{malone2012investigating} studied the distribution of passwords in a statistical way on several large leaked datasets, found that user passwords fit Zipf distribution well. S. Gaw \cite{gaw2006password} shows how users manage their passwords. Mazurek \cite{mazurek2013measuring} measured 25,000 passwords from a university, revealing correlation between demographic or other factors, such as field of study, and passwords.   J. Bonneau \cite{bonneau2012science} studied language effect on user passwords from over 70 million passwords. He also measured the guessability of 4-digit PINs on over 1,100 banking customers \cite{bonneau2012birthday}, finding that birthday appears extensively in 4-digit PINs. Z. Li et al \cite{li2014large} conducted a large-scale measurement study on Chinese passwords, in which over 100 million real life passwords are studied and differences between Chinese and other languages passwords are presented. There are several works investigating specific aspects of passwords. J. Yan \cite{yan2004password} and C. Kuo \cite{kuo2006human} investigated the mnemonic based passwords. R.  \cite{veras2012visualizing} showed the importance of date in passwords. A. Das et al \cite{das2014tangled} studied how users mangle one password for different sites. And D. Schweitzer \cite{schweitzer2009visualizing} studied the keyboard pattern in passwords.  Beside password itself, researches have been done on human habit and psychology towards password security \cite{florencio2007large}\cite{howe2012psychology}. 
 
+It has been shown that Shannon entropy has lots of trouble accurately describing the security of passwords \cite{cachin1997entropy}\cite{kelley2012guess}\cite{pliam2000incomparability}\cite{weir2010testing}. Researchers developed many metrics to measure passwords. J Massey \cite{massey1994guessing} proposed guessing entropy, which shows the expected number of guesses to make a correct guess. Several other most commonly used metrics include marginal guesswork $\mu_\alpha$ by J. Bonneau \cite{pliam2000incomparability}, which measures the number of expected guess to succeed with probability $\alpha$,  marginal success rate $\lambda_\beta$ by Boztas \cite{boztas1999entropies}, which is the probability of succeed in $\beta$ guesses.
 
-\subsection{Password analysis}
-Jeff Yan, 2004 -- Password Memorability and Security: Empirical Results. 
-They suggest to use mnemonic based passwords (mbki20yon! for my brother kevin is 20 years old now!) because their study shows such passwords are as secure as random passwords and as memorable as naively selected passwords
+Study of password cracking method has been discussed for over three decades. Attackers usually tried to recover passwords from a hashed password database. While reverse hashing function is infeasible, early works found that passwords are vulnerable to dictionary attacks \cite{morris1979password}. Time-memory Trade-off in passwords proposed by M.Hellman \cite{hellman1980cryptanalytic} made dictionary attacks much more efficient. Rainbow table proposed by P.Oechslin \cite{oechslin2003making} is derived from Hellman method \cite{hellman1980cryptanalytic} by reducing table number while use multiple reduction functions. However, recent years as the password policy becomes strict, simple dictionary password is less common. A. Narayanan \cite{narayanan2005fast} used Markov model to generate guesses based on that passwords need to be phonetically similar to users' native languages. M.Durmuth \cite{castelluccia2013privacy} improved Markov attack by making guess in approximately descending probability order. In 2009, M. Weir \cite{weir2009password} leverages Probabilistic Context-Free Grammars (PCFG) to crack passwords. R. Veras et al\cite{veras2014semantic} tried to use semantic patterns in passwords, their method can be seen as a revolution of PCFG by M. Weir. Besides, while attacking a hashed password database remains main attacking scenarios, there are also other attacks on different scenarios, such as video eavesdropping on passwords done by D. Balzarotti \cite{balzarotti2008clearshot}.
 
+There have been works discussing protecting passwords by enforcing users to select more secure passwords, among which password strength meters seem to be one effective method. C. Castelluccia et al \cite{castelluccia2012adaptive} proposed to use Markov Model as in \cite{narayanan2005fast} to measure the security of user passwords. Meanwhile commercial password meters adopted by popular websites are proved inconsistent \cite{de2014very}. Both M. Weir \cite{weir2010testing} and S. Komanduri \cite{komanduri2014telepathwords} tried to provide feedback to users using trained leaked passwords or dictionaries. Several works discussed adding security questions on top of passwords \cite{pinkas2002securing}\cite{schechter2009s}\cite{brainard2006fourth}. Some works propose to use graphics \cite{davis2004user}\cite{jermyn1999design} or biometrics \cite{jain2006biometrics} instead of passwords for authentication. However, text-based passwords are expected to remain dominating \cite{bonneau2012quest}.
 
-J. BONNEAU, 12SP -- The science of guessing: Analyzing an anonymized corpus of 70 million passwords. (studied password strength based on languages by performing an empirical study on Yahoo! users and concluded that Chinese passwords are among the hardest ones to guess.)
-
-J. BONNEAU, FC' 12 -- A birthday present every eleven wallets? the security of customer-chosen banking pins.
-
-A. Das NDSS 14 -- The tangled web of password reuse
-
-DELLAMICO, INFOCOMM 2010 -- Password strength: An empirical analysis
-
-C. KUO 06SP -- Human selection of mnemonic phrase-based passwords.
-
-D. MALONE WWW2012 -- Investigating the distribution of password choices.
-
-D. FLORENCIO, 2007 WWW -- A large-scale study of web password habits. (used a browser extension to observe thousands of users’ password habits, finding on average 25 accounts and 6 unique passwords per user.)
-
-HOWE, A , 2012 SP -- The psychology of security for the home computer user
-
-MAZUREK, ACM Conference on Computer and Communications Security (2013) -- Measuring password guessability for an entire university.
-
-\subsection{password metrics}
-
-(CCS 2010) -- Testing metrics for password creation policies by attacking large sets of revealed passwords
-
-C. Casterlluccia (NDSS 2012) -- Adaptive Password-Strength Meters from Markov Models 
-
-DE CARN DE CARNAVALET, X NDSS2014 -- From very weak to very strong: Analyzing password-strength meters
-
-PLIAM, J. O. INDOCRYPT (2000) -- On the incomparability of entropy and marginal guesswork in brute-force attacks.  ($\alpha-work-factors$)
-
-BOZTAS, S. Entropies, 1999 -- guessing, and cryptography. Tech. rep., ($\beta-success-rate$ )
-
-
-\subsection{Password cracking}
-M. Hellman (Information Theory, IEEE 1980) -- A Cryptanalytic time-memory trade-off 
-
-P. Oechslin (CRYPTO 2003) -- Making a faster cryptanalytic time-memory trade-off 
-
-NARAYANAN, A, CCS 05 -- Fast dictionary attacks on passwords using time-space tradeoff
-
-R. VERAS, NDSS 2014 -- On the semantic patterns of passwords and their security impact
-
-M.Weir 09SP -- Password cracking using probabilistic context-free grammars (PCFG)
-
-R. Morris and K. Thompson, Commun. ACM, vol. 22, no. 11, pp. 594–597, , 1979 -- Password security: a case history (early work talking about cracking passwords using dictionary attacks and early light on how to protect passwords including choosing slower hash, less guessable passwords, adding salt, etc)
-
-D. Balzarotti, SP 08 --“ClearShot: Eavesdropping on Keyboard Input from Video (passwords can be automatically recovered from high-quality video of the keyboard)
-
-M. Durmuth (2013) -- When Privacy meets Security: Leveraging Personal Information for Password Cracking 
-
-ICIC2013 -- Password Cracking Based on Learned Patterns from Disclosed Passwords 
-
-\subsection{password protection}
-
-C. Herley USENIX Security 2014 --Telepathwords:Preventing Weak Passwords by Reading Users’ Minds
-
-PINKAS, B, CCS02 --Securing passwords against dictionary attacks.
- 
-U manber 1994 -- A Simple Scheme to Make Passwords Based on One-Way Functions Much Harder to Crack (Besides public salt, which is used to make attacking the whole dataset harder, they use a secret salt which has only 100-1000 possible values. Secret salt is disgarded, every password will be tried 0 to 100-1000 times to validate it. Legitimate try is OK because the it is just a little slower. But attackers will suffer 100-1000 times slow.)
-
-KELLEY, P , 12SP -- Guess again (and again and again): Measuring password strength by simulating password-cracking algorithms
-
-S. Gaw and E. W. Felten,in ACM SOUPS 2006 -- Password Management Strategies for Online Accounts.
-\subsection{new authentication scheme}
-H. Wimberly SP 11 -- Using Fingerprint Authentication to Reduce System Security: An Empirical Study (at least under controlled conditions users can be expected to behave less securely when interacting with systems that seem to them to be better secured.)
-
-R. Dhamija USENIX Security 2000 --A user study using images for authentication
-D. Davis, USENIX Security 04 --  On user choice in graphical password schemes
-J. Thorpe USENIX Security 04 --Graphical dictionaries and the memorable space of graphical passwords.
-
-SCHWEITZER, D., VizSec 2009 -- Visualizing keyboard pattern passwords.
-
-A. K. Jain, TIFS 2007 -- “Biometrics: a tool for information security,” IEEE Transactions on Information Forensics and Security (1) examining applications where biometrics can solve issues pertaining to information security; 2) enumerating the fundamental challenges encountered by biometric systems in real-world applications; and 3) discussing solutions to address the problems of scalability and security in large-scale authentication systems.))
-
-A. Ross, IEEE Trans. Pattern Anal. Mach. Intell 2007 -- From Template to Image: Reconstructing Fingerprints from Minutiae Points.
-
-J. Daugman, IEEE Trans.Circuits Syst. Video Techn, 2006 -- How iris recognition works.
-
-S. Schechter, SP09 -- It’s no secret Measuring the security and reliability of authentication via ‘secret’ questions (The secret questions employed by the top four webmail services are not sufficiently reliable authenticators.)
-
-] J. Brainard, CCS 06 --Fourth-factor authentication: somebody you know,” in ACM (Somebody you know, explore the social network of the user)
 \section{Acknowledgments}
 
 % The following two commands are all you need in the
