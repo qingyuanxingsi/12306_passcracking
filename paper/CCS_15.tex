@@ -557,7 +557,7 @@ We use 12306 dataset in both Personal-PCFG and original PCFG method. 12306 datas
 
 We realized that most previous works on password cracking use guessing number to compare different methods. However, we use hashing number to evaluate Personal-PCFG. We argue that as hashing is the bottleneck of such attacks, it is more reasonable to compare hashing number instead of guessing number. It is acceptable to use guessing number in past works because guessing number has linear relation to hashing number. For each guess, it needs to be padded by the salt before hashing. Therefore, a database of $N$ passwords requires $N$ hashes to verify each guess. However, in Personal-PCFG, one guess is usually personalized to test on only one password so it requires only $1$ hash to verify a guess. Therefore insist on using guessing number to compare 2 methods is inappropriate.
 
-The result is shown in Figure~\ref{f3}, in which we compute the probability of a password that can be cracked given the guessing number. We found that Personal-PCFG works substantially better than original PCFG method. Some interesting observations are listed in following.
+The result is shown in Figure~\ref{f3}, in which we compute the percentage of a password that can be cracked given the guessing number. We found that Personal-PCFG works substantially better than original PCFG method. Some interesting observations are listed in following.
 
 \begin{figure}[h!]
 \centering
@@ -575,6 +575,38 @@ The result is shown in Figure~\ref{f3}, in which we compute the probability of a
 \item Personal-PCFG covers more passwords than PCFG method. This is because personal information provides rich personalized strings which may not  be covered in the training set.  
 
 \end{enumerate}
+
+Beside offline attack, we also show the effectiveness of Personal-PCFG in online attacks. Online attacks allow much less guessing attempts because a real system usually restrain log in attempts for a specific user. Therefore we limit the guesses to be at most 100 times. In fact, most systems will not allow log in attempts to exceed 10 time.s. We present the results in Figure~\ref{cmp100} and we show representative points in Table~\ref{cmp100t}
+
+
+
+\begin{figure}[h!]
+\centering
+  \caption{PCFG and Personal-PCFG -- Online attacks}{}
+  \label{cmp100}
+  \centering
+    \includegraphics[width=0.5\textwidth]{fig/cmp100}
+\end{figure}
+
+\begin{table}
+\centering
+\caption{Most Frequent Structures in Different Gender}
+\begin{adjustbox}{max width=0.48\textwidth}
+\begin{tabular}{|c|c|c|c|c|} \hline
+\multirow{2}{*}{Attempts}&\multicolumn{2}{|c|}{PCFG}&\multicolumn{2}{|c|}{Personal-PCFG}\\ \cline{2-5}
+&Cracked NO&Percentage&Cracked NO&Percentage\\ \hline
+1 & 329 & 0.5\% & 1390 & 2.1\% \\
+3 & 510 & 0.8\% & 2412 & 3.7\%\\
+5 & 583 & 0.9\% & 3089 & 4.7\%\\
+10 & 908 & 1.4\% & 4136 & 6.3\%\\
+50 & 1312 & 2.0\% & 8684 & 13.2\%\\
+100 & 1523 & 2.3\% & 11402 & 17.4\%\\
+\hline\end{tabular}
+\end{adjustbox}
+\label{cmp100t}
+\end{table}
+
+In online attacks, Personal-PCFG is able to crack 323\% to 649\% more passwords than original PCFG. Apparently Personal-PCFG achieves substantially higher success rate than PCFG. 
 
 
 \section{Password Protection}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  26 APR 2015 01:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  28 APR 2015 01:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -684,38 +684,64 @@ Overfull \hbox (9.97774pt too wide) in paragraph at lines 575--576
 []\T1/aer/m/n/9 Personal-PCFG cov-ers more pass-words than PCFG method.
  []
 
-[9 <./fig/cmp.png>] <fig/dist1.png, id=56, 391.4625pt x 272.01625pt>
-File: fig/dist1.png Graphic file (type png)
+<fig/cmp100.png, id=52, 398.48875pt x 272.01625pt>
+File: fig/cmp100.png Graphic file (type png)
+ <use fig/cmp100.png>
+Package pdftex.def Info: fig/cmp100.png used on input line 588.
+(pdftex.def)             Requested size: 252.0pt x 172.01863pt.
 
-<use fig/dist1.png>
-Package pdftex.def Info: fig/dist1.png used on input line 599.
-(pdftex.def)             Requested size: 252.0pt x 175.11086pt.
-
-Overfull \hbox (12.0pt too wide) in paragraph at lines 599--600
+Overfull \hbox (12.0pt too wide) in paragraph at lines 588--589
  [][] 
  []
 
-<fig/dist2.png, id=57, 391.4625pt x 272.01625pt>
+
+Overfull \hbox (1.92952pt too wide) in paragraph at lines 605--607
+ [] 
+ []
+
+[9 <./fig/cmp.png> <./fig/cmp100.png>]
+<fig/dist1.png, id=58, 391.4625pt x 272.01625pt>
+File: fig/dist1.png Graphic file (type png)
+ <use fig/dist1.png>
+Package pdftex.def Info: fig/dist1.png used on input line 631.
+(pdftex.def)             Requested size: 252.0pt x 175.11086pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 631--632
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<fig/dist2.png, id=59, 391.4625pt x 272.01625pt>
 File: fig/dist2.png Graphic file (type png)
  <use fig/dist2.png>
-Package pdftex.def Info: fig/dist2.png used on input line 613.
+Package pdftex.def Info: fig/dist2.png used on input line 645.
 (pdftex.def)             Requested size: 252.0pt x 175.11086pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 613--614
+Overfull \hbox (12.0pt too wide) in paragraph at lines 645--646
  [][] 
  []
 
-[10 <./fig/dist1.png> <./fig/dist2.png>]
-Overfull \hbox (1.8069pt too wide) in paragraph at lines 634--635
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10 <./fig/dist1.png>]
+Overfull \hbox (1.8069pt too wide) in paragraph at lines 666--667
 \T1/aer/m/n/9 ac-cu-rately de-scrib-ing the se-cu-rity of pass-words [7][19][30
 ][35].
  []
 
-(./CCS_15.bbl [11]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-) [12]
-(./CCS_15.aux)
+ [11 <./fig/dist2.png>] (./CCS_15.bbl
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12])
+[13
+
+] (./CCS_15.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -724,10 +750,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6606 strings out of 493117
- 96314 string characters out of 6135433
- 183924 words of memory out of 5000000
- 9857 multiletter control sequences out of 15000+600000
+ 6613 strings out of 493117
+ 96416 string characters out of 6135433
+ 183940 words of memory out of 5000000
+ 9863 multiletter control sequences out of 15000+600000
  62222 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,15n,75p,1950b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -749,10 +775,10 @@ s/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
 /urw/symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/
 utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on CCS_15.pdf (12 pages, 369995 bytes).
+Output written on CCS_15.pdf (13 pages, 382648 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 84 compressed objects within 1 object stream
+ 133 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
