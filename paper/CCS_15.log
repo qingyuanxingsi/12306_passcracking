@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  28 APR 2015 01:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  28 APR 2015 19:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -510,6 +510,11 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 144.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
+Overfull \hbox (8.82646pt too wide) in paragraph at lines 146--147
+\T1/aer/m/n/9 Personal-PCFG. Personal-PCFG cracks pass-words much faster
+ []
+
+
 Overfull \hbox (6.18994pt too wide) in paragraph at lines 160--161
 \T1/aer/m/n/9 though peo-ple have pro-posed al-ter-na-tive au-then-ti-ca-tion m
 ech-
@@ -523,77 +528,77 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 
-Package caption Warning: \label without proper \caption on input line 211.
+Package caption Warning: \label without proper \caption on input line 210.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `t2' on page \thepage  undefined on input line 206.
+LaTeX Warning: Reference `t2' on page \thepage  undefined on input line 207.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--228
+Underfull \hbox (badness 10000) in paragraph at lines 213--227
 [][]
  []
 
-LaTeX Font Info:    Try loading font information for T1+aett on input line 238.
+[2]
+LaTeX Font Info:    Try loading font information for T1+aett on input line 237.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/ae/t1aett.fd
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-) [2]
-Overfull \hbox (19.37599pt too wide) in paragraph at lines 245--245
+)
+Overfull \hbox (19.37599pt too wide) in paragraph at lines 244--244
 []\T1/aett/m/n/9 3. Cellphone number: User's registered cellphone number[] 
  []
 
 
-Overfull \hbox (19.37599pt too wide) in paragraph at lines 245--245
-[]\T1/aett/m/n/9 4. Account name: the account used to log on the system,[] 
+Overfull \hbox (19.37599pt too wide) in paragraph at lines 244--244
+[]\T1/aett/m/n/9 4. Account name: the account used to log in the system,[] 
  []
 
 
-Overfull \hbox (28.80785pt too wide) in paragraph at lines 245--245
+Overfull \hbox (28.80785pt too wide) in paragraph at lines 244--244
 []\T1/aett/m/n/9 may contain digits and letters. For example, "myacct123".[] 
- []
-
-
-Overfull \hbox (2.4817pt too wide) in paragraph at lines 250--251
-\OT1/cmr/m/n/9 [\OML/cmm/m/it/9 Name\OT1/cmr/m/n/9 ][\OML/cmm/m/it/9 Birthday\O
-T1/cmr/m/n/9 ]\OML/cmm/m/it/9 L[]$ \T1/aer/m/n/9 in-stead of $\OML/cmm/m/it/9 L
-[]D[]L[]$ \T1/aer/m/n/9 in a tra-di-tional mea-
  []
 
 [3]
 
-Package caption Warning: \label without proper \caption on input line 211.
+Package caption Warning: \label without proper \caption on input line 210.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `t2' on page \thepage  undefined on input line 344.
+LaTeX Warning: Reference `t2' on page \thepage  undefined on input line 343.
+
+
+Overfull \hbox (10.6362pt too wide) in paragraph at lines 347--348
+\T1/aer/m/n/9 any of the per-sonal in-for-ma-tion. Struc-tures like $\OT1/cmr/m
+/n/9 [\OML/cmm/m/it/9 NAME\OT1/cmr/m/n/9 ]\OML/cmm/m/it/9 D[]$
+ []
 
 [4]
-Overfull \hbox (1.92082pt too wide) in paragraph at lines 379--381
+Overfull \hbox (1.92082pt too wide) in paragraph at lines 380--382
  [] 
  []
 
 
-Overfull \hbox (1.92194pt too wide) in paragraph at lines 397--399
+Overfull \hbox (1.92194pt too wide) in paragraph at lines 398--400
  [] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 407.
+               Default added (so using `!tbp') on input line 408.
 
 
-Underfull \hbox (badness 5431) in paragraph at lines 414--414
-[][]\T1/aer/m/n/9 We found 44,227 pass-words in Tianya dataset is
+Underfull \hbox (badness 5431) in paragraph at lines 415--415
+[][]\T1/aer/m/n/9 We found 45,574 pass-words in Tianya dataset is
  []
 
 
-Overfull \hbox (1.92108pt too wide) in paragraph at lines 419--421
+Overfull \hbox (1.92108pt too wide) in paragraph at lines 420--422
  [] 
  []
 
 
-Overfull \hbox (1.46365pt too wide) in paragraph at lines 423--424
+Overfull \hbox (1.46365pt too wide) in paragraph at lines 424--425
 \T1/aer/m/n/9 main-tain good mem-o-ra-bil-ity and se-cu-rity, cur-rently few us
 ers
  []
@@ -601,22 +606,23 @@ ers
 [5]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!htbp') on input line 449.
+               Default added (so using `!htbp') on input line 450.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 462--463
+Underfull \hbox (badness 10000) in paragraph at lines 463--464
 [] \T1/aer/bx/n/9 for $\OML/cmm/m/it/9 j \OMS/cmsy/m/n/9   \OML/cmm/m/it/9 matc
 hmark$ \T1/aer/m/n/9 to
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+Package amsmath Warning: Foreign command \over;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 483.
 
 <fig/cvgfig.png, id=34, 628.3475pt x 783.92876pt>
 File: fig/cvgfig.png Graphic file (type png)
  <use fig/cvgfig.png>
-Package pdftex.def Info: fig/cvgfig.png used on input line 497.
+Package pdftex.def Info: fig/cvgfig.png used on input line 490.
 (pdftex.def)             Requested size: 151.20154pt x 188.63718pt.
 
 
@@ -624,124 +630,110 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [6]
 
-LaTeX Warning: Reference `1' on page \thepage  undefined on input line 508.
+LaTeX Warning: Reference `1' on page \thepage  undefined on input line 501.
 
 
-Overfull \hbox (9.19453pt too wide) in paragraph at lines 508--508
+Overfull \hbox (9.19453pt too wide) in paragraph at lines 501--501
 \T1/aer/m/n/9 cates stronger cor-re-la-tion. From Equa-tion [], for a matched
  []
 
-<fig/cvghist.png, id=41, 391.4625pt x 272.01625pt>
+<fig/cvghist.png, id=43, 391.4625pt x 272.01625pt>
 File: fig/cvghist.png Graphic file (type png)
  <use fig/cvghist.png>
-Package pdftex.def Info: fig/cvghist.png used on input line 524.
+Package pdftex.def Info: fig/cvghist.png used on input line 517.
 (pdftex.def)             Requested size: 226.79846pt x 157.5952pt.
 
-Overfull \hbox (9.8608pt too wide) in paragraph at lines 529--529
+[7 <./fig/cvgfig.png> <./fig/cvghist.png>]
+Overfull \hbox (9.8608pt too wide) in paragraph at lines 531--531
 []\secfnt PERSONAL-PCFG, AN IN-DI-VID-UAL ORI-
  []
 
-[7 <./fig/cvgfig.png> <./fig/cvghist.png>]
-Overfull \hbox (4.04756pt too wide) in paragraph at lines 541--542
+
+Overfull \hbox (4.04756pt too wide) in paragraph at lines 543--544
 \T1/aer/m/n/9 processes pass-words by their struc-tures. From the pre-process
  []
 
 
-Overfull \hbox (2.11334pt too wide) in paragraph at lines 541--542
+Overfull \hbox (2.11334pt too wide) in paragraph at lines 543--544
 \T1/aer/m/n/9 are hashed to com-pare with the val-ues in pass-word databases.
  []
 
-
-Package amsmath Warning: Foreign command \over;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 550.
-
-[8] <fig/cmp.png, id=51, 391.4625pt x 272.01625pt>
+[8] <fig/cmp.png, id=53, 391.4625pt x 272.01625pt>
 File: fig/cmp.png Graphic file (type png)
  <use fig/cmp.png>
-Package pdftex.def Info: fig/cmp.png used on input line 567.
+Package pdftex.def Info: fig/cmp.png used on input line 569.
 (pdftex.def)             Requested size: 252.0pt x 175.11086pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 567--568
+Overfull \hbox (12.0pt too wide) in paragraph at lines 569--570
  [][] 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Overfull \hbox (1.32893pt too wide) in paragraph at lines 573--574
+Overfull \hbox (1.32893pt too wide) in paragraph at lines 575--576
 []\T1/aer/m/n/9 Personal-PCFG works much bet-ter than PCFG when only
  []
 
 
-Overfull \hbox (2.041pt too wide) in paragraph at lines 573--574
+Overfull \hbox (2.041pt too wide) in paragraph at lines 575--576
 \T1/aer/m/n/9 one per-son is the tar-get. With 10 mil-lion guesses Personal-
  []
 
 
-Overfull \hbox (9.97774pt too wide) in paragraph at lines 575--576
+Overfull \hbox (9.97774pt too wide) in paragraph at lines 577--578
 []\T1/aer/m/n/9 Personal-PCFG cov-ers more pass-words than PCFG method.
  []
 
-<fig/cmp100.png, id=52, 398.48875pt x 272.01625pt>
+[9 <./fig/cmp.png>] <fig/cmp100.png, id=58, 398.48875pt x 272.01625pt>
 File: fig/cmp100.png Graphic file (type png)
- <use fig/cmp100.png>
-Package pdftex.def Info: fig/cmp100.png used on input line 588.
+
+<use fig/cmp100.png>
+Package pdftex.def Info: fig/cmp100.png used on input line 590.
 (pdftex.def)             Requested size: 252.0pt x 172.01863pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 588--589
+Overfull \hbox (12.0pt too wide) in paragraph at lines 590--591
  [][] 
  []
 
 
-Overfull \hbox (1.92952pt too wide) in paragraph at lines 605--607
+Overfull \hbox (1.92952pt too wide) in paragraph at lines 607--609
  [] 
  []
 
-[9 <./fig/cmp.png> <./fig/cmp100.png>]
-<fig/dist1.png, id=58, 391.4625pt x 272.01625pt>
+<fig/dist1.png, id=59, 391.4625pt x 272.01625pt>
 File: fig/dist1.png Graphic file (type png)
  <use fig/dist1.png>
-Package pdftex.def Info: fig/dist1.png used on input line 631.
+Package pdftex.def Info: fig/dist1.png used on input line 633.
 (pdftex.def)             Requested size: 252.0pt x 175.11086pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 631--632
+Overfull \hbox (12.0pt too wide) in paragraph at lines 633--634
  [][] 
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<fig/dist2.png, id=59, 391.4625pt x 272.01625pt>
+[10 <./fig/cmp100.png> <./fig/dist1.png>]
+<fig/dist2.png, id=65, 391.4625pt x 272.01625pt>
 File: fig/dist2.png Graphic file (type png)
  <use fig/dist2.png>
-Package pdftex.def Info: fig/dist2.png used on input line 645.
+Package pdftex.def Info: fig/dist2.png used on input line 647.
 (pdftex.def)             Requested size: 252.0pt x 175.11086pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 645--646
+Overfull \hbox (12.0pt too wide) in paragraph at lines 647--648
  [][] 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[10 <./fig/dist1.png>]
-Overfull \hbox (1.8069pt too wide) in paragraph at lines 666--667
-\T1/aer/m/n/9 ac-cu-rately de-scrib-ing the se-cu-rity of pass-words [7][19][30
-][35].
+Overfull \hbox (1.8069pt too wide) in paragraph at lines 659--660
+\T1/aer/m/n/9 ac-cu-rately de-scrib-ing the se-cu-rity of pass-words [7][20][31
+][37].
  []
 
-
+[11 <./fig/dist2.png>] (./CCS_15.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11 <./fig/dist2.png>] (./CCS_15.bbl
+ [12]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12])
-[13
-
-] (./CCS_15.aux)
+) [13]
+(./CCS_15.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -750,10 +742,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6613 strings out of 493117
- 96416 string characters out of 6135433
- 183940 words of memory out of 5000000
- 9863 multiletter control sequences out of 15000+600000
+ 6615 strings out of 493117
+ 96450 string characters out of 6135433
+ 183948 words of memory out of 5000000
+ 9865 multiletter control sequences out of 15000+600000
  62222 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,15n,75p,1950b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -761,24 +753,26 @@ Here is how much of TeX's memory you used:
 exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/
-texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/te
-xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texl
-ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texliv
-e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2
-014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2014/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2014/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2014/texmf-di
-st/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2014/texmf-dist/font
-s/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
-/urw/symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/
-utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
-></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on CCS_15.pdf (13 pages, 382648 bytes).
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texliv
+e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/
+2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/201
+4/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2014/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2014/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2014/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2014/texmf-dist/fo
+nts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/typ
+e1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
+symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8
+a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on CCS_15.pdf (13 pages, 401785 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 141 PDF objects out of 1000 (max. 8388607)
+ 93 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

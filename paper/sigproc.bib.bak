@@ -317,3 +317,21 @@
   year={2014}
 }
 
+@MISC{tencentnews,
+   author =       {Tencent Tech},
+   title =        {12306 user info leackage},
+   editor =       {},
+   month =        {December},
+   year =         {2014},
+   url = {http://tech.qq.com/a/20141225/052603.htm},
+   note =         {[Online; posted 25-December-2012]},
+ }
+ 
+ @inproceedings{cao2014personalized,
+  title={Personalized password guessing: a new security threat},
+  author={Cao, Phuong and Li, Hongyang and Nahrstedt, Klara and Kalbarczyk, Zbigniew and Iyer, Ravishankar and Slagell, Adam J},
+  booktitle={Proceedings of the 2014 Symposium and Bootcamp on the Science of Security},
+  pages={22},
+  year={2014},
+  organization={ACM}
+}

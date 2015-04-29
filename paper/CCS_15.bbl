@@ -44,6 +44,12 @@ C.~Cachin.
 \newblock {\em Entropy measures and unconditional security in cryptography}.
 \newblock PhD thesis, Swiss Federal Institute of Technology Zurich, 1997.
 
+\bibitem{cao2014personalized}
+P.~Cao, H.~Li, K.~Nahrstedt, Z.~Kalbarczyk, R.~Iyer, and A.~J. Slagell.
+\newblock Personalized password guessing: a new security threat.
+\newblock In {\em Proceedings of the 2014 Symposium and Bootcamp on the Science
+  of Security}, page~22. ACM, 2014.
+
 \bibitem{castelluccia2013privacy}
 C.~Castelluccia, A.~Chaabane, M.~D{\"u}rmuth, and D.~Perito.
 \newblock When privacy meets security: Leveraging personal information for
@@ -192,6 +198,11 @@ D.~Schweitzer, J.~Boleng, C.~Hughes, and L.~Murphy.
 \newblock Visualizing keyboard pattern passwords.
 \newblock In {\em Visualization for Cyber Security, 2009. VizSec 2009. 6th
   International Workshop on}, pages 69--73. IEEE, 2009.
+
+\bibitem{tencentnews}
+T.~Tech.
+\newblock 12306 user info leackage, December 2014.
+\newblock [Online; posted 25-December-2012].
 
 \bibitem{veras2014semantic}
 R.~Veras, C.~Collins, and J.~Thorpe.

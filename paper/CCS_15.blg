@@ -4,45 +4,45 @@ The top-level auxiliary file: CCS_15.aux
 The style file: abbrv.bst
 Database file #1: sigproc.bib
 Warning--there's a number but no volume in yan2004password
-You've used 37 entries,
+You've used 39 entries,
             2118 wiz_defined-function locations,
-            698 strings with 10702 characters,
-and the built_in function-call counts, 15938 in all, are:
-= -- 1638
-> -- 689
-< -- 26
-+ -- 280
-- -- 234
-* -- 1006
-:= -- 2413
-add.period$ -- 133
-call.type$ -- 37
-change.case$ -- 225
+            707 strings with 11051 characters,
+and the built_in function-call counts, 16616 in all, are:
+= -- 1700
+> -- 729
+< -- 27
++ -- 296
+- -- 248
+* -- 1048
+:= -- 2524
+add.period$ -- 140
+call.type$ -- 39
+change.case$ -- 238
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 702
-empty$ -- 1290
-format.name$ -- 234
-if$ -- 3568
+cite$ -- 40
+duplicate$ -- 728
+empty$ -- 1343
+format.name$ -- 248
+if$ -- 3715
 int.to.chr$ -- 0
-int.to.str$ -- 37
-missing$ -- 36
-newline$ -- 188
-num.names$ -- 74
-pop$ -- 311
+int.to.str$ -- 39
+missing$ -- 37
+newline$ -- 198
+num.names$ -- 78
+pop$ -- 333
 preamble$ -- 1
-purify$ -- 189
+purify$ -- 200
 quote$ -- 0
-skip$ -- 516
+skip$ -- 534
 stack$ -- 0
-substring$ -- 1006
-swap$ -- 270
-text.length$ -- 26
+substring$ -- 1020
+swap$ -- 278
+text.length$ -- 27
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 148
+type$ -- 156
 warning$ -- 1
-while$ -- 157
-width$ -- 39
-write$ -- 426
+while$ -- 162
+width$ -- 41
+write$ -- 448
 (There was 1 warning)
