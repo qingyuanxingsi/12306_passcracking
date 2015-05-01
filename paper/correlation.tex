@@ -73,9 +73,9 @@ In order to show that Coverage is a useful and reasonable metric, we present 4 f
 \end{enumerate}
 
 \subsection{Result}
-We apply Algorithm~\ref{alg2} on every user of 12306 dataset. The result is shown as a cumulative distribution graph in Figure~\ref{f2}. From the figure we have the following observation
+We apply Algorithm~\ref{alg2} on every user of 12306 dataset. The result is shown as a cumulative distribution graph in Figure~\ref{f2}. Before looking at the table, we give several examples to show implication of a roughly 0.2 Coverage. If we have a 10-symbol long passwords. One matched segment of length 5 will yield 0.25 Coverage. Two matched segments of length 3 (which means 6 symbols are matched to personal information) yield 0.18 Coverage. And 5 matched segments of length 2 (which means all symbols are matched, though fragmentarily) yield 0.2 Coverage. Apparently Coverage of 0.2 indicates a fairly high correlation between personal information and passwords. With such knowledge, we have the following observation from Figure~\ref{f2}
 \begin{enumerate}[leftmargin=*]
-\item Half of the users have Coverage higher than 0.186, implying that  a significant portion of user passwords have relatively high correlation to their personal information.
+\item The median value for user Coverage is 0.186, implying that a significant portion of user passwords have relatively high correlation to their personal information.
 \item 9.9\% users have 0 Coverage. 0 Coverage indicates there is no possible correlation between the users' passwords and their personal information.
 \item 10.5\% users have Coverage of 1, which means that 11.9\% passwords are perfectly matched to exactly one type of personal information. However, Only 13.4\% users have Coverage higher than 0.5 and lower than 1.0. 
 \end{enumerate}
