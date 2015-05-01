@@ -1,6 +1,9 @@
 \section{Personal-PCFG, an individual oriented password cracker}
 \label{personalpcfg}
-We have presented abundant findings regarding user personal information and their passwords, as well as a metric to quantify their correlation. Naturally we wonder how are these findings useful. An obvious answer is that given there is significant correlation between user password and personal information, much potential can be seen to crack passwords faster. To this end, we create Personal-PCFG, which relies on the idea of PCFG approach created by M. Weir \cite{weir2009password}. However, unlike original PCFG method, Personal-PCFG is an individual-oriented password cracker. It generates personalized guesses towards each user.
+We have presented abundant findings regarding user personal information and their passwords, as well as a metric to quantify their correlation. Naturally we wonder how are these findings useful. An obvious answer is that given there is significant correlation between user password and personal information, much potential can be seen to crack passwords faster. To this end, we create Personal-PCFG, which relies on the idea of PCFG approach created by M. Weir \cite{weir2009password}. However, unlike original PCFG method, Personal-PCFG is an individual-oriented password cracker, which generates personalized guesses towards each user. Note that we do not claim to be the first trying to leverage personal information to crack passwords. OMEN+ \cite{castelluccia2013privacy}, which improves Markov Models \cite{narayanan2005fast} to crack passwords, has done simple experiment to prove usefulness of personal information. However, we do not consider this work well done because 1) The experiment is done on only 3,140 users with personal information both insufficient and unreliable. 2) Personal information is not treated "personally" -- they are simply divided into 3-grams and the probabilities of these 3-grams are raised up a little. 3) Dividing personal information into 3-grams internally break the continuation of personal information and causes many coincidences. 
+
+We believe the effect of OMEN+ \cite{castelluccia2013privacy} is roughly equivalent to adding common names, locations, etc to training data. It tries to use personal information of individual user to generate guesses for all users, which is by its nature improper. 
+
 
 \subsection{Attack Scenarios}
 Personal-PCFG can be used in both offline and online attacks. We assume that the attacker knows certain amount of personal information about the targets. The attackers can be an evil neighbor, a curious friend, a jealous husband, a blackmailer, or even a company that buys personal information from other companies. We argue that under these conditions, target personal information is rather easy to obtain -- The attackers might either know the victim personally or easily get personal information by searching online, especially social networks sites (SNS). 
@@ -27,7 +30,7 @@ The result of last step can be applied to any target user. However, this will no
 \subsection{Cracking Result}
 We use 12306 dataset in both Personal-PCFG and original PCFG method. 12306 dataset has 131,389 users. We use half of them as training set, and the other half as testing set. Besides, both of the methods involve selection of dictionaries for the "L" segments. Dictionaries are a vital part for password cracking. To eliminate the effect of unfair dictionary selection, we use "perfect" dictionaries in both of the methods. "Perfect" dictionaries are dictionaries we collected directly from the testing set, in which any string in the dictionary is useful and any string in the passwords appear in the dictionary. So a perfect dictionary is guaranteed to find correct alpha strings efficiently.
 
-We realized that most previous works on password cracking use guessing number to compare different methods. However, we use hashing number to evaluate Personal-PCFG. We argue that as hashing is the bottleneck of such attacks, it is more reasonable to compare hashing number instead of guessing number. Researchers use guessing number in their works because guessing number is independent of dataset size while having linear relation to hashing number. However, we are facing a different condition. For non-personalized guesses, each of them needs to be padded by the salt before hashing. Therefore, a dataset of $N$ passwords requires $N$ hashes to verify each guess. However, in Personal-PCFG, one guess is usually personalized to test on only one password so it requires only $1$ hash to verify a guess. Therefore insist on using guessing number to compare 2 methods is inappropriate.
+We realized that most previous works on password cracking use guessing number to compare different methods. However, we use hashing number to evaluate Personal-PCFG. We argue that as hashing is the bottleneck of such attacks, it is more reasonable to compare hashing number instead of guessing number. Researchers use guessing number in their works because guessing number is independent of dataset size while having linear relation to hashing number. However, we are facing a different condition. For non-personalized guesses, each of them needs to be padded by the salt before hashing. Therefore, a dataset of $N$ passwords requires $N$ hashes to verify each guess. However, in Personal-PCFG, one guess is usually personalized to test on only one password so it requires only $1$ hash to verify a guess. In this sense, insist on using guessing number to compare 2 methods is inappropriate.
 
 To adapt to tradition, we show the result in Figure~\ref{f3} in terms of average hashing number, which is equivalent to guessing number as conventional password cracking mechanisms. We compute the probability of a password that can be cracked given the hashing number. Figure~\ref{f3} implies that Personal-PCFG works substantially better than original PCFG method. Some interesting observations are listed in following.
 
@@ -48,13 +51,22 @@ To adapt to tradition, we show the result in Figure~\ref{f3} in terms of average
 
 \end{enumerate}
 
-Beside offline attack, we also show the effectiveness of Personal-PCFG in online attacks. Online attacks allow much less guessing attempts because a real system usually restrain login attempts for a specific user. Therefore we limit the guesses to be at most 100 times. In fact, most systems will not allow login attempts to exceed 10 time.s. We present the results in Figure~\ref{cmp100} and we show representative points in Table~\ref{cmp100t} and Figure~\ref{online}
+Beside offline attack, we also show the effectiveness of Personal-PCFG in online attacks. Online attacks allow much less guessing attempts because a real system usually restrain login attempts for a specific user. Therefore we limit the guesses to be at most 100 times. In fact, most systems will not allow login attempts to exceed 10 time.s. We present the results in Figure~\ref{cmp100}.
 
+\begin{figure}[h!]
+\centering
+  \caption{PCFG and Personal-PCFG -- Online attacks.}{}
+  \label{cmp100}
+  \centering
+    \includegraphics[width=0.5\textwidth]{fig/cmp100}
+\end{figure}
+
+As shown in Figure~\ref{cmp100}, in online attacks, generally Personal-PCFG is able to crack 323\% to 649\% more passwords than original PCFG. Then we take a look at several representative guessing numbers. These interesting points are shown in Figure~\ref{points}. A most typical system allows 5 attempts to input the correct passwords. Personal-PCFG is able to crack 4.7\% passwords within only 5 guesses. Meanwhile the percentage is only 0.9\% for original PCFG method. In addition, it would take over 800 guesses for PCFG to reach a success rate of 4.7\%. Clearly Personal-PCFG is more powerful to crack out the correct passwords within only a few guesses.
 
 \begin{figure}[h!]
 \centering
   \caption{Representative Points -- Online attacks.}{}
-  \label{online}
+  \label{points}
   \centering
     \includegraphics[width=0.5\textwidth]{fig/online}
 \end{figure}
@@ -77,12 +89,4 @@ Beside offline attack, we also show the effectiveness of Personal-PCFG in online
 \label{cmp100t}
 \end{table}
 
-\begin{figure}[h!]
-\centering
-  \caption{PCFG and Personal-PCFG -- Online attacks.}{}
-  \label{cmp100}
-  \centering
-    \includegraphics[width=0.5\textwidth]{fig/cmp100}
-\end{figure}
 
-As shown in Figure~\ref{cmp100}, in online attacks, Personal-PCFG is able to crack 323\% to 649\% more passwords than original PCFG. 

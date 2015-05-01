@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  30 APR 2015 09:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  1 MAY 2015 17:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -414,11 +414,7 @@ Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 \fn@notes=\box36
 \fn@width=\dimen156
 )
-(./CCS_15.aux
-
-LaTeX Warning: Label `cmp100' multiply defined.
-
-)
+(./CCS_15.aux)
 \openout1 = `CCS_15.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
@@ -433,7 +429,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
 LaTeX Font Info:    ... okay on input line 68.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
 LaTeX Font Info:    ... okay on input line 68.
- (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count135
 \scratchdimen=\dimen157
@@ -649,79 +646,86 @@ Overfull \hbox (9.8608pt too wide) in paragraph at lines 1--1
  []
 
 
-Overfull \hbox (4.04756pt too wide) in paragraph at lines 13--14
+Overfull \hbox (4.04756pt too wide) in paragraph at lines 16--17
 \T1/aer/m/n/9 processes pass-words by their struc-tures. From the pre-process
  []
 
 
-Overfull \hbox (2.11334pt too wide) in paragraph at lines 13--14
-\T1/aer/m/n/9 are hashed to com-pare with the val-ues in pass-word databases.
+Overfull \hbox (10.63399pt too wide) in paragraph at lines 19--20
+\T1/aer/m/n/9 work, ad-di-tional match-ing phase and adapt-substitution phases
  []
 
-[8] <fig/cmp.png, id=53, 391.4625pt x 272.01625pt>
+[8]
+Overfull \hbox (3.19112pt too wide) in paragraph at lines 33--34
+\T1/aer/m/n/9 ever, we are fac-ing a dif-fer-ent con-di-tion. For non-personali
+zed
+ []
+
+<fig/cmp.png, id=53, 391.4625pt x 272.01625pt>
 File: fig/cmp.png Graphic file (type png)
  <use fig/cmp.png>
-Package pdftex.def Info: fig/cmp.png used on input line 39.
+Package pdftex.def Info: fig/cmp.png used on input line 42.
 (pdftex.def)             Requested size: 252.0pt x 175.11086pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 39--40
- [][] 
- []
-
-
-Overfull \hbox (1.32893pt too wide) in paragraph at lines 45--46
-[]\T1/aer/m/n/9 Personal-PCFG works much bet-ter than PCFG when only
- []
-
-
-Overfull \hbox (2.041pt too wide) in paragraph at lines 45--46
-\T1/aer/m/n/9 one per-son is the tar-get. With 10 mil-lion guesses Personal-
- []
-
-
-Overfull \hbox (9.97774pt too wide) in paragraph at lines 47--48
-[]\T1/aer/m/n/9 Personal-PCFG cov-ers more pass-words than PCFG method.
- []
-
-[9 <./fig/cmp.png>] <fig/online.png, id=58, 380.42125pt x 298.11375pt>
-File: fig/online.png Graphic file (type png)
-
-<use fig/online.png>
-Package pdftex.def Info: fig/online.png used on input line 59.
-(pdftex.def)             Requested size: 252.0pt x 197.48349pt.
-
-Overfull \hbox (12.0pt too wide) in paragraph at lines 59--60
- [][] 
- []
-
-
-Overfull \hbox (1.92952pt too wide) in paragraph at lines 76--78
- [] 
- []
-
-<fig/cmp100.png, id=59, 398.48875pt x 272.01625pt>
-File: fig/cmp100.png Graphic file (type png)
- <use fig/cmp100.png>
-Package pdftex.def Info: fig/cmp100.png used on input line 85.
-(pdftex.def)             Requested size: 252.0pt x 172.01863pt.
-
-Overfull \hbox (12.0pt too wide) in paragraph at lines 85--86
+Overfull \hbox (12.0pt too wide) in paragraph at lines 42--43
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./passwordprotection.tex [10 <./fig/online.png> <./fig/cmp100.png>]
-<fig/dist2.png, id=65, 391.4625pt x 272.01625pt>
-File: fig/dist2.png Graphic file (type png)
- <use fig/dist2.png>
-Package pdftex.def Info: fig/dist2.png used on input line 28.
-(pdftex.def)             Requested size: 252.0pt x 175.11086pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 28--29
+Overfull \hbox (9.97774pt too wide) in paragraph at lines 50--51
+[]\T1/aer/m/n/9 Personal-PCFG cov-ers more pass-words than PCFG method.
+ []
+
+[9] <fig/cmp100.png, id=57, 398.48875pt x 272.01625pt>
+File: fig/cmp100.png Graphic file (type png)
+ <use fig/cmp100.png>
+Package pdftex.def Info: fig/cmp100.png used on input line 61.
+(pdftex.def)             Requested size: 252.0pt x 172.01863pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 61--62
  [][] 
  []
+
+
+Overfull \hbox (1.15576pt too wide) in paragraph at lines 64--65
+[]\T1/aer/m/n/9 As shown in Fig-ure 4[], in on-line at-tacks, gen-er-ally Perso
+nal-
+ []
+
+<fig/online.png, id=58, 380.42125pt x 298.11375pt>
+File: fig/online.png Graphic file (type png)
+ <use fig/online.png>
+Package pdftex.def Info: fig/online.png used on input line 71.
+(pdftex.def)             Requested size: 252.0pt x 197.48349pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 71--72
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (1.92952pt too wide) in paragraph at lines 88--90
+ [] 
+ []
+
+) (./passwordprotection.tex [10 <./fig/cmp.png> <./fig/cmp100.png> <./fig/onlin
+e.png>] <fig/dist2.png, id=65, 391.4625pt x 272.01625pt>
+File: fig/dist2.png Graphic file (type png)
+ <use fig/dist2.png>
+Package pdftex.def Info: fig/dist2.png used on input line 23.
+(pdftex.def)             Requested size: 252.0pt x 175.11086pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 23--24
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 ) (./relatedwork.tex
 Overfull \hbox (1.8069pt too wide) in paragraph at lines 5--6
@@ -729,10 +733,7 @@ Overfull \hbox (1.8069pt too wide) in paragraph at lines 5--6
 ][37].
  []
 
-) (./conclusion.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11 <./fig/dist2.png>]) (./CCS_15.bbl
+[11 <./fig/dist2.png>]) (./conclusion.tex) (./CCS_15.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12]
@@ -743,18 +744,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 6638 strings out of 493117
- 96809 string characters out of 6135433
- 184947 words of memory out of 5000000
- 9865 multiletter control sequences out of 15000+600000
+ 6639 strings out of 493117
+ 96817 string characters out of 6135433
+ 184916 words of memory out of 5000000
+ 9866 multiletter control sequences out of 15000+600000
  62222 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,15n,75p,1970b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,15n,75p,1976b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/tex
@@ -775,7 +773,7 @@ e1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
 symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
 r/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on CCS_15.pdf (13 pages, 398366 bytes).
+Output written on CCS_15.pdf (13 pages, 399995 bytes).
 PDF statistics:
  141 PDF objects out of 1000 (max. 8388607)
  93 compressed objects within 1 object stream
