@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  1 MAY 2015 17:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  1 MAY 2015 22:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -506,12 +506,8 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 144.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) (./abstract.tex
-Overfull \hbox (8.82646pt too wide) in paragraph at lines 2--3
-\T1/aer/m/n/9 Personal-PCFG. Personal-PCFG cracks pass-words much faster
- []
-
-) (./introduction.tex
+) (./abstract.tex)
+(./introduction.tex
 Overfull \hbox (6.18994pt too wide) in paragraph at lines 3--4
 \T1/aer/m/n/9 though peo-ple have pro-posed al-ter-na-tive au-then-ti-ca-tion m
 ech-
@@ -770,7 +766,7 @@ e1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
 symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
 r/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on CCS_15.pdf (14 pages, 400640 bytes).
+Output written on CCS_15.pdf (14 pages, 400806 bytes).
 PDF statistics:
  144 PDF objects out of 1000 (max. 8388607)
  95 compressed objects within 1 object stream
