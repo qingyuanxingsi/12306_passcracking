@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  1 MAY 2015 22:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  4 MAY 2015 12:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -520,22 +520,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ])
-(./personalinfo.tex
-
-Package caption Warning: \label without proper \caption on input line 41.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `t2' on page \thepage  undefined on input line 38.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--58
-[][]
+(./personalinfo.tex [2]
+Underfull \hbox (badness 10000) in paragraph at lines 43--58
+[][] []
  []
 
-[2]
 LaTeX Font Info:    Try loading font information for T1+aett on input line 68.
- (/usr/local/texlive/2014/texmf-dist/tex/latex/ae/t1aett.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
 Overfull \hbox (19.37599pt too wide) in paragraph at lines 75--75
@@ -543,8 +534,8 @@ Overfull \hbox (19.37599pt too wide) in paragraph at lines 75--75
  []
 
 
-Overfull \hbox (19.37599pt too wide) in paragraph at lines 75--75
-[]\T1/aett/m/n/9 4. Account name: the account used to log in the system,[] 
+Overfull \hbox (24.09192pt too wide) in paragraph at lines 75--75
+[]\T1/aett/m/n/9 4. Account name: the username used to log in the system,[] 
  []
 
 
@@ -553,45 +544,47 @@ Overfull \hbox (28.80785pt too wide) in paragraph at lines 75--75
  []
 
 [3]
-
-Package caption Warning: \label without proper \caption on input line 41.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `t2' on page \thepage  undefined on input line 174.
+Overfull \hbox (3.22064pt too wide) in paragraph at lines 190--191
+\T1/aer/m/n/9 birth-day (23.43% pass-words of males con-tain their names).
+ []
 
 
-Overfull \hbox (10.6362pt too wide) in paragraph at lines 178--179
-\T1/aer/m/n/9 any of the per-sonal in-for-ma-tion. Struc-tures like $\OT1/cmr/m
-/n/9 [\OML/cmm/m/it/9 NAME\OT1/cmr/m/n/9 ]\OML/cmm/m/it/9 D[]$
+Overfull \hbox (1.11487pt too wide) in paragraph at lines 190--191
+\T1/aer/m/n/9 Mean-while only 13.03% pass-words of fe-males con-tain their
  []
 
 [4]
-Overfull \hbox (1.92082pt too wide) in paragraph at lines 211--213
+Overfull \hbox (2.34518pt too wide) in paragraph at lines 191--192
+[]\T1/aer/m/n/9 Set aside per-sonal in-for-ma-tion, the top 10 struc-tures coun
+t
+ []
+
+
+Overfull \hbox (1.92082pt too wide) in paragraph at lines 212--214
  [] 
  []
 
 
-Overfull \hbox (1.92194pt too wide) in paragraph at lines 229--231
+Overfull \hbox (1.92194pt too wide) in paragraph at lines 230--232
  [] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 239.
+               Default added (so using `!tbp') on input line 240.
 
 
-Underfull \hbox (badness 5431) in paragraph at lines 246--246
+Underfull \hbox (badness 5431) in paragraph at lines 247--247
 [][]\T1/aer/m/n/9 We found 45,574 pass-words in Tianya dataset is
  []
 
 
-Overfull \hbox (1.92108pt too wide) in paragraph at lines 251--253
+Overfull \hbox (1.92108pt too wide) in paragraph at lines 252--254
  [] 
  []
 
 
-Overfull \hbox (1.46365pt too wide) in paragraph at lines 255--256
+Overfull \hbox (1.46365pt too wide) in paragraph at lines 256--257
 \T1/aer/m/n/9 main-tain good mem-o-ra-bil-ity and se-cu-rity, cur-rently few us
 ers
  []
@@ -599,10 +592,10 @@ ers
 ) (./correlation.tex [5]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!htbp') on input line 21.
+               Default added (so using `!htbp') on input line 19.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 34--35
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
 [] \T1/aer/bx/n/9 for $\OML/cmm/m/it/9 j \OMS/cmsy/m/n/9   \OML/cmm/m/it/9 matc
 hmark$ \T1/aer/m/n/9 to
  []
@@ -610,12 +603,16 @@ hmark$ \T1/aer/m/n/9 to
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 54.
+(amsmath)                 on input line 52.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 <fig/cvgfig.png, id=34, 628.3475pt x 783.92876pt>
 File: fig/cvgfig.png Graphic file (type png)
  <use fig/cvgfig.png>
-Package pdftex.def Info: fig/cvgfig.png used on input line 61.
+Package pdftex.def Info: fig/cvgfig.png used on input line 59.
 (pdftex.def)             Requested size: 151.20154pt x 188.63718pt.
 
 
@@ -623,17 +620,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [6]
 
-LaTeX Warning: Reference `1' on page \thepage  undefined on input line 72.
-
-
-Overfull \hbox (9.19453pt too wide) in paragraph at lines 72--72
-\T1/aer/m/n/9 cates stronger cor-re-la-tion. From Equa-tion [], for a matched
- []
+LaTeX Warning: Reference `1' on page \thepage  undefined on input line 70.
 
 <fig/cvghist.png, id=43, 391.4625pt x 272.01625pt>
 File: fig/cvghist.png Graphic file (type png)
  <use fig/cvghist.png>
-Package pdftex.def Info: fig/cvghist.png used on input line 88.
+Package pdftex.def Info: fig/cvghist.png used on input line 87.
 (pdftex.def)             Requested size: 226.79846pt x 157.5952pt.
 
 [7 <./fig/cvgfig.png> <./fig/cvghist.png>]) (./personalpcfg.tex
@@ -641,52 +633,42 @@ Overfull \hbox (9.8608pt too wide) in paragraph at lines 1--1
 []\secfnt PERSONAL-PCFG, AN IN-DI-VID-UAL ORI-
  []
 
-
-Overfull \hbox (4.04756pt too wide) in paragraph at lines 16--17
-\T1/aer/m/n/9 processes pass-words by their struc-tures. From the pre-process
- []
-
 [8]
-Overfull \hbox (10.63399pt too wide) in paragraph at lines 19--20
+Overfull \hbox (10.63399pt too wide) in paragraph at lines 18--19
 \T1/aer/m/n/9 work, ad-di-tional match-ing phase and adapt-substitution phases
  []
 
 
-Overfull \hbox (3.19112pt too wide) in paragraph at lines 33--34
+Overfull \hbox (3.19112pt too wide) in paragraph at lines 32--33
 \T1/aer/m/n/9 ever, we are fac-ing a dif-fer-ent con-di-tion. For non-personali
 zed
  []
 
-<fig/cmp.png, id=53, 391.4625pt x 272.01625pt>
+[9] <fig/cmp.png, id=56, 391.4625pt x 272.01625pt>
 File: fig/cmp.png Graphic file (type png)
  <use fig/cmp.png>
-Package pdftex.def Info: fig/cmp.png used on input line 42.
+Package pdftex.def Info: fig/cmp.png used on input line 41.
 (pdftex.def)             Requested size: 252.0pt x 175.11086pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 42--43
+Overfull \hbox (12.0pt too wide) in paragraph at lines 41--42
+ [][] 
+ []
+
+<fig/cmp100.png, id=57, 398.48875pt x 272.01625pt>
+File: fig/cmp100.png Graphic file (type png)
+ <use fig/cmp100.png>
+Package pdftex.def Info: fig/cmp100.png used on input line 60.
+(pdftex.def)             Requested size: 252.0pt x 172.01863pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 60--61
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[9]
-Overfull \hbox (9.97774pt too wide) in paragraph at lines 50--51
-[]\T1/aer/m/n/9 Personal-PCFG cov-ers more pass-words than PCFG method.
- []
 
-<fig/cmp100.png, id=57, 398.48875pt x 272.01625pt>
-File: fig/cmp100.png Graphic file (type png)
- <use fig/cmp100.png>
-Package pdftex.def Info: fig/cmp100.png used on input line 61.
-(pdftex.def)             Requested size: 252.0pt x 172.01863pt.
-
-Overfull \hbox (12.0pt too wide) in paragraph at lines 61--62
- [][] 
- []
-
-
-Overfull \hbox (1.15576pt too wide) in paragraph at lines 64--65
+Overfull \hbox (1.15576pt too wide) in paragraph at lines 63--64
 []\T1/aer/m/n/9 As shown in Fig-ure 4[], in on-line at-tacks, gen-er-ally Perso
 nal-
  []
@@ -694,17 +676,15 @@ nal-
 <fig/online.png, id=58, 380.42125pt x 298.11375pt>
 File: fig/online.png Graphic file (type png)
  <use fig/online.png>
-Package pdftex.def Info: fig/online.png used on input line 71.
+Package pdftex.def Info: fig/online.png used on input line 70.
 (pdftex.def)             Requested size: 252.0pt x 197.48349pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 71--72
+Overfull \hbox (12.0pt too wide) in paragraph at lines 70--71
  [][] 
  []
 
 
-Overfull \hbox (1.92952pt too wide) in paragraph at lines 88--90
- [] 
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 ) (./passwordprotection.tex [10 <./fig/cmp.png> <./fig/cmp100.png> <./fig/onlin
 e.png>]
@@ -731,21 +711,19 @@ Overfull \hbox (1.8069pt too wide) in paragraph at lines 5--6
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ) [13]
-[14
-
-] (./CCS_15.aux)
+(./CCS_15.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 6639 strings out of 493117
- 96817 string characters out of 6135433
- 184916 words of memory out of 5000000
- 9866 multiletter control sequences out of 15000+600000
+ 6638 strings out of 493117
+ 96808 string characters out of 6135433
+ 183885 words of memory out of 5000000
+ 9865 multiletter control sequences out of 15000+600000
  62222 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,15n,75p,1976b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,15n,75p,2053b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/tex
@@ -766,10 +744,10 @@ e1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
 symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
 r/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on CCS_15.pdf (14 pages, 400806 bytes).
+Output written on CCS_15.pdf (13 pages, 399496 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 95 compressed objects within 1 object stream
+ 141 PDF objects out of 1000 (max. 8388607)
+ 93 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
