@@ -1,2 +1,21 @@
 \section{Conclusion}
-In this work, we conduct a comprehensive quantitative study on how user personal information resides in human-chosen passwords. To the best of our knowledge, we are the first to systematically analyze personal information in passwords. We present interesting and quantitative observations such as 3.42\% of the users in 12306 dataset use their birthday as passwords, and male users are much more likely to include their name in passwords than female users. We then develop a novel metric -- Coverage -- that describes the correlation between a set of personal information and passwords. Coverage carries preeminent features, making it widely applicable. Besides the natural belief that longer personal information should yield higher Coverage, Coverage also stresses that a continued personal information match is much stronger than fragmented matches. We make our findings meaningful by creating Personal-PCFG, which leverages the basic idea of PCFG but adds more semantic symbols to crack passwords in 12306 dataset. Unlike most of previous password cracking methods, Personal-PCFG generates personalized password guesses by putting user personal information in the guesses. Our result shows Personal-PCFG is significantly faster than PCFG. It meanwhile makes online attacks much easier to succeed. Finally, we discussed how to guard passwords against these attacks. We present a simple but effective approach that using distortion function to distort passwords. We conducted proof-of-concept studies by applying several simple distortion functions on user passwords and measure the Coverage again. With a steep drop in Coverage, we found distortion functions are very effective to defend personal information related and semantics-aware attacks.
+In this work, we conduct a comprehensive quantitative study on how
+user personal information resides in human-chosen passwords. To the
+best of our knowledge, we are the first to systematically analyze
+personal information in passwords. We have some interesting and
+quantitative discovery such as 3.42\% of the users in 12306 dataset
+use their birthday as passwords, and male users are much more likely
+to include their name in passwords than female users. We then develop
+a novel metric, Coverage, that describes the correlation between a set
+of personal information and passwords. Besides the natural belief that
+longer personal information should yield higher Coverage, Coverage
+also stresses that a continued personal information match is much
+stronger than fragmented matches. We develop Personal-PCFG method that
+which leverages the basic idea of PCFG but adds more semantic symbols
+to crack passwords. Personal-PCFG generates personalized password
+guesses by integrating user personal information in the guesses, so it
+is significantly faster than PCFG and makes online attacks
+feasible. Finally, we propose to use distortion functions to protect
+passwords. Through a proof-of-concept study, we verify that distortion
+functions are effective to defend personal information related and
+semantic-aware attacks.

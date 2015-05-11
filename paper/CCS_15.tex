@@ -61,9 +61,10 @@
 \usepackage{multirow}
 \usepackage{subfig}
 \usepackage{footnote}
-
+\usepackage[margin=1cm]{caption}
 \makesavenoteenv{tabular}
 \makesavenoteenv{table}
+\usepackage{caption}
 
 \begin{document}
 %
@@ -73,7 +74,7 @@
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 % --- End of Author Metadata ---
 
-\title{A Study of Personal Information in Human-chosen Passwords and Its Implication}
+\title{A Study of Personal Information in Human-chosen Passwords and Its Security Implications}
 
 % You need the command \numberofauthors to handle the 'placement
 % and alignment' of the authors beneath the title.
@@ -103,7 +104,7 @@
 % of EIGHT authors. SIX appear on the 'first-page' (for formatting
 % reasons) and the remaining two appear in the \additionalauthors section.
 %
-\author{
+
 % You can go ahead and credit any number of authors here,
 % e.g. one 'row of three' or two rows (consisting of one row of three
 % and a second row of one, two or three).
@@ -117,18 +118,19 @@
 % 1st. author
   % use '\and' if you need 'another row' of author names
 % 4th. author
-\alignauthor Yue Li\\
-       \affaddr{College of William \& Mary}\\
-       \email{yli@cs.wm.edu}
-% 5th. author
-\alignauthor Haining Wang\\
-       \affaddr{University of Delaware}\\
-       \email{hnw@udel.edu}
-% 6th. author
-\alignauthor Kun Sun\\
-       \affaddr{College of William \& Mary}\\
-       \email{ksun@cs.wm.com}
-}
+
+%\author{
+%\alignauthor Yue Li\\
+%       \affaddr{College of William \& Mary}\\
+%       \email{yli@cs.wm.edu}
+%\alignauthor Haining Wang\\
+%       \affaddr{University of Delaware}\\
+%       \email{hnw@udel.edu}
+%\alignauthor Kun Sun\\
+%       \affaddr{College of William \& Mary}\\
+%       \email{ksun@cs.wm.com}
+%}
+
 % There's nothing stopping you putting the seventh, eighth, etc.
 % author on the opening page (as the 'third row') but we ask,
 % for aesthetic reasons that you place these 'additional authors'
