@@ -29,7 +29,7 @@
 
 - The idea to use distortion function is not novel, it is just another way to obfuscate the password that can be done by using hash functions.
 
-<span style="color:red">__The above 3 comments are criticizing the value of the ideas. We cannot do any improvement unless we have better ideas. __</span>
+<span style="color:red">__The above 3 comments are criticizing the value of the ideas. We cannot do any improvement unless we have better ideas__.</span>
 
 - A user study should have been conducted to see if the proposed security measures for password protection is easier to use than present methods of password protection like password managers etc. as it puts the burden of remembering the distortion function on the user. If the functions are as simple as Caeser's cipher, it won't take long for a motivated attacker to figure it out. Hash function are a better alternative in my opinion.
 
