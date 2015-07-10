@@ -6,7 +6,7 @@ While the statistical numbers above show the correlation between each
 type of personal information and passwords, they cannot accurately
 measure the degree of personal information involvement in an
 individual password. In~\cite{castelluccia2013privacy}, Longest Common
-Sequence and a modified Jaccard similarity (JS) index are used to measure the
+Sequence and a modified JS are used to measure the
 correlations. However, their results end up having two metrics for
 each type of personal information. Besides, their metrics fail to
 differentiate fragmented and continued personal information. Thus, we
@@ -38,9 +38,9 @@ window is 2. If the segment covered by the window matches to a certain
 type of personal information, we enlarge the window size by 1. Then we
 try again to match the segment in the grown window to personal
 information. If a match is found, we further enlarge the window size
-until a mismatch happens. At this point, we reset the window size to
+until a mis-match happens. At this point, we reset the window size to
 the initial value 2 and slide the window to the password symbol that
-causes the mismatch in the previous window. We maintain an array
+causes the mis-match in the previous window. We maintain an array
 called {\em tag array} with the same length as the password to record
 the length of each matched password segment. For example, assume a
 password with length of 8, its tag array is
@@ -81,7 +81,7 @@ to a substring of certain personal information.
 \State $cvg \gets $ 0
 \While {$windowsize \le $len($pwd$)}
 \State $passseg \gets pwd[0:windowsize]$
-\If {$passseg$ = substring of $anyinfo$ in $infolist$}
+\If {$passseg$ = substring of $infolist$}
 \For {$j \gets matchmark$ to $matchmark$+$windowsize$}
 \State $matchtag[j] \gets windowsize$
 \EndFor
@@ -123,7 +123,7 @@ since matches are continuously found. The tag array also keeps being
 updated. Until step (f), the window now covers ``alice8", which is not
 a substring of ``alice" or ``19880816." Therefore, the window size is
 reset to 2 and the window slides to the position of the symbol of the
-previous window that causes the mismatch (i.e., the position of
+previous window that causes the mis-match (i.e., the position of
 ``8"). The tag array remains unchanged. In step (g), the window of
 size 2 now covers ``81", which is a substring of birthday, again we
 extend the window by 1 and update the tag array to [$5_{1}, 5_{2},
@@ -142,7 +142,7 @@ Equation~\ref{eq1}, the coverage is computed as \[ CVG = \sum_{i=1}^2
   \label{f1}
   \centering
     \includegraphics[width=0.3\textwidth]{fig/cvgfig}
-\caption*{\small Grey boxes hold unvisited password symbols. Yellow and red
+\caption*{Grey boxes hold unvisited password symbols. Yellow and red
   boxes denote that the symbols inside are covered by the sliding
   window. White boxes denote the symbols inside have been settled
   (window stops extending). }
@@ -164,42 +164,26 @@ accurately quantify the correlation between a user's password and its
 personal information. For personal information segments with the same
 length, Coverage stresses the continuation of matching. A continuous
 match is stronger than fragmented matches. That is to say, for a given
-password of length $L$, a matched segment of length $l$ ($l\le L$) has
+password of length $L$, a matched segment of length $l$ ($l<L$) has
 stronger correlation to personal information than two matched segments
 of length $l_1$ and $l_2$ with $l = l_1 + l_2$. For example, a matched
 segment of length 6 is expected to have stronger correlation than 2
 matched segments of length 3. This feature of Coverage is desirable
 because multiple shorter segments (i.e., originated from different
 types of personal information) are usually harder to guess and may
-involve a wrong match due to coincidence. Since it is difficult to
-differentiate a real match from a coincident match, we would like to
+involve a wrong match (coincidence). Since it is difficult to
+differentiate a real match and a coincidence match, we would like to
 minimize the effect of wrong matches by taking squares of the matched
 segments to compute Coverage, in favor of a continuous match.
 %\end{enumerate}
 
 \subsection{Coverage Results on 12306}
-We compute the Coverage value for each user in the 12306 dataset, and
-the result is shown as a cumulative distribution function in
-Figure~\ref{f2}. To easily understand the value of Coverage, we
-discuss a few examples to illustrate the implication of a roughly 0.2
-Coverage. Suppose we have a 10-symbol long password. One matched
-segment with length 5 will yield 0.25 Coverage. Two matched segments
-with length 3 (i.e., in total 6 symbols are matched to personal
-information) yield 0.18 Coverage. Moreover, 5 matched segments with
-length 2 (i.e., all symbols are matched but in a fragmented fashion)
-yield 0.2 Coverage. Apparently Coverage of 0.2 indicates a fairly high
-correlation between personal information and a password. Furthermore,
-we have the following observations from Figure~\ref{f2}.
+We compute the value of Coverage for each user in the 12306 dataset. The result is shown as a cumulative distribution function in Figure~\ref{f2}. To easily understand the value of Coverage,  a few examples are given below for showing the implication of a roughly 0.2 Coverage. Assume that we have a 10-symbol long password. One matched segment with length 5 will yield 0.25 Coverage. Two matched segments with length 3 (i.e., in total 6 symbols are matched to personal information) yield 0.18 Coverage. And 5 matched segments with length 2 (i.e., all symbols are matched but in a fragmented fashion) yield 0.2 Coverage. Apparently Coverage of 0.2 indicates a fairly high correlation between personal information and a password. With such knowledge, we have the following observations from Figure~\ref{f2}.
 \begin{enumerate}[leftmargin=*]
-\item The median value for a user's Coverage is 0.186, which implies
-  that a significant portion of user passwords have relatively high
-  correlation to personal information.
-\item Around 9.9\% of users have zero Coverage. Zero Coverage indicates
-  that no personal information is included in a user password.
+\item The median value for a user's Coverage is 0.186, implying that a significant portion of user passwords have relatively high correlation to personal information.
+\item About 9.9\% of users have zero Coverage. Zero Coverage indicates that no personal information is included in a user password.
 % correlation between the users' passwords and their personal information.
-\item Around 10.5\% of users have Coverage of 1, which means that
-  10.5\% of passwords are perfectly matched to exactly one type of
-  personal information. However, only 13.4\% users fall in the range $[0.5,1)$
+\item About 10.5\% of users have Coverage of one, which means that 10.5\% of passwords are perfectly matched to exactly one type of personal information. However, only 13.4\% users have Coverage higher than 0.5. 
 \end{enumerate}
 
 \begin{figure}[t]
@@ -208,67 +192,24 @@ we have the following observations from Figure~\ref{f2}.
   \label{f2}
   \centering
     \includegraphics[width=0.35\textwidth]{fig/cvghist}
-\vspace{-0.1in}
 \end{figure}
 
-The average Coverage for the entire 12306 dataset is 0.309. We also
-compute the average Coverages for male and female groups, since we
-observe that male users are more likely to include personal
-information in their passwords in Section~\ref{genderdifference}.  The
-average Coverage for the male group is 0.314 and the average Coverage
-for the female group is 0.269. It complies with our previous
-observation and indicates that the correlation for male users is
-higher than that of female users. Conversely, it also shows that
-Coverage works very well to quantify the correlation between passwords
-and personal information.
+The average Coverage for the 12306 dataset is 0.309. We also compute the average Coverages for male and female groups that are used in Section~\ref{genderdifference}, in which we observe that male users are more likely to include personal information in their passwords. It turns out that the average Coverage for the male group is 0.314 and the average Coverage for the female group is 0.269. Our result indicates that the correlation for male users is higher than that of female users. It complies with our previous observation. Conversely, it also shows that Coverage works very well to quantify the correlation between passwords and personal information.
 
 \subsection{Coverage Usage}
 %Coverage can be used in many scenarios. Firstly, it can be used as a general metric to describe a dataset. Coverage directly reflects the correlation between password and available personal information. Investigating how users from different systems behave regarding to constructing their passwords using personal information would be an interesting future work. 
 
-Apparently Coverage could be very useful for constructing password
-strength meters, which have been reported as mostly
-ad-hoc~\cite{de2014very}. Most meters give scores dumbly based on
-password structure and length or blacklist commonly used passwords
-(e.g., the notorious ``password"). There are also meters that perform
-simple social profile analysis, such as a password cannot contain the
-user's names or the password cannot be the same as the account
-name. However, these simple analysis mechanisms can be easily fooled
-around by mangling a password a little, while the password remains
-weak. Using the metric of Coverage, password strength meters can be
-improved to more accurately measure the strength of a password.
+Apparently Coverage would be very useful for password strength meters, which have been reported as mostly ad-hoc \cite{de2014very}. Most meters dumbly give scores based on password structure and length, or blacklist commonly used passwords (such as notorious ``password"). There are also meters that do simple social profile analysis, such as passwords cannot contain the users' names or passwords cannot be the same as account names. However, these simple analysis mechanisms can be easily fooled around by mangling a password a little. Using the metric of Coverage, password strength meters will be able to more accurately measure the strength of a password.
 % to cover the unnoticed corner of personal information. 
 %While registering an online account, a user is often required to build its personal profile, including name, %birthday, email address, etc. At this moment password meters will offer feedback of password strength %normally in bar or score forms. Since personal information is available, Coverage matches the scenario %perfectly. In addition, 
-Moreover, it is straightforward to implement Coverage as a part of strength
-measurement (only a few lines of Javascript should do).
+It is straightforward to implement Coverage as a part of strength measurement (only a few lines of Javascript should do). 
 %Apparently, higher Coverage indicates vulnerable passwords. Systems can even ban passwords when they surpass a preset Coverage threshold. 
-More importantly, since users cannot easily defeat Coverage
-measurement through simple mangling methods, they are forced to select
-more secure passwords.
+More importantly, users cannot easily escape Coverage measurement through simple mangling, and thus are forced to select more secure passwords.
 
-Coverage can also be integrated into existing tools to enhance their
-capabilities. There are several Markov Model based tools that predict
-the next symbol when a user creates a password
-\cite{komanduri2014telepathwords,weir2010testing}. These tools rank
-the probability of the next symbol based on the Markov model learned
-from dictionaries or leaked datasets, and then show the most probable
-predictions. Since most users would be surprised to find that the next
-symbol in their mind matches exactly the tool's output, they may
-switch to choose a more unpredictable password symbol. Coverage helps
-to determine if personal information prediction ranks high enough in
-probability to remind a user of avoiding the use of personal
-information in password creation. \\
-
-%Thus, it is able to work with these tools as an enhancement.
+Coverage can also be integrated into existing tools to enhance their capabilities. There are several Markov Model based tools that predict the next symbol when a user creates a password \cite{komanduri2014telepathwords,weir2010testing}. These tools rank the probability of the next symbol based on Markov Model learned from dictionaries or leaked datasets, and then show the most probable several predictions. Users would be surprised to find that the next symbol in their mind matches exactly the tool's output. They then switch to a more unpredictable password symbol. Coverage helps to determine if personal information prediction ranks high enough in probability to remind a user of avoiding the use of personal information in password creation. Thus, it is able to work with these tools as an enhancement.
 % -- When Coverage is rather high, it is easy to predict what the next symbol of user input will be.
 
-%Finally, average Coverage could be used as an indicator of dataset
-%security for the system administrators as well as researchers, since cracking a dataset with
-%high average Coverage is expected to be much easier than a dataset
-%with low average Coverage. 
-%Specifically, it is able to imply the effectiveness of Personal-PCFG -- a password cracker we proposed in Section~\ref{personalpcfg} that leverages personal information. 
-%As password cracking consumes relatively long time and significant
-%efforts, computing the average Coverage of a targeted dataset can shed
-%light on the dataset security as well as predicting the cracking
-%results.
+Finally, average Coverage could be used as an indicator of dataset security, because cracking a dataset with high average Coverage is expected to be much easier than a dataset with low average Coverage. %Specifically, it is able to imply the effectiveness of Personal-PCFG -- a password cracker we proposed in Section~\ref{personalpcfg} that leverages personal information. 
+Since password cracking consumes relatively long time and significant efforts, computing the average Coverage of a targeted dataset can shed light on the dataset security as well as predicting the cracking results. 
 
-%NOTE: it cannot predict cracking results because the dataset is hashed so Coverage cannot be computed.
+

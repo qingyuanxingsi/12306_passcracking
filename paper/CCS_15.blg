@@ -3,44 +3,47 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: CCS_15.aux
 The style file: abbrv.bst
 Database file #1: sigproc.bib
-You've used 40 entries,
+Warning--empty publisher in oechslin2003making
+Warning--empty publisher in pliam2000incomparability
+You've used 41 entries,
             2118 wiz_defined-function locations,
-            667 strings with 9884 characters,
-and the built_in function-call counts, 12376 in all, are:
-= -- 1120
-> -- 747
+            664 strings with 10044 characters,
+and the built_in function-call counts, 12499 in all, are:
+= -- 1049
+> -- 776
 < -- 0
-+ -- 303
-- -- 254
-* -- 747
-:= -- 2160
-add.period$ -- 143
-call.type$ -- 40
-change.case$ -- 243
++ -- 314
+- -- 264
+* -- 759
+:= -- 2166
+add.period$ -- 126
+call.type$ -- 41
+change.case$ -- 252
 chr.to.int$ -- 0
-cite$ -- 40
-duplicate$ -- 525
-empty$ -- 1029
-format.name$ -- 254
-if$ -- 2602
+cite$ -- 43
+duplicate$ -- 546
+empty$ -- 1063
+format.name$ -- 264
+if$ -- 2583
 int.to.chr$ -- 0
-int.to.str$ -- 40
-missing$ -- 39
-newline$ -- 203
-num.names$ -- 80
-pop$ -- 377
+int.to.str$ -- 41
+missing$ -- 41
+newline$ -- 208
+num.names$ -- 82
+pop$ -- 391
 preamble$ -- 1
-purify$ -- 205
+purify$ -- 213
 quote$ -- 0
-skip$ -- 241
+skip$ -- 288
 stack$ -- 0
-substring$ -- 209
-swap$ -- 68
+substring$ -- 214
+swap$ -- 71
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 158
-warning$ -- 0
-while$ -- 80
-width$ -- 42
-write$ -- 426
+type$ -- 162
+warning$ -- 2
+while$ -- 82
+width$ -- 43
+write$ -- 414
+(There were 2 warnings)

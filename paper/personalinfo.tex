@@ -1,24 +1,66 @@
+\\
 \section{Personal Info in Passwords}
 \label{personalinfo}
-Intuitively, people tend to create their passwords based on their personal information because human beings are limited by their memory --- random passwords are much harder for them to remeber. We attempt to show that user personal information plays an important role in password generation by dissecting passwords in a mid-sized dataset. 
-Understanding the usage of personal information in passwords and its security implications will help us to further enhance password security. To start with, we introduce the dataset we used throughout this study. 
+Intuitively, people tend to create their passwords based on their
+personal information since human beings are limited by their memory --
+true random passwords are much harder to remember. We show that user
+personal information plays an important role in human-chosen password
+generation by dissecting passwords in a mid-sized leaked password
+dataset.  Understanding the usage of personal information in passwords
+and its security implications can help us to further enhance password
+security. To start with, we introduce the dataset used throughout this
+study.
 
 %is important for both users and system administrators for it has strong indication to user password security. Users and administrators are expected to enhance their password security by avoiding using easily predictable passwords or patterns.  To start with, we introduce the dataset we used thorough our study. 
 
 \subsection{12306 Dataset}
-Many password datasets have been exposed to the public in recent years, and there are password measurement or password cracking works based on these datasets \cite{bonneau2012science, li2014large}. These leaked datasets usually contain several thousands to millions of real passwords. In this paper, a dataset called 12306 is used to illustrate how personal information is involved in password creation.
+A number of password datasets have been exposed to the public in
+recent years, and they usually contain several thousands to millions
+of real passwords. As a result, there are several password measurement
+or password cracking works based on analyzing those
+datasets~\cite{bonneau2012science, li2014large}. In this paper, a
+dataset called 12306 is used to illustrate how personal information is
+involved in password creation.
 
-\subsubsection{Introduction to dataset}
-At the end of year 2014, a Chinese dataset is leaked to the public by anonymous attackers. It is reported that the dataset is collected by trying passwords from other leaked passwords \cite{tencentnews}. We call this dataset 12306 because all passwords are from a website www.12306.cn. The website is the official website of online railway ticket booking system for Chinese users. There is no data showing the exact number of users in the 12306 website. However, we infer at least tens of millions users registered in the system since it is the only official website for the entire Chinese railway systems.
+\subsubsection{Introduction to Dataset}
+At the end of year 2014, a Chinese dataset is leaked to the public by
+anonymous attackers. It is reported that the dataset is collected by
+trying passwords from other leaked passwords. We
+call this dataset 12306 because all passwords are from a website
+www.12306.cn, which is the official website of online railway ticket
+reservation system for Chinese users. There is no data available
+showing the exact number of users in the 12306 website; however, we
+infer at least tens of millions users registered in the system since
+it is the only official website for the entire Chinese railway
+systems.
 
-The 12306 dataset contains over 130,000 Chinese passwords. Having witnessed so many large datasets  leaked out, the size of the 12306 dataset is just medium. What makes it special is that together with plain text passwords, the dataset also includes several types of user personal information, such as a user's name and ID number. This is because the website requires a real ID number to register and people need to provide real personal information to book a ticket. 
-% information in the dataset is considered reliable.
+The 12306 dataset contains over 130,000 Chinese passwords. Having
+witnessed so many large datasets leaked out, the size of the 12306
+dataset is just medium. What makes it special is that together with
+plaintext passwords, the dataset also includes several types of user
+personal information, such as a user's name and the government-issued unique ID number
+(similar to the Social Security Number in USA). As the
+website requires a real ID number to register and people must provide
+real personal information to book a ticket, we consider that information in this dataset pretty reliable.
+
 
 \subsubsection{Basic Analysis}
-We first conduct a simple analysis to reveal some general characteristics of the 12306 dataset. 
-%After cleansing, we remove a minor part of passwords (0.2\%), with 131,389 good passowrds left for analysis. 
-For data consistency, we remove users whose ID number is not 18-digit long. These users may have used other IDs to register the web system and count 0.2\% of the whole dataset. After cleansing our dataset, it contains 131,389 passwords for analysis
-Note that websites may have different password creation policy. With a strict password policy, users may apply mangling rules (For example, $abc$ $->$ $@bc$ or $abc1$) to their passwords to fulfill the policy requirement \cite{weir2010testing}. As the 12306 website has changed its password policy after the password leakage, we do not know exactly the password policy at the time the dataset was leaked. However, from the dataset, we infer that  the password policy is quite simple --- all passwords need to be no shorter than 6 symbols. There is no restriction on what type of symbols are used. Therefore, users are not forced to apply any mangling to their passwords. 
+We first conduct a simple analysis to reveal some general
+characteristics of the 12306 dataset.  For data consistency, we remove
+users whose ID number is not 18-digit long. These users may have used
+other IDs (e.g., passport number) to register the web system and count
+0.2\% of the whole dataset. The dataset contains 131,389 passwords for
+analysis after being cleansed. Note that various websites may have
+different password creation policies. For instance, with a strict
+password policy, users may apply mangling rules (e.g., $abc$ $->$
+$@bc$ or $abc1$) to their passwords to fulfill the policy
+requirement~\cite{weir2010testing}. Since the 12306 website has
+changed its password policy after the password leakage, we do not know
+the exact password policy when the dataset was leaked. However, from
+the leaked dataset, we infer that the password policy is quite simple
+-- all passwords cannot be shorter than 6 symbols. There is no
+restriction on what type of symbols are used. Therefore, users are not
+required to apply any mangling rule to their passwords.
 
 \begin{table}
 \centering
@@ -37,16 +79,37 @@ Rank&Password&Amount&Percentage\\ \hline
 10&1qaz2wsx&92&0.070\%\\ 
 \hline\end{tabular}
 \label{t1}
+\vspace{-0.1in}
 \end{table}
 
-The average length of passwords in  the 12306 dataset is 8.44. The most common passwords in the 12306 dataset are listed in Table~\ref{t1}.
-%From Table~\ref{t1} we can see that 
-It is evident that the dominating passwords are trivial passwords (123456, a123456, etc), keyboard passwords (1qaz2wsx and 1q2w3e4r), and ``I love you" type passwords. Both ``5201314" and ``woaini1314" means ``I love you forever" in Chinese. The most commonly used Chinese passwords are similar to previous studies \cite{li2014large}. However, the 12306 dataset is much less congregated. The most popular password ``123456" counts less than 0.3\% of all passwords while the number is 2.17\% in \cite{li2014large}. We believe that the passowrd sparsity is due to the importance of the website so that users are less prone to use trivial passwords like ``123456" and there is fewer symbil accounts because real ID number is needed. 
 
-Then we show the basic structure of passwords. The most popular password structures are shown in Table~\ref{t2}. Like previous studied \cite{li2014large}, our result again shows that Chinese users prefer to use digits in their passwords, instead of letters as English-speaking users. The top five structures all have significant portion of digits, in which at most 2 or 3 letters are appended in front. We reckon that the reason behind may be Chinese characters are logogram-based  and digits seem to be the best alternative when creating a password.
+The average length of passwords in the 12306 dataset is 8.44. The most
+common passwords in the 12306 dataset are listed in Table~\ref{t1}.
+The dominating passwords are trivial passwords (e.g., 123456, a123456,
+etc.), keyboard passwords (e.g., 1qaz2wsx, 1q2w3e4r, etc.), and ``I
+love you'' type passwords. Both ``5201314" and ``woaini1314" means ``I
+love you forever" in Chinese. The most commonly used Chinese passwords
+are similar to a previous study~\cite{li2014large}; however, the 12306
+dataset is much less congregated. The most popular password ``123456"
+counts less than 0.3\% of all passwords while the number is 2.17\%
+in~\cite{li2014large}. We believe that the password sparsity is due to
+the importance of the website so that users are less prone to use
+trivial passwords like ``123456" and there is fewer sybil accounts
+because real ID number is needed for registration.
+
+We also study the basic structures of the passwords in 12306. The most
+popular password structures are shown in Table~\ref{t2}. Similar to a
+previous study~\cite{li2014large}, our result again shows that Chinese
+users prefer to use digits in their passwords instead of letters as
+English-speaking users. The top five structures all have significant
+portion of digits, and at most 2 or 3 letters are appended in
+front. We reckon that the reason behind may be Chinese characters are
+logogram-based and digits seem to be the best alternative when
+creating a password.
 
 \begin{table}
 \centering
+\begin{threeparttable}
 \caption{Most Frequent Password Structures.}
 \begin{tabular}{|c|c|c|c|} \hline
 Rank&Structure&Amount&Percentage\\ \hline
@@ -66,12 +129,19 @@ Rank&Structure&Amount&Percentage\\ \hline
       \small
       \item ``D" represents digits and ``L" represents English letters. The number indicates the segment length. For example, $L_2D_7$ means the password contains 2 letters following by 7 digits.
     \end{tablenotes}
+    \end{threeparttable}
+\vspace{-0.1in}
 \end{table}
 
-Overall, the 12306 dataset is a Chinese password dataset that has general Chinese password characteristics. However, its passwords are more sparse than previously studied datasets because users concern security more when creating passwords for important systems. 
+Overall, the 12306 dataset is a Chinese password dataset that has
+general Chinese password characteristics. However, its passwords are
+more sparse than previously studied datasets because users concern
+password security more when creating passwords for critical service
+systems.
 
 \subsection{Personal Information}
-As we mentioned before, the 12306 dataset not only contains user passwords, but it also include multiple types of personal information listed below.
+The 12306 dataset not only contains user passwords, but also include
+multiple types of personal information listed below.
 
 \begin{verbatim}
 1. Name: User's Chinese name.
@@ -82,28 +152,60 @@ may contain digits and letters, like "myacct123".
 5. ID number: Government issued ID number.
 \end{verbatim}
 
-Note that the government issued ID number is an 18-digit unique number, which actually includes personal information itself. The digits 1-6 represent the birth place of the owner, the digits 7-14 represent the birthday of the owner, and the digit 17 represents the gender of the owner --- odd number means male and even number means female. We take out the 8-digit birthday information and treat it separately because birthday is very important personal information in passowrd creation. Therefore, we finally have six types personal information: name, birthday, email address, cellphone number, account name, and ID number (birthday excluded). 
+Note the government issued ID number is an 18-digit unique number,
+which includes personal information itself. The digits 1-6 represent
+the birth place of the owner, the digits 7-14 represent the birthday
+of the owner, and the digit 17 represents the gender of the owner --
+odd number means male and even number means female. We take out the
+8-digit birthday information and treat it separately since birthday is
+very important personal information in password creation. Therefore,
+we finally have six types of personal information: name, birthday,
+email address, cellphone number, account name, and ID number (birthday
+excluded).
 
 \subsubsection{New Password Representation}
-To better illustrate how personal information correlates to user passwords, we develop a new representation of password by adding more semantic symbols besides the conventional ``D", ``L" and ``S" symbols, which stand for digit, letter, and special symbol, respectively. We try to match parts of a password to the six types of user personal information, and express the password with these personal information. For example, a password ``alice1987abc" can be represented as $[Name][Birthday]L_3$, instead of $L_3D_4L_3$ as in a traditional measurement. The matched personal information is represented with corresponding tags, [Name] and [Birthday] in this case; for those segments that are not matched, we still use ``D", ``L", and ``S" to describe the types of characters.
+To better illustrate how personal information correlates to user
+passwords, we develop a new representation of password by adding more
+semantic symbols besides the conventional ``D", ``L" and ``S" symbols,
+which stand for digit, letter, and special symbol, respectively. We
+try to match parts of a password to the six types of user personal
+information, and express the password with these personal
+information. For example, a password ``alice1987abc" can be
+represented as $[Name][Birthday]L_3$, instead of $L_3D_4L_3$ as in a
+traditional representation. The matched personal information is
+denoted by corresponding tags -- [Name] and [Birthday] in this
+example; for segments that are not matched, we still use ``D",
+``L", and ``S" to describe the symbol types. 
 
-We believe that the representation like $[Name][Birthday]L_3$ is better than $L_5D_4L_3$ since it more accurately describes the composition of a user password. Using this representation, we apply the matching process to the whole 12306 dataset to see how these personal information tags appear in password structures.
+We believe that the representation like $[Name][Birthday]L_3$ is
+better than $L_5D_4L_3$ since it more accurately describes the
+composition of a user password with more detailed semantic
+information. Using this representation, we apply the following
+matching method to the entire 12306 dataset to see how these personal
+information tags appear in password structures.
 
 \subsubsection{Matching Method}
 \label{matchingmethod}
 %In order to put personal information in password representations, an essential question will be: How to match the personal information to user passwords? To answer this question, we show the algorithm
 
-We propose a match algorithm to locate the personal information in a user password, which is shown
- in Algorithm~\ref{alg1}. The basic idea is that we first generate all substrings of the password and sort them in descending length order. Then we try to match the substrings from longest to shortest to all types of personal information. If one match is found, the remaining password segments are recursively applied the match function until no further match is found. The segments that are not matched to personal information will be then labeled using the traditional ``LDS" tags.
+We propose a matching method to locate personal information in a
+user password, which is shown in Algorithm~\ref{alg1}. The high level idea
+is that we first generate all substrings of the password and sort them
+in descending length order. Then we match these substrings from the
+longest to the shortest to all types of personal information.  If one
+match is found, the match function is recursively applied over the
+remaining password segments until no further match is found. The
+segments that are not matched to any personal information will be then
+labeled using the traditional ``LDS" tags.
 
 
 \begin{algorithm}[h!]
-\caption{Match personal information with password.}
+\caption{Personal Information Matching.}
 \label{alg1}
 \begin{algorithmic}[1]
 \Procedure{Match}{$pwd$,$infolist$}
 \State $newform \gets$ empty\_string
-\If len($pwd$) == 0
+\If{len($pwd$) == 0}
 \State \Return empty\_string
 \EndIf
 \State $substring \gets$ get\_all\_substring($pwd$)
@@ -111,13 +213,17 @@ We propose a match algorithm to locate the personal information in a user passwo
 \For {$eachstring$ \Pisymbol{psy}{206} $substring$}
 \If {len($eachstring$) $\ge$ 2}
 \If{matchbd($eachstring$,$infolist$)}
-\State $tag \gets $ "[BD]"
+\State $tag \gets $ ``[BD]"
 \State $leftover \gets pwd$.split($eachstring$)
 \State break
 \EndIf
 \State $\ldots$
 \If{matchID($eachstring$,$infolist$)}
-\State $tag \gets$ "[ID]"
+\If{tag != None}
+\State $tag \gets tag + ``\&[ID]"$
+\Else
+\State $tag \gets$ ``[ID]"
+\EndIf
 \State $leftover \gets pwd$.split($eachstring$)
 \State break
 \EndIf
@@ -133,21 +239,53 @@ We propose a match algorithm to locate the personal information in a user passwo
 \Else
 \State $newform \gets$ seg($pwd$)
 \EndIf
-\State \Return $newform$
+\State $results \gets $extract\_ambiguous\_structures($newform$)
+\State \Return $results$
 \EndProcedure
 \end{algorithmic}
+%\vspace{-0.1in}
 \end{algorithm}
 
-Note that in Algorithm~\ref{alg1} we do not show the specific matching algorithm for each type of the personal information (line 10 and line 16) to keep it clean and simple. We describe the matching methods as follows.
-
-First we make sure that the length of a password segment is at least 2 for matching. 
-%For segment of length 1, we directly map it to digit, letter, or special character. 
-We try to match segments with length 2 or more to each kind of the personal information. For name, we convert Chinese names into Pinyin form, which is alphabetic representation of Chinese. Then we compare password segments to 10 possible permsutations of a name, such as lastname+firstname and last\_initial+firstname. If the segment is exactly same as anyone of the permutations, we consider a match is found. We list all the 10 permutations in the Appendices. For birthday, we list 17 possible permutations and compare a password segment with these permutations. If the segment is the same as any permutation, we consider a match is found. All the birthday permutations are also listed in the Appendices. For account name, cellphone number, and ID number, we further restrain the length of a segment to be at least 4 to avoid coincidence. We believe a match of at least length 4 is very likely to be an actual match. If the segment is a substring of any of the 3 personal information, we regard it a match to the corresponding personal information. Note that for some password segment, it may match to multiple types of personal information. In this case, each type that matched is counted once.
 
 
-\subsubsection{Matching Result}
+In Algorithm~\ref{alg1}, we first make sure that the length of a
+password segment is at least 2 for matching.  Then we try to match eligible segments to each kind of the personal information. Note that we do not present the specific matching methods
+for each type of the personal information (line 10 and line 16) to
+keep it clean and simple. Instead we describe the methods as follows.
+For the Chinese names, we convert them into Pinyin form, which is
+alphabetic representation of Chinese. Then we compare password
+segments to 10 possible permutations of a name, such as
+lastname+firstname and last\_initial+firstname. If the segment is
+exactly same as anyone of the permutations, we consider a match is
+found. 
+%We list all the 10 permutations in the Appendices. 
+For birthday, we list 17 possible permutations and compare a password
+segment with these permutations. If the segment is the same as any
+permutation, we consider it as a match. 
+%All the birthday permutations are also listed in the Appendices. 
+For account name, Email address, cellphone number, and ID number, we further restrain
+the length of a segment to be at least 3 to avoid mismatching by
+coincidence. Besides, as people tend to memorize a sequence of numbers by
+dividing it into 3-digit groups, We believe that a match of at least
+length 3 is likely to be a real match. 
+
+% If the segment is a substring of any of the 3 personal information, we regard it a match to the corresponding personal information. 
+Note that for a password segment, it may match to multiple types of
+personal information. In such cases, all matches are counted. The results of Algorithm~\ref{alg1} contain all possible matches. \\
+
+\subsubsection{Matching Results}
 \label{matchingresult}
-After applying Algorithm~\ref{alg1} to the 12306 dataset, we found that 70,892 out of 131,389 (54.0\%) of the passwords contain at least one of the six types of personal information. Apparently, personal information is an essential part of user passwords and most users include certain personal information in their passwords. We believe that the ratio could be higher if we have more personal information at hand. However, this percentage has served its purpose properly. We present the top 10 password structures in Table~\ref{t3} and most commonly used personal information in Table~\ref{t4}. As we have mentioned before, a password segment may match to multiple types of personal information and we count each matched type. Therefore, with 131,389 passwords we obtain 143373 password structures. Based on Tables~\ref{t3} and~\ref{t4}, we have the following observations
+After applying Algorithm~\ref{alg1} to the 12306 dataset, we find that
+78,975 out of 131,389 (60.1\%) of the passwords contain at least one
+of the six types of personal information. Apparently, personal
+information is frequently used in password creation. We believe that
+the ratio could be even higher if we have more personal information at
+hand. We present the top 10 password structures in Table~\ref{t3} and
+the usage of personal information in passwords in Table~\ref{t4}.  As
+mentioned above, a password segment may match to multiple types of
+personal information and we count all these matches. Therefore, with
+131,389 passwords we obtain 153,895 password structures. Based on
+Tables~\ref{t3} and~\ref{t4}, we have the following observations.
 
 \begin{table}
 \centering
@@ -166,42 +304,95 @@ Rank&Structure&Amount&Percentage\\ \hline
 10&[ACCT][BD]&2191&1.667\%\\
 \hline\end{tabular}
 \label{t3}
+\vspace{-0.1in}
 \end{table}
 
 \begin{table}
 \centering
-\caption{Most Popular Personal Information.}
-\begin{tabular}{|c|c|c|c|} \hline
-Rank&Information Type&Amount&Percentage\\ \hline
-1&[BD]&31674&24.10\%\\
-2&[ACCT]&31017&23.60\%\\
-3&[NAME]&29377&22.35\%\\
-4&[EMAIL]&16642&12.66\%\\
-5&[ID]&3937&2.996\%\\
-6&[CELL]&3582&2.726\%\\
-\hline\end{tabular}
+\caption{Personal Information Usage.}
+\begin{tabular}{|c|c|c|c|} \hline 
+Rank & Information Type & Amount & Percentage { \footnote{\small Note
+    that one password segment can be matched to multiple types of
+    personal information. If so, all matched types are
+    counted. Therefore the sum of the percentages is larger than
+    60.1\%}}\\ \hline 1&Birthday&31674&24.10\%\\ 2&Account
+Name&31017&23.60\%\\ 3&Name&29377&22.35\%\\ 4&Email&16642&12.66\%\\ 5&ID
+Number&3937&2.996\%\\ 6&Cell Phone&3582&2.726\%\\ \hline\end{tabular}
 \label{t4}
+\vspace{-0.1in}
 \end{table}
 
+
 \begin{enumerate}[leftmargin=*]
-\item Overall personal information is a vital part of passwords. 3 out of the top 10 structures are composed by pure personal information and 6 out of the top 10 structures have personal information segments. 
+\item Even for security sensitive websites like 12306, people tend to
+  use personal information for password creation. 5 out of the top 10
+  structures are composed by pure personal information, and 6 out of
+  the top 10 structures have personal information segments.
 
-\item Birthday, name, and account name are most popular personal information in user passwords with 24.63\%, 22.56\%, and 16.22\% occurrence rate accordingly. A moderate percentage (8.4\%) of users put email in their passwords. On the other hand, Only few people include their cellphone and ID number in their passwords.  
+\item Birthday, account name, and name are the most popular personal
+  information contained in user passwords, with 24.10\%, 23.60\%, and
+  22.35\% occurrence rates, respectively. Meanwhile, about 12.66\% of
+  users include email in their passwords. However, only few percentage
+  of people include their cellphone and ID number in their passwords
+  (less than 3\%).
 
-\item Set aside personal information, digits are still dominating user passwords. The dominating structures $D_7$, $D_6$, and $D_8$ in Table~\ref{t2} still rank fairly high. Only one structure from the top 10 structures contains letter segment. The result confirms that Chinese users prefer to use digits in their passwords.
+\item Digits are still dominating user passwords. The dominating
+  structures $D_7$, $D_6$, and $D_8$ in Table~\ref{t2} still rank
+  fairly high. Only one structure from the top 10 structures contains
+  letter segment. The result confirms that Chinese users prefer to use
+  digits in their passwords.
 
-\item An interesting observation is that although account name has merely half percentage as birthday and name information, the structure [ACCT] ranks highest among all structures that contain personal information. The reason behind may be that users tend to directly use their account names as their passwords instead of using them as part of their passwords. 
+\item %An interesting observation is that although 
+%While the number of passwords including account name is clearly lower than those of including birthday and name information, 
+The structure [ACCT] ranks the highest among all structures. The
+reason may be that users tend to directly use their account names as
+their passwords, instead of using them as part of their passwords.
 \end{enumerate}
 
-\subsubsection{Gender difference}
+\subsubsection{Gender Password Preference}
 \label{genderdifference}
-Beside treating the dataset as a whole, it is also interesting to study the difference of password structures between males and females. Although the dataset does not have a gender column, user ID number actually contains gender information (The second last digit in ID number represents gender). However, we found that the dataset is biased in gender, with 9,856 females and 121,533 males in it. To balance the number, we randomly select 9,856 males from the male pool and compare them with females. 
+%Beside treating the dataset as a whole, it is also interesting to study the difference of password structures between males and females. Although the dataset does not have a gender column, 
 
-The average length of passwords for males and females are 8.41 and 8.51, which are quite similar. It shows that males and females do not differ much in the length of their passwords. We then apply the matching method to each of the 2 genders. We found that 54.9\% of male passwords contain personal information while only 44.6\% of female passwords contain personal information. We list the top 10 structures for each gender in Table~\ref{t5} and personal information usage in Table~\ref{t6}. From the results we have following observations:
+As the user ID number in our dataset actually contains gender
+information (i.e., the second last digit in the ID number represents
+gender), we compare the password structures between males and females
+to see if there is any difference on password preference. Since the
+dataset is biased in gender with 9,856 females and 121,533 males, we
+randomly select 9,856 males from the male pool and compare them with
+females.
+
+The average password lengths for males and females are 8.41 and 8.51,
+respectively, which shows that males and females do not differ much in
+the length of their passwords. We then apply the matching method to
+each gender. We observe that 61.0\% of male passwords contain personal
+information while only 54.1\% of female passwords contain personal
+information. We list the top 10 structures for each gender in
+Table~\ref{t5} and personal information usage in Table~\ref{t6}. These
+results demonstrate that male users are more likely to include
+personal information in their passwords than female users. In
+addition, we have the following two interesting observations:
+
 \begin{enumerate}[leftmargin=*]
-\item From the percentages of passwords containing personal information (54.9\% for males and 44.6\% for females) and the fact that each structure that contained personal information in the top 10 structures has higher percentage for male users, we can easily imply that male users are more likely to put personal information in their passwords.
-\item From Table~\ref{t6} we can see the percentage of each type of personal information in the passwords. Interestingly males and females are very different in the usage of name information. Males use their names as frequent as their birthday (23.43\% passwords of males contain their names). Meanwhile only 13.03\% passwords of females contain their names. We also notice that the name usage mostly contribute the 10\% difference in personal information usage between males and females. 
-\item Set aside personal information, the top 10 structures count 33.62\% of males passwords but only 28.31\% of female passwords. Besides, the number of total password structures of females is 1,194, which is 8.7\% more than the number of males. We can see passwords of males are more congregated, and therefore tend to be more predictable.
+%\item 
+%From the percentages of passwords containing personal information (54.9\% for males and 44.6\% for females) and the fact that each structure that contained personal information in the top 10 structures has higher percentage for male users, we can easily imply that  Male users are more likely to include personal information in their passwords than female users.
+
+\item As Table~\ref{t5} shows, 28.38\% of males' passwords fall into
+  the category of the top 10 structures but there are only 23.94\% of
+  female passwords whose structures belong to the top 10. Moreover,
+  the total number of different password structures of females is
+  1,756, which is 10.3\% more than the total number of males. Thus,
+  the passwords of males are more congregated and hence tend to be
+  more predictable.
+
+%From Table~\ref{t6} we can see the percentage of each type of personal information in the passwords. 
+\item Males and females vary in the usage of name information, as
+  shown in Table~\ref{t6}. Males use their names as frequent as their
+  birthday (23.31\% passwords of males contain their names). In
+  contrast, only 12.94\% of females' passwords contain their names. We
+  also notice that the name usage is the dominating factor that causes
+  the difference in personal information between males and females. In
+  other words, except for name usage, male and female have no significant
+  difference in using personal information for password creation.
 \end{enumerate} 
 
 \begin{table}
@@ -220,7 +411,8 @@ The average length of passwords for males and females are 8.41 and 8.51, which a
 7&D8 & 2.158\%&[BD] & 1.968\%\\
 8&L1D7 & 2.088\%&L2D6 & 1.518\%\\
 9&[NAME]D7 & 1.749\%&L1D7 & 1.267\%\\
-10&[ACCT][BD] & 1.557\%&L2D7 & 1.240\%\\
+10&[ACCT][BD] & 1.557\%&L2D7 & 1.240\%\\ \hline
+NA&TOTAL&28.384\%&TOTAL&23.937\%\\
 \hline\end{tabular}
 \end{adjustbox}
 \label{t5}
@@ -244,30 +436,61 @@ The average length of passwords for males and females are 8.41 and 8.51, which a
 \label{t6}
 \end{table}
 
-In conclusion, passwords of males are generally composed of more personal information, especially names of the users. In addition, the password sparsity for males is lower. Our analysis indicates that passwords of males maybe more vulnerable from the perspective of using personal information in passwords. 
+In summary, passwords of males are generally composed of more personal
+information, especially names of the users. In addition, the password
+diversity for males is lower. Our analysis indicates that the
+passwords of males are more vulnerable than those
+of females. At least from the perspective of personal-information-related attacks, our observations are different from the conclusion drawn in \cite{mazurek2013measuring} that males have slightly stronger passwords than females.
+%from the perspective of using personal information in passwords. 
 
 
-\subsection{Service Information} 
-Cao et al \cite{cao2014personalized} proposed an interesting idea that uses service information to crack user passwords. However, the idea has not been carried out with an experiment. It draws our interest because we have shown the importance of personal information in user password and naturally we are also interested in how important the service information can be. By service information we mean the information of service provider. For example, the famous ``Rockyou" dataset is leaked from a website $www.rockyou.com$, the service information could be ``rockyou". In our case, the service information may be ``12306". It is reasonable for a user to add service information to their passwords to keep his/her passwords different in each site. This approach balances password security and memorability. Therefore we wish to verify whether service information is as important as personal information. As 12306 is just a medium-sized Chinese dataset, the result may not be very representative. Therefore, we would like to verify more datasets, including Tianya and Rockyou datasets, etc. in each of the datasets, we try to search the service information in the passwords. The result is shown in Table~\ref{t7}.
+\subsection{Domain Information} 
+Cao et al.~\cite{cao2014personalized} proposed an interesting idea
+that uses domain information to crack user passwords. It draws our
+attention since we have shown the involvement of personal information
+in user password and naturally we are also interested in the
+involvement of the domain information as another aspect of semantic
+information in password creation. By domain information, we mean the
+information of an Internet domain, e.g., a web service. For example,
+the famous ``Rockyou'' dataset is leaked from a website
+$www.rockyou.com$, the domain information here is ``rockyou". In our
+personal information study, the domain information is ``12306". It is
+reasonable for users to include domain information in their passwords
+to keep their passwords different from site to site but still easy to
+remember. This approach is promising to balance password security and
+memorability; however, the idea has not been validated with a large
+scale experiments. Therefore, we attempt to verify whether domain
+information is involved in password creation as personal
+information. In addition to the medium-sized 12306 dataset, we study
+more password datasets including Tianya, Rockyou, PHPBB, and MySpace
+datasets. In each dataset, we search the domain information and its meaningful substrings in the
+passwords, and the results are shown in Table~\ref{t7}.
 
 \begin{table}[!]
 \centering
-\caption{Service Information in Passwords.}
+\caption{Domain Information in Passwords.}
 \begin{adjustbox}{max width=0.48\textwidth}
 \begin{tabular}{|c|c|c|c|} \hline
-Dataset & Password Amount & Service info Amount & Percentage\\ \hline
-Rockyou & 14,344,391 & 44,025 & 0.3\%\\ 
-Tianya & 26,832,592 & 29,430{ \footnote{We found 45,574 passwords in Tianya dataset is ``111222tiany". It does not make much sense for so many user using such same password so we doubt they are mostly sybil accounts. Therefore the duplications are removed in our analysis} } &0.11\%\\ 
-PHPBB & 184,389 & 2,209 & 1.2\%\\ 
-12306 & 131,389 & 490 & 0.4\%\\ 
-MySpace & 37144 & 72 & 0.2\%\\ 
-\hline\end{tabular}
+Dataset & Password Amount & Domain info Amount & Percentage\\ \hline
+Rockyou & 14,344,391 & 44,025 & 0.3\%\\ Tianya & 26,832,592 &
+29,430{ \footnote{\small We find that 45,574 passwords in the Tianya
+    dataset is ``111222tiany". It does not make much sense for so many
+    users using the same password and highly likely they are sybil
+    accounts. Thus, these duplications are removed from our analysis.}
+} &0.11\%\\ PHPBB & 184,389 & 2,209 & 1.2\%\\ 12306 & 131,389 & 490 &
+0.4\%\\ MySpace & 37144 & 72 & 0.2\%\\ \hline\end{tabular}
 \end{adjustbox}
 \label{t7}
 \end{table}
 
-As shown in Table~\ref{t7}, we can see indeed some users are using service information in their passwords. Our results indicate that all datasets examined contain 0.11\% to 1.2\% passwords that relate to service information. However, the portion is quite small. Such small percentage indicates that though adding service information in user passwords may maintain good memorability and security, currently few users are using such method to construct their passwords. Therefore, we concluded that only few users include service information in their passwords. the method proposed by Cao et al that uses service information to crack passwords may not bring much improvement over state-of-art technique.
+From Table~\ref{t7}, we can see that indeed some users include domain
+information in their passwords. Our results indicate that all the
+datasets examined contain 0.11\% to 1.2\% of passwords that relate to
+domain information. However, the small percentage indicates that
+though including domain information in a password helps users to have
+different passwords for different websites, currently not many users
+are using such a method to construct their passwords.
 
 
-\subsection{Ethical Consideration}
-We do realize that studying leaked datasets involves much ethical concern. We claim that we only use the datasets for researching purpose. All data are carefully stored and used. We will not expose any user personal information or password or use these information in any other way except for research use.
+%\subsection{Ethical Consideration}
+%We do realize that studying leaked datasets involves much ethical concern. We claim that we only use the datasets for researching purpose. All data are carefully stored and used. We will not expose any user personal information or password or use these information in any other way except for research use.

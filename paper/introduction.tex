@@ -1,16 +1,105 @@
 
 \section{Introduction}
-Text-based passwords still remain a dominating and irreplaceable authentication method in foreseeable future. Although people have proposed different authentication mechanisms, no alternative can bring all benefits of passwords without introducing any extra burden to users \cite{bonneau2012quest}. However, passwords have long been criticized to be one of the weakest link in authentication. 
-Due to human-memorability requirement, user passwords are usually far from random strings \cite{bonneau2012science,malone2012investigating,narayanan2005fast,veras2012visualizing,yan2004password}. For example, ``secret" is more likely a human-chosen password than ``ziorqpe". In other words, human
-users often choose weak passwords simply because they are easy to remember. 
-As a result, most passwords are within only a small portion of the large password space, vulnerable to brute-force and dictionary attacks. 
+Text-based passwords still remain a dominating and irreplaceable
+authentication method in foreseeable future. Although people have
+proposed different authentication mechanisms, no alternative can bring
+all benefits of passwords without introducing any extra burden to
+users \cite{bonneau2012quest}. However, passwords have long been
+criticized to be one of the weakest link in authentication.  Due to
+human-memorability requirement, user passwords are usually far from
+true random strings
+\cite{bonneau2012science,malone2012investigating,narayanan2005fast,veras2012visualizing,yan2004password}. For
+example, ``secret'' is more likely a human-chosen password than
+``zjorqpe''. In other words, human users are prone to choose weak
+passwords simply because they are easy to remember.  As a result, most
+passwords are chosen within only a small portion of the entire large
+password space, being vulnerable to brute-force and dictionary attacks.
 
-To increase password security, 
-%help both users and system administrators better enhance passwords strength. 
-a very common way is to restrict password creation policies by requiring non-alphabets in passwords. The bad news is that these policies do not keep passwords from vulnerable because users tend to simply mangle their passwords to fulfill the restriction \cite{weir2010testing}, making the security improvement very limited. Nowadays most websites also have password strength meters enabled to provide direct feedbacks to users. However, these meters are proved to be ad-hoc and inconsistent \cite{de2014very}. To better assess the strength of passwords, we need to understand how users construct their passwords. If an attacker knows exactly how users construct their passwords, guessing their passwords will become much easier. On the other hand, if a user knows how other users construct their passwords, the user can easily improve his/her password strength by avoid using these password construction methods. 
 
-Toward this end, researchers have done much to unveil the structures of passwords. Traditional dictionary attacks on passwords have shown that users tend to use simple dictionary words to construct their passwords \cite{hellman1980cryptanalytic}\cite{morris1979password}. Languages users speak are also vital since users tend to use their own languages when constructing passwords \cite{bonneau2012science}. Besides, passwords are mostly phonetically memorable \cite{narayanan2005fast} even they are not simply dicionary words. It is also indicated that users use keyboard strings such as ``qwerty" and ``qweasdzxc", trivial strings such as ``password", ``123456", and date strings such as ``19951225" in their passwords \cite{li2014large}\cite{schweitzer2009visualizing}\cite{veras2012visualizing}. However, most studies are showing superficial password patterns. The actual composition of passwords are still mysterious to people. Fortunately, an enlightening work studied how users generate their passwords by learning the semantic patterns in passwords \cite{veras2014semantic}. We would like to take another perspective -- personal information, to study password semantics. Based on our analysis and quantification of personal information, we conduct subsequent works on password cracking and protection. 
+%help both users and system administrators better enhance passwords strength. a very common way is to restrict password creation policies by requiring non-alphabets in passwords. The bad news is that these policies do not keep passwords from vulnerable because users tend to simply mangle their passwords to fulfill the restriction \cite{weir2010testing}, making the security improvement very limited. 
 
-Our contribution is 4-fold. First, we measure the importance of personal information in passwords and present interesting quantified results. We show most popular password structures with personal information notion embedded. We also found that male and female behave differently when putting personal information in their passwords. Second, we quantify the correlation between user password and personal information by developing a metric -- Coverage. Coverage is useful in measuring password strength, which can potentially be used in password meters. Third, we introduce Personal-PCFG, an evolution of PCFG method by M. Weir\cite{weir2009password} by adding personal information symbols in password structures. Personal-PCFG is able to crack password much faster than PCFG. It also makes online attack more feasible by drastically increasing guessing successful rate with a small amount of guesses. Forth, we discuss how to defend such semantics-aware attacks like Personal-PCFG or \cite{veras2014semantic} by applying a simple distortion function on passwords. 
+To increase password security, online authentication systems start to
+enforce more strict password policies. Meanwhile, currently most
+websites have password strength meters deployed to help users choose
+secure passwords. However, these meters are proved to be ad-hoc and
+inconsistent \cite{de2014very}. To better assess the strength of
+passwords, we need to have a deeper understanding on how users
+construct their passwords. If an attacker knows exactly how users
+create their passwords, guessing their passwords will become much
+easier. Meanwhile, if a user is aware of the potential vulnerability
+induced by a commonly used password creation method, the user can
+avoid using the same method for creating passwords.
 
-This paper is organized as follows. Section~\ref{personalinfo} studies how personal information resides in user passwords and shows the gender difference in passwords. Section~\ref{correlationquantification} introduces the Correlation descriptive metric -- Coverage. In Section~\ref{personalpcfg} we present Personal-PCFG and show cracking results compared to original PCFG method. In Section~\ref{passwordprotection} we discussed defense of our attacks by applying distortion functions in passwords.
+
+Toward this end, researchers have done a lot of work to unveil the
+structures of passwords. Traditional dictionary attacks on passwords
+have shown that users tend to use simple dictionary words to construct
+their passwords~\cite{hellman1980cryptanalytic,
+  morris1979password}. Languages are also vital since users tend to
+use their own languages when constructing
+passwords~\cite{bonneau2012science}. Besides, passwords are mostly
+phonetically memorable~\cite{narayanan2005fast} even they are not
+simple dictionary words. It is also indicated that users may use
+keyboard strings such as ``qwerty" and ``qweasdzxc", trivial strings
+such as ``password", ``123456", and date strings such as ``19951225"
+in their passwords~\cite{li2014large, schweitzer2009visualizing,
+  veras2012visualizing}. However, most studies only discover
+superficial password patterns, and the semantic-rich composition of
+passwords is still mysterious to be fully uncovered. Fortunately, an
+enlightening work investigates on how users generate their passwords
+by learning the semantic patterns in
+passwords~\cite{veras2014semantic}.
+
+In this paper, we study password semantics from a different
+perspective---personal information.  We utilize a leaked password
+dataset, which contains personal information, from a Chinese website
+for this study.  We first measure the usage of personal information in
+password creation and present interesting observations. We are able to
+obtain the most popular password structures with personal information
+embedded. We also observe that male and female behave differently when
+using personal information in password creation. Next, we introduce a
+new metric called Coverage to accurately quantify the correlation
+between personal information and user password. Since it considers
+both the length and continuation of personal information in a
+password, Coverage is a useful metric to measure the strength of a
+password. Our quantification results using the Coverage metric confirm
+with our direct measurement results on the dataset, showing the
+efficacy of Coverage.  Moreover, Coverage is easy to apply and to be integrated with existing tools, such as password strength
+meters to uncover the unnoticed corner of personal information.
+
+To demonstrate the security vulnerability induced by using personal
+information in passwords, we propose a semantics-rich Probabilistic Context-Free
+Grammars (PCFG) method called Personal-PCFG, which extends PCFG~\cite{weir2009password} by considering personal
+information symbols in password structures. Personal-PCFG is able to
+crack passwords much faster than PCFG. It also makes an online attack
+more feasible by drastically increasing guessing success rate. Finally, we present simple distortion
+functions to defend against these semantics-aware attacks such as
+Personal-PCFG or~\cite{veras2014semantic}. Our evaluation results
+demonstrate that distortion functions can effectively protect
+passwords by significantly reducing the unwanted correlation between
+personal information and passwords.
+
+Our study is based on a dataset collected from a Chinese
+website. Although measurement results could be different in some
+aspects if other datasets are used, our observations still show a
+valid grand picture on how personal information is used in passwords.
+As long as memorability plays an important role in password creation,
+the correlation between personal information and user password
+remains, regardless of which language users speak. We believe that our
+work on personal information quantification, password cracking, and
+password protection could be applicable for any other text-based
+password datasets from different websites.
+
+The remainder of this paper is organized as
+follows. Section~\ref{personalinfo} measures how personal information
+resides in user passwords and shows the gender difference in password
+creation, based on a leaked dataset from an online ticket reservation
+website. Section~\ref{correlationquantification} introduces the new
+metric, Coverage, to accurately quantify the correlation between
+personal information and user password.  Section~\ref{personalpcfg}
+details Personal-PCFG and shows cracking results compared with the
+original PCFG.  Section~\ref{passwordprotection} presents our
+defense against semantics-aware attacks by applying simple distortion
+functions on password creation. Section~\ref{sec:related} surveys
+related work, and finally Section~\ref{sec:conclusion} concludes this
+paper.

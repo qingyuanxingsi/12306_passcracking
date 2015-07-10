@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  30 JUN 2015 22:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  9 JUL 2015 22:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -417,18 +417,18 @@ Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 (./CCS_15.aux)
 \openout1 = `CCS_15.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -492,17 +492,17 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: threeparttable package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 146.
+LaTeX Font Info:    Try loading font information for U+msa on input line 145.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 146.
+LaTeX Font Info:    Try loading font information for U+msb on input line 145.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 146.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 145.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -516,207 +516,200 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-])
-(./personalinfo.tex [2]
-Underfull \hbox (badness 10000) in paragraph at lines 51--66
-[][] []
+]
+Overfull \hbox (8.54626pt too wide) in paragraph at lines 70--81
+\T1/aer/m/n/9 ing per-sonal in-for-ma-tion in pass-words, we pro-pose a semanti
+cs-
  []
 
-LaTeX Font Info:    Try loading font information for T1+aett on input line 76.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/ae/t1aett.fd
+
+Overfull \hbox (1.85188pt too wide) in paragraph at lines 70--81
+\T1/aer/m/n/9 sim-ple dis-tor-tion func-tions to de-fend against these semantic
+s-
+ []
+
+) (./personalinfo.tex
+Underfull \hbox (badness 10000) in paragraph at lines 93--2
+
+ []
+
+[2]
+LaTeX Font Info:    Try loading font information for T1+aett on input line 146.
+
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-Overfull \hbox (7.349pt too wide) in paragraph at lines 90--91
+Overfull \hbox (5.18153pt too wide) in paragraph at lines 155--165
+[]\T1/aer/m/n/9 Note the gov-ern-ment is-sued ID num-ber is an 18-digit unique
+ []
+
+
+Overfull \hbox (7.349pt too wide) in paragraph at lines 180--186
 []\T1/aer/m/n/9 We be-lieve that the rep-re-sen-ta-tion like $\OT1/cmr/m/n/9 [\
 OML/cmm/m/it/9 Name\OT1/cmr/m/n/9 ][\OML/cmm/m/it/9 Birthday\OT1/cmr/m/n/9 ]\OM
 L/cmm/m/it/9 L[]$
  []
 
-[3]
-Overfull \hbox (3.22064pt too wide) in paragraph at lines 203--204
-\T1/aer/m/n/9 birth-day (23.43% pass-words of males con-tain their names).
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--275
+
  []
 
-
-Overfull \hbox (1.11487pt too wide) in paragraph at lines 203--204
-\T1/aer/m/n/9 Mean-while only 13.03% pass-words of fe-males con-tain their
- []
-
-
-Overfull \hbox (2.34518pt too wide) in paragraph at lines 204--205
-[]\T1/aer/m/n/9 Set aside per-sonal in-for-ma-tion, the top 10 struc-tures coun
-t
- []
-
-[4]
-Overfull \hbox (1.92082pt too wide) in paragraph at lines 225--227
+[3] [4]
+Overfull \hbox (1.92082pt too wide) in paragraph at lines 417--419
  [] 
  []
 
 
-Overfull \hbox (1.92194pt too wide) in paragraph at lines 243--245
+Overfull \hbox (1.92194pt too wide) in paragraph at lines 435--437
  [] 
+ []
+
+
+Overfull \hbox (7.3855pt too wide) in paragraph at lines 448--468
+\T1/aer/m/n/9 ``Rock-you'' dataset is leaked from a web-site $\OML/cmm/m/it/9 w
+ww:rockyou:com$\T1/aer/m/n/9 ,
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 253.
+               Default added (so using `!tbp') on input line 469.
 
 
-Underfull \hbox (badness 5431) in paragraph at lines 260--260
-[][]\T1/aer/m/n/9 We found 45,574 pass-words in Tianya dataset is
+Underfull \hbox (badness 1337) in paragraph at lines 479--479
+[][]\T1/aer/m/n/8 We find that 45,574 pass-words in the Tianya dataset is
  []
 
 
-Overfull \hbox (1.92108pt too wide) in paragraph at lines 265--267
+Overfull \hbox (1.92258pt too wide) in paragraph at lines 482--484
  [] 
- []
-
-
-Overfull \hbox (1.46365pt too wide) in paragraph at lines 269--270
-\T1/aer/m/n/9 main-tain good mem-o-ra-bil-ity and se-cu-rity, cur-rently few us
-ers
  []
 
 ) (./correlation.tex [5]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!htbp') on input line 19.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--33
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
 [] \T1/aer/bx/n/9 for $\OML/cmm/m/it/9 j \OMS/cmsy/m/n/9   \OML/cmm/m/it/9 matc
 hmark$ \T1/aer/m/n/9 to
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 52.
+(amsmath)                 on input line 137.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-<fig/cvgfig.png, id=33, 628.3475pt x 783.92876pt>
+<fig/cvgfig.png, id=32, 628.3475pt x 783.92876pt>
 File: fig/cvgfig.png Graphic file (type png)
  <use fig/cvgfig.png>
-Package pdftex.def Info: fig/cvgfig.png used on input line 59.
+Package pdftex.def Info: fig/cvgfig.png used on input line 144.
 (pdftex.def)             Requested size: 151.20154pt x 188.63718pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[6]
-
-LaTeX Warning: Reference `1' on page \thepage  undefined on input line 70.
-
-<fig/cvghist.png, id=42, 391.4625pt x 272.01625pt>
+ [6]
+<fig/cvghist.png, id=40, 391.4625pt x 272.01625pt>
 File: fig/cvghist.png Graphic file (type png)
  <use fig/cvghist.png>
-Package pdftex.def Info: fig/cvghist.png used on input line 87.
-(pdftex.def)             Requested size: 226.79846pt x 157.5952pt.
+Package pdftex.def Info: fig/cvghist.png used on input line 210.
+(pdftex.def)             Requested size: 176.40308pt x 122.57635pt.
 
-[7 <./fig/cvgfig.png> <./fig/cvghist.png>]) (./personalpcfg.tex
-Overfull \hbox (9.8608pt too wide) in paragraph at lines 1--1
-[]\secfnt PERSONAL-PCFG, AN IN-DI-VID-UAL ORI-
+Underfull \hbox (badness 10000) in paragraph at lines 248--260
+
  []
 
-[8]
-Overfull \hbox (10.63399pt too wide) in paragraph at lines 18--19
-\T1/aer/m/n/9 work, ad-di-tional match-ing phase and adapt-substitution phases
+) (./personalpcfg.tex [7 <./fig/cvgfig.png> <./fig/cvghist.png>]
+Overfull \hbox (3.64285pt too wide) in paragraph at lines 21--34
+\T1/aer/m/n/9 high-probability per-son-al-ized pass-words and ver-ify them firs
+t. 
  []
 
 
-Overfull \hbox (3.19112pt too wide) in paragraph at lines 32--33
-\T1/aer/m/n/9 ever, we are fac-ing a dif-fer-ent con-di-tion. For non-personali
-zed
+Overfull \hbox (19.19333pt too wide) in paragraph at lines 48--72
+[]\T1/aer/m/n/9 Personal-PCFG is based on the ba-sic idea of PCFG method [40]
  []
 
-<fig/cmp.png, id=52, 394.47375pt x 276.03125pt>
+
+Overfull \hbox (6.04083pt too wide) in paragraph at lines 100--108
+\T1/aer/m/n/9 sam-ple struc-ture ``$\OML/cmm/m/it/9 helloN[]B[]\OT1/cmr/m/n/9 !
+$\T1/aer/m/n/9 " will be up-dated to ``$\OML/cmm/m/it/9 L[]N[]B[]S[]$\T1/aer/m/
+n/9 "
+ []
+
+[8] <fig/cmp.png, id=50, 408.52625pt x 276.03125pt>
 File: fig/cmp.png Graphic file (type png)
  <use fig/cmp.png>
-Package pdftex.def Info: fig/cmp.png used on input line 44.
-(pdftex.def)             Requested size: 149.6878pt x 104.74133pt.
+Package pdftex.def Info: fig/cmp.png used on input line 158.
+(pdftex.def)             Requested size: 201.59692pt x 136.2168pt.
 
-<fig/cmp100.png, id=53, 401.5pt x 276.03125pt>
+Overfull \hbox (12.83035pt too wide) in paragraph at lines 175--191
+\T1/aer/m/n/9 dataset. How-ever, be-cause al-most all mod-ern pass-word dataset
+s
+ []
+
+<fig/cmp100.png, id=51, 401.5pt x 276.03125pt>
 File: fig/cmp100.png Graphic file (type png)
  <use fig/cmp100.png>
-Package pdftex.def Info: fig/cmp100.png used on input line 52.
-(pdftex.def)             Requested size: 149.6878pt x 102.91336pt.
+Package pdftex.def Info: fig/cmp100.png used on input line 196.
+(pdftex.def)             Requested size: 201.59692pt x 138.60072pt.
 
-<fig/online.png, id=54, 383.4325pt x 298.11375pt>
+<fig/online.png, id=52, 383.4325pt x 298.11375pt>
 File: fig/online.png Graphic file (type png)
  <use fig/online.png>
-Package pdftex.def Info: fig/online.png used on input line 60.
-(pdftex.def)             Requested size: 149.6878pt x 116.38216pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[9]
-Overfull \hbox (1.15576pt too wide) in paragraph at lines 78--79
-[]\T1/aer/m/n/9 As shown in Fig-ure 4[], in on-line at-tacks, gen-er-ally Perso
-nal-
- []
-
-) (./passwordprotection.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10 <./fig/cmp.png> <./fig/cmp100.png> <./fig/online.png>]
-<fig/dist2.png, id=65, 391.4625pt x 272.01625pt>
+Package pdftex.def Info: fig/online.png used on input line 220.
+(pdftex.def)             Requested size: 201.59692pt x 156.7395pt.
+ [9 <./fig/cmp.png> <./fig/cmp100.png>]) (./passwordprotection.tex
+<fig/dist2.png, id=58, 391.4625pt x 272.01625pt>
 File: fig/dist2.png Graphic file (type png)
  <use fig/dist2.png>
-Package pdftex.def Info: fig/dist2.png used on input line 98.
-(pdftex.def)             Requested size: 252.0pt x 175.11086pt.
-
-Overfull \hbox (12.0pt too wide) in paragraph at lines 98--99
- [][] 
- []
-
-) (./relatedwork.tex) (./conclusion.tex) (./CCS_15.bbl [11 <./fig/dist2.png>]
+Package pdftex.def Info: fig/dist2.png used on input line 71.
+(pdftex.def)             Requested size: 201.59692pt x 140.0837pt.
+)
+(./relatedwork.tex [10 <./fig/online.png> <./fig/dist2.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12])
-[13
+)
+(./conclusion.tex) (./CCS_15.bbl
+Overfull \hbox (2.79701pt too wide) in paragraph at lines 3--1
+\T1/aer/m/n/9 against personal-information-related and semantics-aware at-
+ []
 
-] (./CCS_15.aux)
+[11]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: There were undefined references.
-
- ) 
+) [12]
+(./CCS_15.aux) ) 
 Here is how much of TeX's memory you used:
- 6639 strings out of 493117
- 96824 string characters out of 6135433
- 186873 words of memory out of 5000000
- 9866 multiletter control sequences out of 15000+600000
- 60578 words of font info for 90 fonts, out of 8000000 for 9000
+ 6645 strings out of 493117
+ 96995 string characters out of 6135433
+ 185452 words of memory out of 5000000
+ 9876 multiletter control sequences out of 15000+600000
+ 57287 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,15n,75p,1902b,494s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/tex
-live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/tex
-live/2014/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/
-texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/te
-xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texl
-ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texliv
-e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/
-2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/201
-4/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2014/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2014/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2014/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2014/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2014/texmf-dist/fonts
-/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/
-urw/symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/u
-tmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-</usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on CCS_15.pdf (13 pages, 403695 bytes).
+ 41i,15n,76p,767b,462s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc
+}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><
+/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><
+/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pf
+b></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/l
+ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/t
+exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texli
+ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive
+/2014/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2014/t
+exmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/f
+onts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
+/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times
+/utmri8a.pfb>
+Output written on CCS_15.pdf (12 pages, 362433 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 93 compressed objects within 1 object stream
+ 125 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

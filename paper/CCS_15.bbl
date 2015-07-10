@@ -3,19 +3,19 @@
 \bibitem{balzarotti2008clearshot}
 D.~Balzarotti, M.~Cova, and G.~Vigna.
 \newblock Clearshot: Eavesdropping on keyboard input from video.
-\newblock In {\em IEEE Security \& Privacy}. IEEE, 2008.
+\newblock In {\em IEEE Security \& Privacy}, 2008.
 
 \bibitem{bonneau2012science}
 J.~Bonneau.
 \newblock The science of guessing: analyzing an anonymized corpus of 70 million
   passwords.
-\newblock In {\em IEEE Security \& privacy}. IEEE, 2012.
+\newblock In {\em IEEE Security \& Privacy}, 2012.
 
 \bibitem{bonneau2012quest}
 J.~Bonneau, C.~Herley, P.~C. Van~Oorschot, and F.~Stajano.
 \newblock The quest to replace passwords: A framework for comparative
   evaluation of web authentication schemes.
-\newblock In {\em IEEE Security \& Privacy}. IEEE, 2012.
+\newblock In {\em IEEE Security \& Privacy}, 2012.
 
 \bibitem{bonneau2012birthday}
 J.~Bonneau, S.~Preibusch, and R.~Anderson.
@@ -32,7 +32,7 @@ S.~Boztas.
 \bibitem{brainard2006fourth}
 J.~Brainard, A.~Juels, R.~L. Rivest, M.~Szydlo, and M.~Yung.
 \newblock Fourth-factor authentication: somebody you know.
-\newblock In {\em CCS}. ACM, 2006.
+\newblock In {\em ACM CCS}, 2006.
 
 \bibitem{cachin1997entropy}
 C.~Cachin.
@@ -42,8 +42,8 @@ C.~Cachin.
 \bibitem{cao2014personalized}
 P.~Cao, H.~Li, K.~Nahrstedt, Z.~Kalbarczyk, R.~Iyer, and A.~J. Slagell.
 \newblock Personalized password guessing: a new security threat.
-\newblock In {\em Proceedings of the 2014 Symposium and Bootcamp on the Science
-  of Security}. ACM, 2014.
+\newblock In {\em ACM Proceedings of the 2014 Symposium and Bootcamp on the
+  Science of Security}, 2014.
 
 \bibitem{castelluccia2013privacy}
 C.~Castelluccia, A.~Chaabane, M.~D{\"u}rmuth, and D.~Perito.
@@ -74,13 +74,17 @@ X.~d.~C. de~Carnavalet and M.~Mannan.
 \bibitem{florencio2007large}
 D.~Florencio and C.~Herley.
 \newblock A large-scale study of web password habits.
-\newblock In {\em WWW'07}. ACM, 2007.
+\newblock In {\em ACM WWW}, 2007.
 
 \bibitem{gaw2006password}
 S.~Gaw and E.~W. Felten.
 \newblock Password management strategies for online accounts.
-\newblock In {\em Proceedings of the second symposium on Usable privacy and
-  security}. ACM, 2006.
+\newblock In {\em ACM SOUPS}, 2006.
+
+\bibitem{gross2005information}
+R.~Gross and A.~Acquisti.
+\newblock Information revelation and privacy in online social networks.
+\newblock In {\em ACM WPES}, 2005.
 
 \bibitem{hellman1980cryptanalytic}
 M.~E. Hellman.
@@ -90,7 +94,7 @@ M.~E. Hellman.
 \bibitem{howe2012psychology}
 A.~E. Howe, I.~Ray, M.~Roberts, M.~Urbanska, and Z.~Byrne.
 \newblock The psychology of security for the home computer user.
-\newblock In {\em IEEE Security \& privacy}. IEEE, 2012.
+\newblock In {\em IEEE Security \& Privacy}, 2012.
 
 \bibitem{jain2006biometrics}
 A.~K. Jain, A.~Ross, and S.~Pankanti.
@@ -112,18 +116,23 @@ P.~G. Kelley, S.~Komanduri, M.~L. Mazurek, R.~Shay, T.~Vidas, L.~Bauer,
   N.~Christin, L.~F. Cranor, and J.~Lopez.
 \newblock Guess again (and again and again): Measuring password strength by
   simulating password-cracking algorithms.
-\newblock In {\em IEEE Security \& Privacy}. IEEE, 2012.
+\newblock In {\em IEEE Security \& Privacy}, 2012.
 
 \bibitem{komanduri2014telepathwords}
 S.~Komanduri, R.~Shay, L.~F. Cranor, C.~Herley, and S.~Schechter.
-\newblock Telepathwords: Preventing weak passwords by reading users’ minds.
+\newblock Telepathwords: Preventing weak passwords by reading users' minds.
 \newblock In {\em USENIX Security}, 2014.
+
+\bibitem{krishnamurthy2009leakage}
+B.~Krishnamurthy and C.~E. Wills.
+\newblock On the leakage of personally identifiable information via online
+  social networks.
+\newblock In {\em ACM COSN}, 2009.
 
 \bibitem{kuo2006human}
 C.~Kuo, S.~Romanosky, and L.~F. Cranor.
 \newblock Human selection of mnemonic phrase-based passwords.
-\newblock In {\em Proceedings of the second symposium on Usable privacy and
-  security}. ACM, 2006.
+\newblock In {\em ACM SOUPS}, 2006.
 
 \bibitem{li2014large}
 Z.~Li, W.~Han, and W.~Xu.
@@ -133,19 +142,18 @@ Z.~Li, W.~Han, and W.~Xu.
 \bibitem{malone2012investigating}
 D.~Malone and K.~Maher.
 \newblock Investigating the distribution of password choices.
-\newblock In {\em WWW'12}. ACM, 2012.
+\newblock In {\em ACM WWW}, 2012.
 
 \bibitem{massey1994guessing}
 J.~L. Massey.
 \newblock Guessing and entropy.
-\newblock In {\em IEEE International Symposium on Information Theory}. IEEE,
-  1994.
+\newblock In {\em IEEE International Symposium on Information Theory}, 1994.
 
 \bibitem{mazurek2013measuring}
 M.~L. Mazurek, S.~Komanduri, T.~Vidas, L.~Bauer, N.~Christin, L.~F. Cranor,
   P.~G. Kelley, R.~Shay, and B.~Ur.
 \newblock Measuring password guessability for an entire university.
-\newblock In {\em CCS'13}. ACM, 2013.
+\newblock In {\em ACM CCS}, 2013.
 
 \bibitem{morris1979password}
 R.~Morris and K.~Thompson.
@@ -155,39 +163,34 @@ R.~Morris and K.~Thompson.
 \bibitem{narayanan2005fast}
 A.~Narayanan and V.~Shmatikov.
 \newblock Fast dictionary attacks on passwords using time-space tradeoff.
-\newblock In {\em CCS}. ACM, 2005.
+\newblock In {\em ACM CCS}, 2005.
 
 \bibitem{oechslin2003making}
 P.~Oechslin.
 \newblock Making a faster cryptanalytic time-memory trade-off.
-\newblock In {\em Advances in Cryptology-CRYPTO 2003}. Springer, 2003.
+\newblock In {\em Advances in Cryptology-CRYPTO 2003}. 2003.
 
 \bibitem{pinkas2002securing}
 B.~Pinkas and T.~Sander.
 \newblock Securing passwords against dictionary attacks.
-\newblock In {\em CCS}. ACM, 2002.
+\newblock In {\em ACM CCS}, 2002.
 
 \bibitem{pliam2000incomparability}
 J.~O. Pliam.
 \newblock On the incomparability of entropy and marginal guesswork in
   brute-force attacks.
-\newblock In {\em Progress in Cryptology—INDOCRYPT 2000}. Springer, 2000.
+\newblock In {\em Progress in Cryptology-INDOCRYPT}. 2000.
 
 \bibitem{schechter2009s}
 S.~Schechter, A.~B. Brush, and S.~Egelman.
 \newblock It's no secret. measuring the security and reliability of
-  authentication via “secret” questions.
-\newblock In {\em IEEE Security \& Privacy}. IEEE, 2009.
+  authentication via ``secret" questions.
+\newblock In {\em IEEE Security \& Privacy}, 2009.
 
 \bibitem{schweitzer2009visualizing}
 D.~Schweitzer, J.~Boleng, C.~Hughes, and L.~Murphy.
 \newblock Visualizing keyboard pattern passwords.
-\newblock In {\em VizSec'09}. IEEE, 2009.
-
-\bibitem{tencentnews}
-T.~Tech.
-\newblock 12306 user info leackage, December 2014.
-\newblock [Online; posted 25-December-2012].
+\newblock In {\em IEEE VizSec}, 2009.
 
 \bibitem{veras2014semantic}
 R.~Veras, C.~Collins, and J.~Thorpe.
@@ -197,22 +200,22 @@ R.~Veras, C.~Collins, and J.~Thorpe.
 \bibitem{veras2012visualizing}
 R.~Veras, J.~Thorpe, and C.~Collins.
 \newblock Visualizing semantics in passwords: The role of dates.
-\newblock In {\em VizSec}. ACM, 2012.
+\newblock In {\em IEEE VizSec}, 2012.
 
 \bibitem{weir2010testing}
 M.~Weir, S.~Aggarwal, M.~Collins, and H.~Stern.
 \newblock Testing metrics for password creation policies by attacking large
   sets of revealed passwords.
-\newblock In {\em CCS}. ACM, 2010.
+\newblock In {\em ACM CCS}, 2010.
 
 \bibitem{weir2009password}
 M.~Weir, S.~Aggarwal, B.~De~Medeiros, and B.~Glodek.
 \newblock Password cracking using probabilistic context-free grammars.
-\newblock In {\em IEEE Security \& Privacy}. IEEE, 2009.
+\newblock In {\em IEEE Security \& Privacy}, 2009.
 
 \bibitem{yan2004password}
-J.~Yan et~al.
+J.~Yan, A.~Blackwell, R.~Anderson, and A.~Grant.
 \newblock Password memorability and security: Empirical results.
-\newblock {\em IEEE Security \& privacy}, 2004.
+\newblock {\em IEEE Security \& Privacy Magazine}, 2004.
 
 \end{thebibliography}

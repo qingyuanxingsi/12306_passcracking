@@ -6,19 +6,20 @@ and its security implications have not yet been studied systematically
 in the past.  In this paper, we first dissect user passwords from a
 leaked dataset to investigate how and to what extent user personal
 information resides in a password. In particular, we extract the most
-popular password structures expressed by personal information and show the usage of personal information. Then we
+popular password structures expressed by personal information, and we
 introduce a new metric called Coverage to quantify the correlation
-between passwords and personal information. Afterwards, based on our
-analysis, we extend the Probabilistic Context-Free
-Grammars (PCFG) method to be semantics-rich and propose Personal-PCFG to crack passwords by generating personalized guesses. Through
-offline and online attack scenarios, we demonstrate that
-Personal-PCFG cracks passwords much faster than PCFG and makes online attacks much easier to succeed.  To defend
-against such semantics-aware attacks, we propose to use simple
-distortion functions that are chosen by users to mitigate unwanted
-correlation between personal information and passwords. Our
-experimental results show that a simple distortion can effectively
-protect a password from personalized cracking without sacrificing
-usability.
+between passwords and personal information. Then, exploiting the
+potential of cracking passwords based on our analysis, we develop a
+semantics-richer Probabilistic Context-Free Grammars method called
+Personal-PCFG to crack passwords. Through offlline and online attack
+scenarios, we demonstrate that Personal-PCFG cracks passwords much
+faster than the state-of-art techniques and makes online attacks much
+easier to succeed.  To defend against such semantics-aware attacks, we
+propose to use simple distortion functions that are chosen by users to
+mitigate unwanted correlation between personal information and
+passwords. Our experimental results show that a simple distortion can
+effectively protect a password from personalized cracking without
+sacraficing usability.
 \end{abstract}
 
 % A category with the (minimum) three required fields

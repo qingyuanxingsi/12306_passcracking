@@ -46,7 +46,6 @@
 % For tracking purposes - this is V2.0 - May 2012
 
 \documentclass{sig-alternate}
-
 \usepackage{booktabs,caption,fixltx2e}
 \usepackage[flushleft]{threeparttable}
 \usepackage{algorithm}
@@ -61,7 +60,7 @@
 \usepackage{multirow}
 \usepackage{subfig}
 \usepackage{footnote}
-\usepackage[margin=1cm]{caption}
+%\usepackage[margin=1cm]{caption}
 \makesavenoteenv{tabular}
 \makesavenoteenv{table}
 \usepackage{caption}
@@ -69,7 +68,7 @@
 \begin{document}
 %
 % --- Author Metadata here ---
-\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
+\conferenceinfo{}{}%WOODSTOCK}{'97 El Paso, Texas USA}
 %\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 % --- End of Author Metadata ---
@@ -166,9 +165,7 @@ email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
 %
 %APPENDICES are optional
 %\balancecolumns
-\appendix
+%\appendix
 %Appendix A
-\section{Full List of Birthday and Name in Matching Algorithm}
-\section{TODO}
-Male and Female passwords cracked
+%\section{Full List of Birthday and Name in Matching Algorithm}
 \end{document}

@@ -11,7 +11,7 @@ passwords fit Zipf distribution well. Gaw and Felton~\cite{gaw2006password}
 showed how users manage their
 passwords. Mazurek et al.~\cite{mazurek2013measuring} measured 25,000
 passwords from a university and revealed correlation between
-demographic or other factors, such as gender and field of study.
+demographic or other factors, such as field of study, and passwords.
 Bonneau~\cite{bonneau2012science} studied language effect on user
 passwords from over 70 million passwords. Through measuring the
 guessability of 4-digit PINs on over 1,100 banking customers
@@ -58,31 +58,16 @@ number in~\cite{hellman1980cryptanalytic} using multiple reduction functions. Ho
 the password policy becomes strict, simple dictionary passwords are less
 common. Narayanan and Shmatikov~\cite{narayanan2005fast} used
 Markov model to generate guesses based on that passwords need to be
-phonetically similar to users' native languages. 
-%
-In 2009, Weir et al.~\cite{weir2009password} leveraged Probabilistic
-Context-Free Grammars (PCFG) to crack passwords. Veras et
+phonetically similar to users' native languages. Castelluccia et
+al.~\cite{castelluccia2013privacy} improved Markov attack by making
+guess in approximately descending probability order. In 2009, Weir
+et al.~\cite{weir2009password} leveraged Probabilistic Context-Free
+Grammars (PCFG) to crack passwords. Veras et
 al.~\cite{veras2014semantic} tried to use semantic patterns in
 passwords. Besides, while attacking a hashed password database remains
 main attacking scenarios, there are other attacks on different
 scenarios, such as video eavesdropping on
 passwords~\cite{balzarotti2008clearshot}.
-%
-
-OMEN+~\cite{castelluccia2013privacy} improves Markov Models
-\cite{narayanan2005fast} to crack passwords. It includes some simple
-experiments to prove usefulness of personal information in password
-cracking. However, since their experiments are performed on only 3,140
-users, their results are insufficient and unreliable. Moreover, since
-the personal information is simply divided into 3-grams and the
-probabilities of these 3-grams are increased a little in the attack
-dictionary, OMEN+ does not treat personal information as ``personally"
-and break the internal continuation of personal information.
-Therefore, we believe the effect of
-OMEN+~\cite{castelluccia2013privacy} is roughly equivalent to adding
-common names, locations, etc. to training data. Besides, it is naturally improper
-to use personal information of individual user to generate guesses for
-all users.
 
 There have been works on protecting passwords by enforcing users to
 select more secure passwords, among which password strength meters
@@ -90,7 +75,8 @@ seem to be one effective method. Castelluccia et
 al~\cite{castelluccia2012adaptive} proposed to use Markov Model as in
 ~\cite{narayanan2005fast} to measure the security of user
 passwords. Meanwhile commercial password meters adopted by popular
-websites are proved inconsistent~\cite{de2014very}.  There are works focusing on providing Feedback to users using trained leaked passwords or
+websites are proved inconsistent~\cite{de2014very}.  Feedback can be
+provided to users using trained leaked passwords or
 dictionaries~\cite{weir2010testing, komanduri2014telepathwords}.
 Several works discussed adding security questions on top of passwords
 ~\cite{pinkas2002securing, schechter2009s, brainard2006fourth}. Though

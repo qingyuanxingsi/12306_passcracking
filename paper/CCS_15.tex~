@@ -46,6 +46,7 @@
 % For tracking purposes - this is V2.0 - May 2012
 
 \documentclass{sig-alternate}
+
 \usepackage{booktabs,caption,fixltx2e}
 \usepackage[flushleft]{threeparttable}
 \usepackage{algorithm}
@@ -68,7 +69,7 @@
 \begin{document}
 %
 % --- Author Metadata here ---
-\conferenceinfo{}{}%WOODSTOCK}{'97 El Paso, Texas USA}
+\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
 %\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 % --- End of Author Metadata ---

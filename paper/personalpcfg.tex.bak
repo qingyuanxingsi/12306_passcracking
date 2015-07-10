@@ -1,90 +1,245 @@
-\section{Personal-PCFG, an individual oriented password cracker}
+%\section{Personal-PCFG, an individual oriented password cracker}
+\section{Personal-PCFG}
 \label{personalpcfg}
-We have presented abundant findings regarding user personal information and their passwords, as well as a metric to quantify their correlation. Naturally we wonder how are these findings useful. And an obvious answer is that given there is significant correlation between user password and personal information, we can make password cracking much faster. Therefore we create Personal-PCFG, which relies on the idea of PCFG approach created by M. Weir \cite{weir2009password}. However, unlike original PCFG method, Personal-PCFG is an individual-oriented password cracker. It generates personalized guesses towards each user.
+After investigating the correlation between personal information and user passwords 
+through measurement and quantification, we further study their potential usage to crack passwords
+from an attacker's point of view. Based on PCFG
+approach~\cite{weir2009password},  we develop Personal-PCFG as an individual-oriented
+password cracker that can generate personalized guesses towards a targeted user by exploiting the already known personal information.
+
 
 \subsection{Attack Scenarios}
-Personal-PCFG can be used in both offline and online attacks. Attackers need to know certain amount of personal information about the targets. The attackers can be an evil neighbor, a curious friend, a jealous husband, a blackmailer (for online attacks). Or even a company that buys personal information from other companies (for offline attacks). Under these conditions, target personal information is rather easy to obtain -- The attackers might either know some victim personal information or can easily get personal information by searching online, especially social networks sites (SNS). 
+We assume that the attacker knows certain amount of personal information
+about the targets. The attacker can be an evil neighbor, a curious
+friend, a jealous husband, a blackmailer, or even a company that buys
+personal information from other companies. Under these conditions,
+targeted personal information is rather easy to obtain by knowing the
+victim personally or searching online, especially on social networks
+sites (SNS)~\cite{gross2005information, krishnamurthy2009leakage}.
+Personal-PCFG can be used in both offline and online attacks. 
 
-In traditional offline password attacks, attackers usually steal hashed passwords from victim systems, and try to find out the unhashed values of these passwords. As hash process cannot be simply reversed, the most usual solution is by brute force, namely guessing and verifying passwords. Every guess is verified by hashing the guess (salt is also likely to be added) and comparing it to each of the hashed values. high-probability password guesses can usually match many hashed values and thus are usually tried first. In offline attacks, Personal-PCFG is much faster in guessing out the correct password than conventional methods by generating high-probability personalized passwords.
+In traditional offline password attacks, attackers usually steal
+hashed passwords from victim systems, and then try to find out the
+unhashed values of these passwords. As a secure hash function cannot
+be simply reversed, the most popular attacking strategy is to guess
+and verify passwords by brute force. Each guess is verified by hashing
+a password (salt needs to be added) from a password dictionary and
+comparing the result to the hashed values in the leaked password
+database. High-probability password guesses can usually match many
+hashed values in the password database and thus are expected to be
+tried first. For offline attacks, Personal-PCFG is much faster in
+guessing out the correct password than conventional methods since it
+can generate high-probability personalized passwords and verify them
+first.
 
-As for online attack, the attacker does not even have a hashed database. Instead the attacker tries to directly log in the real systems. It is considered more difficult than offline attacks because websites usually have restrictions on log in attempts for a given period of time. If the trial quota has been reached without inputting the correct password, the target account may be locked either for some time or permanently unless certain actions are taken (For example, call the service provider). As a matter of fact, online attacks need to be very fast -- within at most tens of guesses the password should be cracked out. Any proposed password cracking method 
+For online attack, since the attacker does not even have a hashed
+password database, he or she instead tries to directly log in the real
+systems by guessing the passwords. It is more difficult to succeed in
+online attacks than offline attacks because online service systems
+usually have restrictions on login attempts for a given period of
+time. If the attempt quota has been reached without inputting a
+correct password, the account may be locked for some time or even
+permanently unless certain actions are taken (e.g., call the service
+provider). Therefore, online attacks require very accurate guesses, which can be achieved by
+integrating personal information. Personal-PCFG is able to crack
+around 1 out of 20 passwords within only 5 guesses.
 
-\subsection{A revisit of PCFG}
-Personal-PCFG method is based on the idea of PCFG method. Before we introduce Personal-PCFG. We revisit the basic principle of PCFG method. PCFG method pre-processes passwords by their structures. From the pre-process base structures such as $"L_5D_3S_1"$ are generated for each of the passwords. Then PCFG method substitute the "D" and "S" segments using segments of same length learned from the training set. These substitute segments are ranked by probability of occurring in training set. Therefore higher probability segments will be tried first. For example, "123" is a high-probability candidate for $D_3$ while "691" may not be a high probability candidate. As a result, one base structure may have many substitutions, for example, $"L_5D_3S_1"$ can have $"L_5123!"$ and $"L_5691!"$, etc as its substitutions. These new representations are called pre-terminal structures. No "L" segment is substituted because the space of alpha strings is too large to learn from the training set. These pre-terminals are ranked from high probability to low probability. And finally "L" segments are substituted using a dictionary. Besides the basic idea, PCFG method also carries an efficient algorithm to enumerate passwords from high probability to low probability on the fly, which will also be used in Personal-PCFG. Therefore PCFG method generates password guesses in descending probability order. These guesses are hashed to compare with the values in password databases. Since PCFG method output statistically high probability password first. It reduces the guessing number of traditional dictionary attacks significantly. 
+\subsection{A Revisit of PCFG}
+Personal-PCFG is based on the basic idea of PCFG
+method~\cite{weir2009password} and provide an extension to further
+improve its efficiency. Before we introduce Personal-PCFG, we briefly
+revisit principles of PCFG. PCFG pre-processes
+passwords and generates base password structures such as $"L_5D_3S_1"$ for each
+of the passwords. Starting from high-probability structures, PCFG
+method substitutes the ``D'' and ``S'' segments using segments of same
+length learned from the training set. These substitute segments are
+ranked by probability of occurring leanred from the training set. Therefore high
+probability segments will be tried first. One base structure may have
+a number of substitutions, for example, $"L_5D_3S_1"$ can have
+$"L_5123!"$ and $"L_5691!"$ as its substitutions. These new
+representations are called pre-terminal structures. No ``L'' segment
+is currently substituted since the space of alpha strings is too large
+to learn from the training set. Next, these pre-terminals are ranked
+from high probability to low probability. Finally ``L'' segments
+are substituted using a dictionary to generate actual guesses. 
+Besides the basic idea, PCFG
+method also carries an efficient algorithm to enumerate passwords from
+high probability to low probability on the fly. These
+guesses are hashed to compare with the values in password
+databases. Since PCFG can generate statistically high probability
+password first, it can significantly reduce the guessing number of
+traditional dictionary attacks.
 
 \subsection{Personal-PCFG}
-Personal PCFG leverages the basic idea of PCFG method. Beside "L", "D", and "S" symbols, it adds more semantic symbols to PCFG method. These additional symbols include "B" for birthday, "N" for name, "E" for email address, "A" for account name, and "I" for id number. More semantics makes Personal-PCFG more accurate in predicting passwords. To make Personal-PCFG work, additional matching phase and adapt-substitution phase are added to the original PCFG method. Personal-PCFG works as following.
-\subsubsection{Matching}
-Given a password string, we first try to match it or a substring of it to personal information. The algorithm used is the same as that introduced in Section~\ref{matchingmethod}. However, this time we also record the length of the matching segment. We replace the matched segments in password with corresponding symbols and length. Unmatched segments will remain unchanged. Again, We take Alice, who was born in Aug. 16 1988, as an example. This time we assume her password is "helloalice816!". Matching phase will replace "alice" with "$N_5$" and "816" with "$B_3$. The leftover is kept unchanged. Thereby the outcome of this step is "$helloN_5B_3!$" 
-\subsubsection{Processing}
-In this step we simply run the processing routine of original PCFG method on the output of last step. The segments that are matched to personal information are not processed in this step. The output in this step is a base structure for Personal-PCFG. Now the password is fully described by symbols of Personal-PCFG method. Our example password "$helloN_5B_3!$" will update to "$L_5N_5B_3S_1$". 
+Personal-PCFG leverages the basic idea of PCFG. Besides ``L'',
+``D'', and ``S'' symbols in PCFG, we add more semantic symbols
+including ``B'' for birthday, ``N'' for name, ``E'' for email address,
+``A'' for account name, ``C'' for cellphone number, and ``I'' for ID
+number. Richer semantics makes Personal-PCFG more accurate in guessing
+passwords. To make Personal-PCFG work, an additional personal information matching phase
+and an adaptive-substitution phase are added to the original PCFG
+method. Therefore, Personal-PCFG has 4 phases and the output of each phase will be fed to the next phase as input. The output of last phase is the actual guesses for trying. We now describe each phase in detail along with simple examples. 
+
+%the goal of each phase; any connection between phases? how many
+%phases in total?
+ 
+
+\subsubsection{Personal Information Matching}
+Given a password string, we first match the entire password or a
+substring of the password to its personal information. The detailed
+algorithm is similar to Algorithm~\ref{alg1}. However, this time we
+also record the length of the matching segment. We replace the matched
+segments in password with corresponding symbols and mark the symbols
+with length. Unmatched segments remain unchanged. For instance, we
+assume Alice was born in August 16, 1988 and her password is
+``helloalice816!''. The matching phase will replace ``alice'' with
+``$N_5$" and ``816'' with ``$B_3$". The leftover ``hello'' is kept
+unchanged. Therefore the outcome of this phase is ``$helloN_5B_3!$".
+
+\subsubsection{Password Pre-processing}
+This phase is similar to the pre-processing routine of the original
+PCFG; however, based on the output of personal information matching
+phase, the segments already matched to personal information will not
+be processed. For instance, the sample structure
+``$helloN_5B_3!$" will be updated to ``$L_5N_5B_3S_1$" in this phase.  Now the
+password is fully described by semantic symbols of Personal-PCFG, 
+and the output in this phase provides base structures for
+Personal-PCFG.
+
 \subsubsection{Guess Generation}
-Like original PCFG method, we replace "D" and "S" symbols with actual strings learned from the training set in descending probability order. "L" symbols are also replaced with words from a dictionary. We use the "NEXT" function in [] to output the results on the fly so we do not need to wait all possibilities for guesses are calculated and sorted. The results will be kept outputting for next step. Note that we do not replace any symbols for personal information so the guesses are still not actual guesses. We do not handle personal information in this step because personal information for each user is likely to be different. Personal information symbols can only be substituted when the target is specific. In this step our base structures generate pre-terminals, which are partial guesses that contain part of actual guesses and part of Personal-PCFG symbols. The example "$L_5N_5B_3S_1$" is now "$helloN_5B_3!$". if "hello" is the first 5 symbols long string in the input dictionary and "!" has highest probability of occurring for 1 symbol long special character strings in the training set. Note that for "L" segments, every words of same length has same probability. The probability of "hello" is simply $1\over N$, in which $N$ is the total number of words of length 5 in the input dictionary. 
+Similar to the original PCFG, we replace ``D'' and ``S''
+symbols with actual strings learned from the training set in
+descending probability order. ``L'' symbols are replaced with words
+from a dictionary. Similar to PCFG~\cite{weir2009password}, we output
+the results on the fly so we do not need to wait all possibilities for
+guesses are calculated and sorted. The results are kept outputting for
+next step. Note that we have not replaced any symbols for personal
+information so the guesses are still not actual guesses. We do not
+handle personal information in this step, since personal information
+for each user is likely to be different and personal information
+symbols can only be substituted until the target is specific. 
+%
+Therefore, in this phase our base structures only generate
+pre-terminals, which are partial guesses that contain part of actual
+guesses and part of Personal-PCFG semantic symbols. For instance, the
+example ``$L_5N_5B_3S_1$" is instantiated to ``$helloN_5B_3!$" if
+``hello'' is the first 5-symbol long string in the input dictionary
+and ``!'' has highest probability of occurring among 1 symbol special
+character in the training set. Note that for ``L'' segments, each word
+of the same length has the same probability. The probability of
+``hello'' is simply $1\over N$, in which $N$ is the total number of
+words of length 5 in the input dictionary.
 
-\subsubsection{Adapt-substitution}
-The result of last step can be applied to any target user. However, this will no longer be true in this step because the guesses will be further substituted with personal information, which are specific to only one target user. Personal information symbols are replaced by corresponding personal information of same length. If there are multiple candidates of same length, every combination is output for trial. In our example guess $helloN_5B_3!$, $N_5$ will be directly replaced by "alice". However, $B_3$ has many candidate segments. Any length 3 substring of "19880816" can be a candidate. Therefore every substring will be output. The guesses are "helloalice198!", "helloalice988!", $\ldots$, "helloalice816!". We know the final try is exactly the password of Alice. Note that on the opposite of having multiple candidate, not all personal information segments can be replaced because same length segments may not always be available. For example, a $helloN_6B_3!$ is not suitable for Alice for her name is at most 5 symbols long. In this case no guess from this pre-terminal structures will be output for Alice. 
+\subsubsection{Adaptive Substitution}
+In the original PCFG, the output of guess generation can be
+applied to any target user. However, in Personal-PCFG, the guesses
+will be further instantiated with personal information, which are
+specific to only one target user.  Each personal information symbol is
+replaced by corresponding personal information of the same length. If
+there are multiple candidates of the same length, all of them will be
+included for trial. In our example $helloN_5B_3!$, $N_5$ will be
+directly replaced by ``alice''. However, since $B_3$ has many
+candidate segments and any length 3 substring of ``19880816'' may be a
+candidate, the guesses include all substrings such as
+``helloalice198!'', ``helloalice988!'', $\ldots$,
+``helloalice816!''. We then try these candidate guesses one by one
+until we find out that the last candidate matches exactly the password
+of Alice. Note that on the opposite of having multiple candidate, not
+all personal information segments can be replaced since the same
+length segments may not always be available. For instance, a
+pre-terminal structure $helloN_6B_3!$ is not suitable for Alice since
+her name is at most 5 symbols long. In this case no guesses from this
+structure should be generated for Alice.
 
-\subsection{Cracking Result}
-We use 12306 dataset in both Personal-PCFG and original PCFG method. 12306 dataset has 131,389 users. We use half of them as training set, and the other half as testing set. Besides, both of the methods involve selection of dictionaries for the "L" segments. Dictionaries are a vital part for password cracking. [] proved that vocabulary in password datasets are more closed to each other than to an ordinary dictionary therefore using dictionaries collected from other dataset is more efficient. To eliminate the effect of unfair dictionary selection, we use "perfect" dictionaries in both of the methods. "Perfect" dictionaries are dictionaries we collected directly from the testing set, in which any string is useful and no string is uncovered. Therefore a perfect dictionary is guaranteed to find correct alpha strings efficiently.
-
-We realized that most previous works on password cracking use guessing number to compare different methods. However, we use hashing number to evaluate Personal-PCFG. We argue that as hashing is the bottleneck of such attacks, it is more reasonable to compare hashing number instead of guessing number. It is acceptable to use guessing number in past works because guessing number has linear relation to hashing number. For each guess, it needs to be padded by the salt before hashing. Therefore, a database of $N$ passwords requires $N$ hashes to verify each guess. However, in Personal-PCFG, one guess is usually personalized to test on only one password so it requires only $1$ hash to verify a guess. Therefore insist on using guessing number to compare 2 methods is inappropriate.
-
-The result is shown in Figure~\ref{f3}, in which we compute the percentage of a password that can be cracked given the guessing number. We found that Personal-PCFG works substantially better than original PCFG method. Some interesting observations are listed in following.
-
-\begin{figure}[h!]
-\centering
-  \caption{Compare PCFG and Personal-PCFG.}{}
+\begin{figure}[t]
+  \centering
+  \caption{ Compare PCFG and Personal-PCFG.}{}
   \label{f3}
-  \centering
-    \includegraphics[width=0.5\textwidth]{fig/cmp}
+  \includegraphics[width=0.4\textwidth]{fig/cmp}
+\vspace{-0.1in}
 \end{figure}
 
-\begin{enumerate}[leftmargin=*]
-\item Both PCFG and Personal-PCFG can crack passwords quickly when they just start. However, the line become flat when the guessing number is growing large. This is normal because both methods try high probability guesses first. 
+\subsection{Cracking Results}
+We compare the performance of Personal-PCFG and the
+original PCFG using the 12306 dataset, which has 131,389 users.  We 
+use half of the dataset as the training set,
+and the other half as the testing set.  For the ``L" segments, both
+methods need to use a dictionary, which is a critical part for password
+cracking. To eliminate the effect of unfair dictionary selection, we
+use ``perfect'' dictionaries in both methods. Perfect dictionaries are
+dictionaries we collected directly from the testing set, so that any
+string in the dictionary is useful and any letter segments in the passwords
+must appear in the dictionary. Thus, a perfect dictionary is a
+guarantee to find correct alpha strings efficiently. In our study, both PCFG perfect dictionary and Personal-PCFG perfect dictionary contain 15,000 to 17,000 entries.
 
-\item Personal-PCFG works much better than PCFG when only one person is the target. With 10 million guesses Personal-PCFG achieves the probability that is achieved with over 300 million guesses by PCFG method. That is to say, Personal-PCFG can crack password much much faster than PCFG method. 
+Most previous works on password cracking use {\em guessing number} as
+a metric to compare their performance; however, we propose to use {\em
+  hashing number} to evaluate Personal-PCFG. 
+%
+Because hashing operations are the bottleneck of password cracking
+attacks, it is more reasonable to compare hashing number instead of
+guessing number. Researchers use guessing number in their works
+because the guessing number is independent of password dataset size
+and one hashed guess can be compared to all the passwords in the
+dataset. However, because almost all modern password datasets are
+protected by the salt mechanism, each non-personalized guess still
+needs to be padded by the individual salt value for each account
+before hashing. Therefore, a dataset of $N$ passwords requires $N$
+hashes to verify one guess. In Personal-PCFG, one guess is usually
+personalized to test on one specific password so that it requires only $1$
+hash to verify a guess. 
 
-\item Personal-PCFG covers more passwords than PCFG method. This is because personal information provides rich personalized strings which may not  be covered in the training set.  
-
-\end{enumerate}
-
-Beside offline attack, we also show the effectiveness of Personal-PCFG in online attacks. Online attacks allow much less guessing attempts because a real system usually restrain log in attempts for a specific user. Therefore we limit the guesses to be at most 100 times. In fact, most systems will not allow log in attempts to exceed 10 time.s. We present the results in Figure~\ref{cmp100} and we show representative points in Table~\ref{cmp100t}
-
-
-\begin{figure}[h!]
-\centering
-  \caption{Representative Points -- Online attacks.}{}
-  \label{cmp100}
+\begin{figure}[t]
   \centering
-    \includegraphics[width=0.5\textwidth]{fig/online}
-\end{figure}
-
-\begin{table}
-\centering
-\caption{Representative Points.}
-\begin{adjustbox}{max width=0.48\textwidth}
-\begin{tabular}{|c|c|c|c|c|} \hline
-\multirow{2}{*}{Attempts}&\multicolumn{2}{|c|}{PCFG}&\multicolumn{2}{|c|}{Personal-PCFG}\\ \cline{2-5}
-&Cracked NO&Percentage&Cracked NO&Percentage\\ \hline
-1 & 329 & 0.5\% & 1390 & 2.1\% \\
-3 & 510 & 0.8\% & 2412 & 3.7\%\\
-5 & 583 & 0.9\% & 3089 & 4.7\%\\
-10 & 908 & 1.4\% & 4136 & 6.3\%\\
-50 & 1312 & 2.0\% & 8684 & 13.2\%\\
-100 & 1523 & 2.3\% & 11402 & 17.4\%\\
-\hline\end{tabular}
-\end{adjustbox}
-\label{cmp100t}
-\end{table}
-
-\begin{figure}[h!]
-\centering
   \caption{PCFG and Personal-PCFG -- Online attacks.}{}
   \label{cmp100}
-  \centering
-    \includegraphics[width=0.5\textwidth]{fig/cmp100}
+  \includegraphics[width=0.4\textwidth]{fig/cmp100}
+\vspace{-0.1in}
 \end{figure}
+Figure~\ref{f3} shows the comparison of the original PCFG and
+Personal-PCFG using average hashing number. We compute the probability
+of a password to be cracked given various hashing
+numbers. Figure~\ref{f3} implies that generally Personal-PCFG works
+substantially better than original PCFG. With a moderate size of 500,000 hashes
+Personal-PCFG achieves a similar success rate that can be achieved with
+over 200 million hashes by original PCFG. That is to
+say, Personal-PCFG can crack password much faster than PCFG
+does.  Moreover, Personal-PCFG is able to cover a larger password space
+than PCFG. This is because personal information provides rich
+personalized strings that may not appear in the dictionaries or training set.
+%
+It is not surprising that both PCFG and Personal-PCFG can crack
+passwords quickly when they just start, since both methods always try
+high probability guesses first. However, the lines become relatively
+flat when the guessing number is growing large.
 
+ \begin{figure}[t]
+  \centering
+  \caption{Representative Points -- Online attacks.}{}
+  \label{points}
+  \includegraphics[width=0.4\textwidth]{fig/online}
+\vspace{-0.15in}
+\end{figure}
+%online attacks
 
+Personal-PCFG not only improve the cracking efficiency in offline
+attacks, but also increase the guessing success opportunity in online
+attacks. Online attacks are only able to try a small number of guesses
+in a certain time period due to the system constrains on the login
+attempts. Therefore we limit the guesses to be at most 100 times. We present the results in Figure~\ref{cmp100}, from which it can seen that
+Personal-PCFG is able to crack 309\% to 634\% more passwords than
+original PCFG. We then show several representative guessing numbers in Figure~\ref{points}. For a typical system that allows 5
+attempts to input the correct passwords, Personal-PCFG is able to
+crack 4.8\% passwords within only 5 guesses. Meanwhile the percentage
+is just 0.9\% for original PCFG, and it takes around 2000 more guesses
+for PCFG to reach a success rate of 4.8\%. Thus, Personal-PCFG is more
+efficient to crack the correct passwords within only a small number of
+guesses.
 
-In online attacks, Personal-PCFG is able to crack 323\% to 649\% more passwords than original PCFG. Apparently Personal-PCFG achieves substantially higher success rate than PCFG. 
+We conclude that Personal-PCFG substantially outperforms PCFG in both online and
+offline attacks due to the integration of the personal
+information into password guessing. On the other hand, the extra
+requirement of Personal-PCFG on personal information can be satisfied
+by knowing the victim personally or searching on social networks sites
+(SNS).
+
